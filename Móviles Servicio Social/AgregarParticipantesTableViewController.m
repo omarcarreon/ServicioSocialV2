@@ -17,11 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+     /*
+     El siguiente código se obtuvo de:
+     http://stackoverflow.com/questions/19029833/ios-7-navigation-bar-text-and-arrow-color
+     */
+    //Cambia el color de la barra.
+    [self.navigationController.navigationBar setBarTintColor:[self colorWithHexString:@"00B28C"]];
+    //Cambia el color del titulo
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
+    //Cambia el color del back.
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,8 +41,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 2;
 }
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -92,5 +98,57 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+//Convierte un valor string hexadecimal(http://stackoverflow.com/questions/6207329/how-to-set-hex-color-code-for-background)
+-(UIColor*)colorWithHexString:(NSString*)hex
+{
+    NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    
+    // String should be 6 or 8 characters
+    if ([cString length] < 6) return [UIColor grayColor];
+    
+    // strip 0X if it appears
+    if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
+    
+    if ([cString length] != 6) return  [UIColor grayColor];
+    
+    // Separate into r, g, b substrings
+    NSRange range;
+    range.location = 0;
+    range.length = 2;
+    NSString *rString = [cString substringWithRange:range];
+    
+    range.location = 2;
+    NSString *gString = [cString substringWithRange:range];
+    
+    range.location = 4;
+    NSString *bString = [cString substringWithRange:range];
+    
+    // Scan values
+    unsigned int r, g, b;
+    [[NSScanner scannerWithString:rString] scanHexInt:&r];
+    [[NSScanner scannerWithString:gString] scanHexInt:&g];
+    [[NSScanner scannerWithString:bString] scanHexInt:&b];
+    
+    return [UIColor colorWithRed:((float) r / 255.0f)
+                           green:((float) g / 255.0f)
+                            blue:((float) b / 255.0f)
+                           alpha:1.0f];
+}
+- (IBAction)crearBeneficiario:(UIBarButtonItem *)sender {
+    NSString *nombre = self.tfNombre.text;
+    NSString *telefono = self.tfTelefono.text;
+    
+    if (![nombre isEqualToString:@""] && ![telefono isEqualToString:@""]){
+        
+        [self.delegado crearBeneficiario:nombre withTel:telefono];
+        [self.delegado quitaVista];
+        
+    } else {
+        UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"Faltan campos por completar" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+}
 @end

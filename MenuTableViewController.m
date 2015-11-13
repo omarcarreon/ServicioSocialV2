@@ -19,12 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     /*
      El siguiente código se obtuvo de:
      http://stackoverflow.com/questions/19029833/ios-7-navigation-bar-text-and-arrow-color
@@ -109,7 +103,6 @@
         [[segue destinationViewController] setDelegado:self];
     }
 }
-
 
 - (void) agregarStaff:(NSString *)email withName:(NSString *)name withID:(NSString *)mat withCareer:(NSString *)career withSemester:(NSString *)sem withTelefono:(NSString *)tel{
     

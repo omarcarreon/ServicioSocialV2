@@ -1,18 +1,18 @@
 //
-//  CrearGrupoTableViewController.m
+//  AgregarAlumnoTableViewController.m
 //  Móviles Servicio Social
 //
-//  Created by Angel González on 11/12/15.
+//  Created by alumno on 13/11/15.
 //  Copyright © 2015 Angel González. All rights reserved.
 //
 
-#import "CrearGrupoTableViewController.h"
+#import "AgregarAlumnoTableViewController.h"
 
-@interface CrearGrupoTableViewController ()
+@interface AgregarAlumnoTableViewController ()
 
 @end
 
-@implementation CrearGrupoTableViewController
+@implementation AgregarAlumnoTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,11 +32,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+#warning Incomplete implementation, return the number of sections
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+#warning Incomplete implementation, return the number of rows
+    return 0;
 }
 
 /*
@@ -93,20 +95,5 @@
 }
 */
 
-- (IBAction)crearGrupo:(UIBarButtonItem *)sender {
-    NSString *numero = self.tfNumero.text;
-    
-    if (![numero isEqualToString:@""]){
-        
-        [self.delegado crearGrupo:numero];
-        [self.delegado quitaVista];
-        
-    } else {
-        UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"Faltan campos por completar" preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
-        [alert addAction:ok];
-        [self presentViewController:alert animated:YES completion:nil];
-    }
-}
+
 @end

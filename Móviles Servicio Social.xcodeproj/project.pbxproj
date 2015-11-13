@@ -51,6 +51,8 @@
 		4A9B144B1BD84623004AC8C5 /* LOGONEGRO.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9B14491BD84623004AC8C5 /* LOGONEGRO.png */; };
 		4A9B144D1BD85248004AC8C5 /* crearUsuario.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9B144C1BD85248004AC8C5 /* crearUsuario.png */; };
 		4A9B14501BD8569C004AC8C5 /* ViewControllerAdminPrincipal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9B144F1BD8569C004AC8C5 /* ViewControllerAdminPrincipal.m */; };
+		FB7865261BF66398001FC117 /* AlumnosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7865251BF66398001FC117 /* AlumnosTableViewController.m */; };
+		FB7865291BF66A91001FC117 /* AgregarAlumnoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7865281BF66A91001FC117 /* AgregarAlumnoTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +138,10 @@
 		4A9B144C1BD85248004AC8C5 /* crearUsuario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crearUsuario.png; sourceTree = "<group>"; };
 		4A9B144E1BD8569C004AC8C5 /* ViewControllerAdminPrincipal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerAdminPrincipal.h; sourceTree = "<group>"; };
 		4A9B144F1BD8569C004AC8C5 /* ViewControllerAdminPrincipal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerAdminPrincipal.m; sourceTree = "<group>"; };
+		FB7865241BF66398001FC117 /* AlumnosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlumnosTableViewController.h; sourceTree = "<group>"; };
+		FB7865251BF66398001FC117 /* AlumnosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlumnosTableViewController.m; sourceTree = "<group>"; };
+		FB7865271BF66A91001FC117 /* AgregarAlumnoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgregarAlumnoTableViewController.h; sourceTree = "<group>"; };
+		FB7865281BF66A91001FC117 /* AgregarAlumnoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgregarAlumnoTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +235,10 @@
 				1A59DD7A1BEAAD2000E94496 /* TableViewControllerLugares.h */,
 				1A59DD7B1BEAAD2000E94496 /* TableViewControllerLugares.m */,
 				4A98C5441BF502890034FD44 /* Main.storyboard */,
+				FB7865271BF66A91001FC117 /* AgregarAlumnoTableViewController.h */,
+				FB7865281BF66A91001FC117 /* AgregarAlumnoTableViewController.m */,
+				FB7865241BF66398001FC117 /* AlumnosTableViewController.h */,
+				FB7865251BF66398001FC117 /* AlumnosTableViewController.m */,
 				4A98C5531BF516400034FD44 /* BeneficiariosTableViewController.h */,
 				4A98C5541BF516400034FD44 /* BeneficiariosTableViewController.m */,
 				4A98C5501BF5041B0034FD44 /* AsistenciaTableViewController.h */,
@@ -444,7 +454,9 @@
 				4A98C5521BF5041B0034FD44 /* AsistenciaTableViewController.m in Sources */,
 				4A43D7881BF3B7EA00C47F1A /* MenuTableViewController.m in Sources */,
 				1A59DD7C1BEAAD2000E94496 /* TableViewControllerLugares.m in Sources */,
+				FB7865261BF66398001FC117 /* AlumnosTableViewController.m in Sources */,
 				4A1001731BF053B500122FA9 /* CrearProyectoTableViewController.m in Sources */,
+				FB7865291BF66A91001FC117 /* AgregarAlumnoTableViewController.m in Sources */,
 				4A9B14151BD828F1004AC8C5 /* main.m in Sources */,
 				1A59DD7F1BEAAF2600E94496 /* TableViewControllerProyectos.m in Sources */,
 				4A98C5431BF500AC0034FD44 /* TableViewControllerGrupo.m in Sources */,

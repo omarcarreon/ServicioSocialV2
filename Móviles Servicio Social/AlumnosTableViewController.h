@@ -1,15 +1,13 @@
 //
-//  MenudelGrupoTableViewController.h
+//  AlumnosTableViewController.h
 //  Móviles Servicio Social
 //
-//  Created by Angel González on 11/12/15.
+//  Created by alumno on 13/11/15.
 //  Copyright © 2015 Angel González. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface MenudelGrupoTableViewController : UITableViewController
-
+@interface AlumnosTableViewController : UITableViewController
 @property (strong, nonatomic) id detailItem;
-
 @end

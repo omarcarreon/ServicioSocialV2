@@ -13,6 +13,8 @@
 
 @interface TableViewControllerProyectos ()
 @property (strong,nonatomic) NSArray *listaproyectos;
+@property (strong,nonatomic) NSString *objectId;
+@property (strong,nonatomic) NSString *objectIdToDelete;
 @end
 
 @implementation TableViewControllerProyectos
@@ -155,6 +157,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"crearproyecto"]){
         [[segue destinationViewController] setDelegado:self];
+        
+    } else if ([[segue identifier] isEqualToString:@"grupos"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        self.objectId = [[self.listaproyectos valueForKey:@"objectId"] objectAtIndex:indexPath.row];
+        [[segue destinationViewController] setDetailItem:self.objectId];
     }
 }
 

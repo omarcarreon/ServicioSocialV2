@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AgregarParticipantesTableViewController.h"
 
-@interface BeneficiariosTableViewController : UITableViewController
+@interface BeneficiariosTableViewController : UITableViewController <ProtocoloCrearBeneficiario>
+@property (strong, nonatomic) id detailItem;
 
 @end

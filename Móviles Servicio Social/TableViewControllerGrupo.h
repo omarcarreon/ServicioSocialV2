@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CrearGrupoTableViewController.h"
 
-@interface TableViewControllerGrupo : UITableViewController
+@interface TableViewControllerGrupo : UITableViewController <ProtocoloCrearGrupo>
+
+@property (strong, nonatomic) id detailItem;
 
 @end

@@ -7,16 +7,44 @@
 //
 
 #import "BeneficiariosTableViewController.h"
+#import "AgregarParticipantesTableViewController.h"
+#import <Parse/Parse.h>
 
 @interface BeneficiariosTableViewController ()
+@property (strong,nonatomic) NSArray *listabeneficiarios;
+@property (strong,nonatomic) NSString *objectId;
 
 @end
 
 @implementation BeneficiariosTableViewController
 
+- (void)setDetailItem:(id)newDetailItem {
+    if (_detailItem != newDetailItem) {
+        _detailItem = newDetailItem;
+        
+        // Update the view.
+        [self configureView];
+    }
+}
+
+- (void)configureView {
+    // Update the user interface for the detail item.
+    if (self.detailItem) {
+        PFQuery *query = [PFQuery queryWithClassName:@"Beneficiario"];
+        [query whereKey:@"IDGrupo" equalTo:[PFObject objectWithoutDataWithClassName:@"Grupo" objectId:self.detailItem]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                self.listabeneficiarios = [[NSMutableArray alloc]initWithArray:objects];
+                [self.tableView reloadData];
+            }
+        }];
+        
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self configureView];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -32,44 +60,90 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.listabeneficiarios.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"beneficiarios" forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.textLabel.text = [[self.listabeneficiarios valueForKey:@"Nombre"] objectAtIndex:indexPath.row];
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
+- (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
 }
-*/
 
-/*
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:@"Borrar Beneficiario"
+                                      message:@"¿Desea borrar el beneficiario?"
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"Si"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 
+                                 PFObject *object = [self.listabeneficiarios objectAtIndex:indexPath.row];
+                                 [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                     [self viewDidLoad];
+                                 }];
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+        UIAlertAction* cancel = [UIAlertAction
+                                 actionWithTitle:@"No"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [alert dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                 }];
+        [alert addAction:cancel];
+        [alert addAction:ok];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    }
 }
-*/
+
+- (void)crearBeneficiario:(NSString *)nombre withTel:(NSString *)telefono{
+    PFObject *beneficiario = [PFObject objectWithClassName:@"Beneficiario"];
+    beneficiario[@"Nombre"] = nombre;
+    beneficiario[@"Telefono"] = telefono;
+    beneficiario[@"IDGrupo"] = [PFObject objectWithoutDataWithClassName:@"Grupo" objectId:self.detailItem];
+    
+    [beneficiario saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+            
+            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Beneficiario agregado exitosamente" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
+            [alert addAction:ok];
+            [self presentViewController:alert animated:YES completion:nil];
+            [self configureView];
+        } else {
+            // There was a problem
+            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"Ocurrió un error al intentar agregar al beneficiario" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
+            [alert addAction:ok];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
+    
+}
+
+- (void)quitaVista{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 /*
 // Override to support rearranging the table view.
@@ -85,14 +159,51 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"crearbeneficiario"]){
+        [[segue destinationViewController] setDelegado:self];
+    }
 }
-*/
+
+//Convierte un valor string hexadecimal(http://stackoverflow.com/questions/6207329/how-to-set-hex-color-code-for-background)
+-(UIColor*)colorWithHexString:(NSString*)hex
+{
+    NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    
+    // String should be 6 or 8 characters
+    if ([cString length] < 6) return [UIColor grayColor];
+    
+    // strip 0X if it appears
+    if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
+    
+    if ([cString length] != 6) return  [UIColor grayColor];
+    
+    // Separate into r, g, b substrings
+    NSRange range;
+    range.location = 0;
+    range.length = 2;
+    NSString *rString = [cString substringWithRange:range];
+    
+    range.location = 2;
+    NSString *gString = [cString substringWithRange:range];
+    
+    range.location = 4;
+    NSString *bString = [cString substringWithRange:range];
+    
+    // Scan values
+    unsigned int r, g, b;
+    [[NSScanner scannerWithString:rString] scanHexInt:&r];
+    [[NSScanner scannerWithString:gString] scanHexInt:&g];
+    [[NSScanner scannerWithString:bString] scanHexInt:&b];
+    
+    return [UIColor colorWithRed:((float) r / 255.0f)
+                           green:((float) g / 255.0f)
+                            blue:((float) b / 255.0f)
+                           alpha:1.0f];
+}
 
 @end
