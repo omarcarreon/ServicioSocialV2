@@ -1,18 +1,18 @@
 //
-//  AsistenciaTableViewController.m
+//  AsistenciaAlumnosTableViewController.m
 //  Móviles Servicio Social
 //
-//  Created by Angel González on 11/12/15.
+//  Created by Angel González on 11/20/15.
 //  Copyright © 2015 Angel González. All rights reserved.
 //
 
-#import "AsistenciaTableViewController.h"
+#import "AsistenciaAlumnosTableViewController.h"
 
-@interface AsistenciaTableViewController ()
+@interface AsistenciaAlumnosTableViewController ()
 
 @end
 
-@implementation AsistenciaTableViewController
+@implementation AsistenciaAlumnosTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

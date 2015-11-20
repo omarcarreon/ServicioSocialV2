@@ -1,18 +1,18 @@
 //
-//  AsistenciaTableViewController.m
+//  PRUEBACHECKMARKTableViewController.m
 //  Móviles Servicio Social
 //
-//  Created by Angel González on 11/12/15.
+//  Created by Angel González on 11/19/15.
 //  Copyright © 2015 Angel González. All rights reserved.
 //
 
-#import "AsistenciaTableViewController.h"
+#import "PRUEBACHECKMARKTableViewController.h"
 
-@interface AsistenciaTableViewController ()
+@interface PRUEBACHECKMARKTableViewController ()
 
 @end
 
-@implementation AsistenciaTableViewController
+@implementation PRUEBACHECKMARKTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,14 +24,6 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
- Parte del código que permite usar el checkmark.
- */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger index = [[tableView indexPathsForVisibleRows] indexOfObject:indexPath];
     
@@ -45,16 +37,20 @@
     }
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 0;
+    return 3;
 }
 
 /*

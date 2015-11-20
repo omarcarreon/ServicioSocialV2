@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Icf-Lz-W0u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Icf-Lz-W0u">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Correo Electrónico" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nYj-N0-tX1">
-                                <rect key="frame" x="33" y="231" width="308" height="35"/>
+                                <rect key="frame" x="33" y="222" width="308" height="44"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -29,19 +29,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uca-Rc-spR">
-                                <rect key="frame" x="33" y="265" width="308" height="34"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="LOGONEGRO.png" translatesAutoresizingMaskIntoConstraints="NO" id="e0m-GI-Xph">
+                                <rect key="frame" x="33" y="62" width="308" height="140"/>
                                 <animations/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="308" id="5K3-ZF-uNM"/>
-                                    <constraint firstAttribute="height" constant="34" id="Qzb-Xd-CJY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNC-yQ-Own">
-                                <rect key="frame" x="134" y="311" width="106" height="46"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNC-yQ-Own">
+                                <rect key="frame" x="134" y="321" width="106" height="46"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -57,10 +50,17 @@
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i7F-Uv-JjJ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="LOGONEGRO.png" translatesAutoresizingMaskIntoConstraints="NO" id="e0m-GI-Xph">
-                                <rect key="frame" x="33" y="62" width="308" height="140"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uca-Rc-spR">
+                                <rect key="frame" x="33" y="265" width="308" height="41"/>
                                 <animations/>
-                            </imageView>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="308" id="5K3-ZF-uNM"/>
+                                    <constraint firstAttribute="height" constant="34" id="Qzb-Xd-CJY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.69803921570000005" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -90,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6482.5" y="-2019.5"/>
+            <point key="canvasLocation" x="-8402.5" y="-3234.5"/>
         </scene>
         <!--Menú-->
         <scene sceneID="uDQ-h8-j98">
@@ -115,7 +115,7 @@
                                                     <rect key="frame" x="137" y="10" width="101" height="46"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User Groups-100.png" translatesAutoresizingMaskIntoConstraints="NO" id="4aB-6w-615">
@@ -126,9 +126,12 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="KdP-FA-C6m" kind="show" identifier="lugares" id="yYr-z9-EYJ"/>
+                                            <segue destination="KdP-FA-C6m" kind="show" identifier="lugares" id="yYr-z9-EYJ">
+                                                <segue key="commit" inheritsFrom="parent" id="h5o-yb-6ct"/>
+                                                <segue key="preview" inheritsFrom="commit" id="bcq-nG-Xzy"/>
+                                            </segue>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -146,7 +149,7 @@
                                                     <rect key="frame" x="137" y="10" width="101" height="46"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Statistics-100.png" translatesAutoresizingMaskIntoConstraints="NO" id="auD-hS-rKX">
@@ -157,7 +160,7 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -174,7 +177,7 @@
                                                     <rect key="frame" x="137" y="10" width="101" height="46"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Add User-100.png" translatesAutoresizingMaskIntoConstraints="NO" id="ALO-Bt-6YT">
@@ -185,7 +188,7 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="C3P-ov-w74" kind="show" id="o7C-r8-4uM">
                                                 <segue key="commit" inheritsFrom="parent" id="bgw-jC-tGX"/>
@@ -238,7 +241,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t3f-Ub-veC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="baw-Ft-AKq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-5858.5" y="-2020.5"/>
+            <point key="canvasLocation" x="-7778.5" y="-3235.5"/>
         </scene>
         <!--Crear Staff-->
         <scene sceneID="itc-xh-806">
@@ -320,7 +323,7 @@
                                                     <rect key="frame" x="202" y="0.0" width="173" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                             </subviews>
                                             <animations/>
@@ -433,7 +436,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZL-aU-VXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5102.5" y="-1568.5"/>
+            <point key="canvasLocation" x="-7022.5" y="-2783.5"/>
         </scene>
         <!--Crear Lugar-->
         <scene sceneID="SyG-MD-AtR">
@@ -465,7 +468,7 @@
                                                     <rect key="frame" x="202" y="0.0" width="173" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                             </subviews>
                                             <animations/>
@@ -483,7 +486,7 @@
                                                     <rect key="frame" x="202" y="0.0" width="173" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dirección" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5p4-bS-EMr">
                                                     <rect key="frame" x="14" y="10" width="73" height="21"/>
@@ -521,7 +524,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v75-9N-h8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4616.5" y="-3119.5"/>
+            <point key="canvasLocation" x="-6536.5" y="-4334.5"/>
         </scene>
         <!--Lugares-->
         <scene sceneID="HZd-HO-Oeo">
@@ -544,7 +547,10 @@
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="pJJ-LM-YmT" kind="show" identifier="proyectos" id="71N-i5-wAP"/>
+                                    <segue destination="pJJ-LM-YmT" kind="show" identifier="proyectos" id="71N-i5-wAP">
+                                        <segue key="commit" inheritsFrom="parent" id="EIo-yO-34t"/>
+                                        <segue key="preview" inheritsFrom="commit" id="2c6-Hf-0aw"/>
+                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -565,7 +571,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ZX-p1-IvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5102.5" y="-2382.5"/>
+            <point key="canvasLocation" x="-7022.5" y="-3597.5"/>
         </scene>
         <!--Proyectos-->
         <scene sceneID="uAA-u8-zH4">
@@ -588,7 +594,10 @@
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="1ec-lv-4wk" kind="show" identifier="grupos" id="Alf-o1-vp3"/>
+                                    <segue destination="1ec-lv-4wk" kind="show" identifier="grupos" id="Alf-o1-vp3">
+                                        <segue key="commit" inheritsFrom="parent" id="JAH-Xg-Hfn"/>
+                                        <segue key="preview" inheritsFrom="commit" id="YiU-uB-drX"/>
+                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -609,7 +618,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bct-wW-p4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4535.5" y="-2382.5"/>
+            <point key="canvasLocation" x="-6455.5" y="-3597.5"/>
         </scene>
         <!--Grupos-->
         <scene sceneID="jOH-cO-QCq">
@@ -631,7 +640,10 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="6e4-lb-dQv" kind="show" identifier="menugrupo" id="Rhi-TB-e4B"/>
+                                    <segue destination="6e4-lb-dQv" kind="show" identifier="menugrupo" id="Rhi-TB-e4B">
+                                        <segue key="commit" inheritsFrom="parent" id="vhh-hd-L3S"/>
+                                        <segue key="preview" inheritsFrom="commit" id="KGO-kT-dgb"/>
+                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -652,7 +664,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5g5-LC-4TX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3981.5" y="-2382.5"/>
+            <point key="canvasLocation" x="-5901.5" y="-3597.5"/>
         </scene>
         <!--Menú del Grupo-->
         <scene sceneID="ZrE-ds-Ntq">
@@ -681,16 +693,19 @@
                                                     <rect key="frame" x="109" y="10" width="157" height="46"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="7Ik-do-XR0" kind="show" identifier="beneficiarios" id="2Et-f4-hKO"/>
+                                            <segue destination="7Ik-do-XR0" kind="show" identifier="beneficiarios" id="2Et-f4-hKO">
+                                                <segue key="commit" inheritsFrom="parent" id="Lyf-Ng-HRF"/>
+                                                <segue key="preview" inheritsFrom="commit" id="dOT-xf-6Dy"/>
+                                            </segue>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Ryd-NS-F0C">
@@ -702,18 +717,25 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Checklist-100.png" translatesAutoresizingMaskIntoConstraints="NO" id="fSI-5v-R7o">
                                                     <rect key="frame" x="28" y="10" width="49" height="47"/>
+                                                    <animations/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tomar Asistencia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXr-Xs-wf7">
                                                     <rect key="frame" x="125" y="10" width="124" height="46"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="BgU-PR-qE4" kind="show" id="zQu-1P-ANk"/>
+                                            <segue destination="BgU-PR-qE4" kind="show" identifier="asistenciaBeneficiario" id="zQu-1P-ANk">
+                                                <segue key="commit" inheritsFrom="parent" id="bzR-lU-tid"/>
+                                                <segue key="preview" inheritsFrom="commit" id="iJk-io-ldi"/>
+                                            </segue>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -729,18 +751,25 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="List Filled-100-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="icL-AP-oNP">
                                                     <rect key="frame" x="24" y="10" width="49" height="47"/>
+                                                    <animations/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lista" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cL-MS-4l9">
                                                     <rect key="frame" x="109" y="10" width="157" height="46"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="vF7-Z5-Fd0" kind="show" identifier="alumnos" id="6pg-Fk-Vru"/>
+                                            <segue destination="vF7-Z5-Fd0" kind="show" identifier="alumnos" id="6pg-Fk-Vru">
+                                                <segue key="commit" inheritsFrom="parent" id="XzX-s9-788"/>
+                                                <segue key="preview" inheritsFrom="commit" id="B8F-bf-ofv"/>
+                                            </segue>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="zrf-JI-Zhk">
@@ -752,16 +781,26 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Checklist-100.png" translatesAutoresizingMaskIntoConstraints="NO" id="VHe-Rl-jrd">
                                                     <rect key="frame" x="28" y="10" width="49" height="47"/>
+                                                    <animations/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tomar Asistencia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFL-Oi-1UW">
                                                     <rect key="frame" x="125" y="10" width="124" height="46"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="WH2-rH-B9d" kind="show" identifier="asistenciaAlumnos" id="Zec-0F-1na">
+                                                <segue key="commit" inheritsFrom="parent" id="Jl1-AI-OcI"/>
+                                                <segue key="preview" inheritsFrom="commit" id="u5B-QX-ncx"/>
+                                            </segue>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -776,7 +815,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPH-WN-bYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3451.5" y="-2382.5"/>
+            <point key="canvasLocation" x="-5371.5" y="-3597.5"/>
         </scene>
         <!--Tomar Asistencia-->
         <scene sceneID="Ebh-VF-MTn">
@@ -809,7 +848,40 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4i-fx-omc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2895.5" y="-2360.5"/>
+            <point key="canvasLocation" x="-4815.5" y="-3575.5"/>
+        </scene>
+        <!--Asistencia de Alumnos-->
+        <scene sceneID="vof-4y-Axz">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="46P-Jb-4m9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="WH2-rH-B9d" customClass="AsistenciaAlumnosTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="G7V-iW-Unf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="oxI-qN-cj0">
+                                <rect key="frame" x="0.0" y="114" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oxI-qN-cj0" id="sao-aw-OCU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WH2-rH-B9d" id="sMr-Ha-8Ic"/>
+                            <outlet property="delegate" destination="WH2-rH-B9d" id="jof-HT-K1W"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Asistencia de Alumnos" id="hfr-VG-1yI"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="-5347.5" y="-2750.5"/>
         </scene>
         <!--Lista de Alumnos-->
         <scene sceneID="71r-pa-qc3">
@@ -818,15 +890,18 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="iLl-aV-l9q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="alumnos" id="cVX-tf-0Ax">
-                                <rect key="frame" x="0.0" y="114" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="alumnos" rowHeight="50" id="cVX-tf-0Ax">
+                                <rect key="frame" x="0.0" y="114" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cVX-tf-0Ax" id="Bv9-oF-YzX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -846,7 +921,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pmh-0m-m9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2895.5" y="-1535.5"/>
+            <point key="canvasLocation" x="-4815.5" y="-2750.5"/>
         </scene>
         <!--Agregar Beneficiario-->
         <scene sceneID="1Og-vn-Zdc">
@@ -869,11 +944,13 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wih-62-C77">
                                                     <rect key="frame" x="202" y="0.0" width="165" height="43"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre del Beneficiario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3Z-Xp-F7G">
                                                     <rect key="frame" x="18" y="11" width="184" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -892,11 +969,13 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Teléfono" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="14Z-rP-1ma">
                                                     <rect key="frame" x="195" y="0.0" width="180" height="43"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teléfono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPq-8j-mcV">
                                                     <rect key="frame" x="18" y="11" width="66" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -930,7 +1009,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnm-ID-6fv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2358.5" y="-3114.5"/>
+            <point key="canvasLocation" x="-4278.5" y="-4329.5"/>
         </scene>
         <!--Agregar Alumno-->
         <scene sceneID="aRT-Ve-39G">
@@ -939,7 +1018,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="7Rw-uj-c4e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="WHt-Hb-dlS">
                                 <cells>
@@ -950,19 +1030,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-lP-TiT">
-                                                    <rect key="frame" x="165" y="1" width="210" height="43"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
-                                                </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre Completo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bep-Gc-zHX">
                                                     <rect key="frame" x="16" y="11" width="141" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-lP-TiT">
+                                                    <rect key="frame" x="165" y="1" width="210" height="43"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                </textField>
                                             </subviews>
+                                            <animations/>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xKu-Gt-8Yg">
                                         <rect key="frame" x="0.0" y="143" width="375" height="44"/>
@@ -973,17 +1057,21 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Matrícula" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3y-8F-Rgs">
                                                     <rect key="frame" x="15" y="11" width="71" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Matrícula" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hdp-g1-QAn">
                                                     <rect key="frame" x="165" y="1" width="210" height="43"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                             </subviews>
+                                            <animations/>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cmr-fk-zjv">
                                         <rect key="frame" x="0.0" y="187" width="375" height="44"/>
@@ -994,17 +1082,21 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Correo Electrónico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKN-8m-sWF">
                                                     <rect key="frame" x="16" y="11" width="143" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Correo Electrónico" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dUz-y4-1mE">
                                                     <rect key="frame" x="165" y="0.0" width="210" height="43"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                                 </textField>
                                             </subviews>
+                                            <animations/>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="N9K-I3-ZbV">
                                         <rect key="frame" x="0.0" y="231" width="375" height="44"/>
@@ -1015,17 +1107,21 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Teléfono" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZ5-Km-nLh">
                                                     <rect key="frame" x="165" y="0.0" width="210" height="43"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teléfono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYw-Pv-L4A">
                                                     <rect key="frame" x="16" y="11" width="66" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="64U-bR-Ta0">
                                         <rect key="frame" x="0.0" y="275" width="375" height="44"/>
@@ -1036,17 +1132,21 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Carrera" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EvY-Yb-ZdE">
                                                     <rect key="frame" x="165" y="0.0" width="210" height="43"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carrera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8h-Xo-2KL">
                                                     <rect key="frame" x="16" y="11" width="58" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RuF-hq-cJF">
                                         <rect key="frame" x="0.0" y="319" width="375" height="44"/>
@@ -1057,17 +1157,21 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Semestre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mR9-NU-zjp">
                                                     <rect key="frame" x="165" y="0.0" width="210" height="43"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Semestre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmK-S6-MZs">
                                                     <rect key="frame" x="19" y="11" width="73" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1094,23 +1198,23 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOJ-GO-Qjx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2358.5" y="-1535.5"/>
+            <point key="canvasLocation" x="-4278.5" y="-2750.5"/>
         </scene>
         <!--Lista de Beneficiarios-->
         <scene sceneID="6xT-SG-eoK">
             <objects>
                 <tableViewController id="7Ik-do-XR0" customClass="BeneficiariosTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="e4b-bb-Kt6">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="48" sectionHeaderHeight="18" sectionFooterHeight="18" id="e4b-bb-Kt6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="beneficiarios" id="grX-V5-0qs">
-                                <rect key="frame" x="0.0" y="114" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="beneficiarios" rowHeight="50" id="grX-V5-0qs">
+                                <rect key="frame" x="0.0" y="114" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="grX-V5-0qs" id="4pL-Au-UXy">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -1134,7 +1238,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZ3-u6-b8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2903.5" y="-3114.5"/>
+            <point key="canvasLocation" x="-4815.5" y="-4334.5"/>
         </scene>
         <!--Crear Grupo-->
         <scene sceneID="AXl-EG-W2v">
@@ -1166,7 +1270,7 @@
                                                     <rect key="frame" x="173" y="0.0" width="202" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="next"/>
                                                 </textField>
                                             </subviews>
                                             <animations/>
@@ -1196,7 +1300,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0MQ-Sv-12m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3483.5" y="-3119.5"/>
+            <point key="canvasLocation" x="-5403.5" y="-4334.5"/>
         </scene>
         <!--Crear Proyecto-->
         <scene sceneID="cm7-Fx-8Zp">
@@ -1221,7 +1325,7 @@
                                                     <rect key="frame" x="173" y="0.0" width="202" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre del Proyecto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEf-dh-brr">
                                                     <rect key="frame" x="8" y="10" width="162" height="21"/>
@@ -1246,7 +1350,7 @@
                                                     <rect key="frame" x="178" y="0.0" width="197" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descripción" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDU-0U-OHx">
                                                     <rect key="frame" x="8" y="10" width="92" height="21"/>
@@ -1293,7 +1397,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rge-gp-Zqd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4048.5" y="-3119.5"/>
+            <point key="canvasLocation" x="-5968.5" y="-4334.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nwA-bc-Vza">
@@ -1313,7 +1417,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t0b-8I-VEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7007.5" y="-2020.5"/>
+            <point key="canvasLocation" x="-8927.5" y="-3235.5"/>
         </scene>
     </scenes>
     <resources>
@@ -1326,6 +1430,14 @@
         <image name="User Groups-100.png" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="71N-i5-wAP"/>
+        <segue reference="yYr-z9-EYJ"/>
         <segue reference="o7C-r8-4uM"/>
+        <segue reference="Alf-o1-vp3"/>
+        <segue reference="Rhi-TB-e4B"/>
+        <segue reference="6pg-Fk-Vru"/>
+        <segue reference="zQu-1P-ANk"/>
+        <segue reference="2Et-f4-hKO"/>
+        <segue reference="Zec-0F-1na"/>
     </inferredMetricsTieBreakers>
 </document>
