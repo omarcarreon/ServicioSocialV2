@@ -7,7 +7,6 @@
 //
 
 #import "MenuTableViewController.h"
-#import "CrearStaffTableViewController.h"
 #import <Parse/Parse.h>
 
 @interface MenuTableViewController ()
@@ -43,7 +42,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -99,48 +98,9 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"crearstaff"]){
-        [[segue destinationViewController] setDelegado:self];
-    }
+
 }
 
-- (void) agregarStaff:(NSString *)email withName:(NSString *)name withID:(NSString *)mat withCareer:(NSString *)career withSemester:(NSString *)sem withTelefono:(NSString *)tel{
-    
-    PFUser *user = [PFUser user];
-    user.username = email;
-    user.password = @"user1";
-    user[@"Nombre"] = name;
-    user.email = email;
-    user[@"Matricula"] = mat;
-    user[@"Carrera"] = career;
-    user[@"Semestre"] = sem;
-    user[@"Telefono"] = tel;
-    NSNumber *privilegios = [NSNumber numberWithBool:NO];
-    [user setObject:privilegios forKey:@"Privilegios"];
-    
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {
-            
-            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Staff creado exitosamente" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
-            [alert addAction:ok];
-            [self presentViewController:alert animated:YES completion:nil];
-            
-        } else {
-            
-            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"Ocurrió un error al intentar crear el staff" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
-            [alert addAction:ok];
-            [self presentViewController:alert animated:YES completion:nil];
-            
-        }
-    }];
-    
-}
-
-- (void)quitaVista{
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 
 //Convierte un valor string hexadecimal(http://stackoverflow.com/questions/6207329/how-to-set-hex-color-code-for-background)

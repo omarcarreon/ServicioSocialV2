@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "AgregarAlumnoTableViewController.h"
 
-@interface AlumnosTableViewController : UITableViewController
+@interface AlumnosTableViewController : UITableViewController <ProtocoloCrearAlumno>
 @property (strong, nonatomic) id detailItem;
 @end

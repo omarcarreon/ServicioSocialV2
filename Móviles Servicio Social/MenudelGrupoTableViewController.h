@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CrearStaffTableViewController.h"
+#import <Parse/Parse.h>
 
-@interface MenudelGrupoTableViewController : UITableViewController
+
+@interface MenudelGrupoTableViewController : UITableViewController <ProtocoloAgregarStaff>
 
 @property (strong, nonatomic) id detailItem;
 

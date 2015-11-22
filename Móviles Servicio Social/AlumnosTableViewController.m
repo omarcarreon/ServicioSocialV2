@@ -107,6 +107,9 @@
         
     }
 }
+- (void)quitaVista{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
@@ -121,14 +124,48 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"crearalumno"]){
+        [[segue destinationViewController] setDelegado:self];
+    }
 }
-*/
+
+
+- (void) crearAlumno:(NSString *)email withName:(NSString *)name withID:(NSString *)mat withCareer:(NSString *)career withSemester:(NSString *)sem withTelefono:(NSString *)tel{
+    
+    PFObject *alumno = [PFObject objectWithClassName:@"Alumno"];
+    alumno[@"Nombre"] = name;
+    alumno[@"Matricula"] = mat;
+    alumno[@"Correo"] = email;
+    alumno[@"Telefono"] = tel;
+    alumno[@"Carrera"] = career;
+    alumno[@"Semestre"] = sem;
+    alumno[@"IDGrupo"] = [PFObject objectWithoutDataWithClassName:@"Grupo" objectId:self.detailItem];
+    alumno[@"Asistencia"] = [NSNumber numberWithInt:0];
+    alumno[@"Faltas"] = [NSNumber numberWithInt:0];
+    
+    
+    [alumno saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+            
+            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Alumno agregado exitosamente" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
+            [alert addAction:ok];
+            [self presentViewController:alert animated:YES completion:nil];
+            [self configureView];
+        } else {
+            // There was a problem
+            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"Ocurrió un error al intentar agregar al alumno" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
+            [alert addAction:ok];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
+}
 
 @end

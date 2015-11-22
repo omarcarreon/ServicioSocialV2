@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CrearStaffTableViewController.h"
 #import "CrearLugarTableViewController.h"
 #import "CrearProyectoTableViewController.h"
 
-@interface MenuTableViewController : UITableViewController <ProtocoloAgregarStaff>
+@interface MenuTableViewController : UITableViewController
 
 @end

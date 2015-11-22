@@ -10,7 +10,7 @@
 
 @protocol ProtocoloAgregarStaff <NSObject>
 
-- (void) agregarStaff:(NSString *)email withName:(NSString *)name withID:(NSString *)mat withCareer:(NSString *)career withSemester:(NSString *)sem withTelefono:(NSString *)tel;
+- (void) agregarStaff:(NSString *)email withName:(NSString *)name withID:(NSString *)mat withCareer:(NSString *)career withSemester:(NSString *)sem withTelefono:(NSString *)tel withPassword:(NSString *)pass;
 
 - (void)quitaVista;
 @end
@@ -18,6 +18,8 @@
 @interface CrearStaffTableViewController : UITableViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *tfEMail;
+
+@property (strong, nonatomic) IBOutlet UITextField *tfPassword;
 
 @property (weak, nonatomic) IBOutlet UITextField *tfName;
 

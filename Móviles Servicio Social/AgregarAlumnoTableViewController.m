@@ -22,6 +22,38 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tfNombre.delegate = (id)self;
+    self.tfMatricula.delegate = (id)self;
+    self.tfCorreo.delegate = (id)self;
+    self.tfTelefono.delegate = (id)self;
+    self.tfCarrera.delegate = (id)self;
+    self.tfSemestre.delegate = (id)self;
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.tfNombre)
+    {
+        [self.tfMatricula becomeFirstResponder];
+    }
+    else if (textField == self.tfMatricula)
+    {
+       [self.tfCorreo becomeFirstResponder];
+    }
+    else if (textField == self.tfCorreo)
+    {
+        [self.tfCarrera becomeFirstResponder];
+    }
+    else if (textField == self.tfCarrera)
+    {
+        [self.tfSemestre becomeFirstResponder];
+    }
+    else if (textField == self.tfSemestre)
+    {
+        [self.tfTelefono becomeFirstResponder];
+    }
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,4 +126,25 @@
 */
 
 
+- (IBAction)guardarAlumno:(UIBarButtonItem *)sender {
+    NSString *email = self.tfCorreo.text;
+    NSString *nombre = self.tfNombre.text;
+    NSString *matricula = self.tfMatricula.text;
+    NSString *carrera = self.tfCarrera.text;
+    NSString *semestre = self.tfSemestre.text;
+    NSString *telefono = self.tfTelefono.text;
+    
+    if (![email isEqualToString:@""] && ![nombre isEqualToString:@""] && ![matricula isEqualToString:@""] && ![carrera isEqualToString:@""] && ![semestre isEqualToString:@""] && ![telefono isEqualToString:@""]){
+        
+        [self.delegado crearAlumno:email withName:nombre withID:matricula withCareer:carrera withSemester:semestre withTelefono:telefono];
+        [self.delegado quitaVista];
+        
+    } else {
+        UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"Faltan campos por completar" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+}
 @end

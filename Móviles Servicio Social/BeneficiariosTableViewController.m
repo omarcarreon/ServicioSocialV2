@@ -9,6 +9,7 @@
 #import "BeneficiariosTableViewController.h"
 #import "AgregarParticipantesTableViewController.h"
 #import <Parse/Parse.h>
+#import "listaTableViewCell.h"
 
 @interface BeneficiariosTableViewController ()
 @property (strong,nonatomic) NSArray *listabeneficiarios;
@@ -39,7 +40,6 @@
                 [self.tableView reloadData];
             }
         }];
-        
     }
 }
 
@@ -69,10 +69,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"beneficiarios" forIndexPath:indexPath];
     
-    cell.textLabel.text = [[self.listabeneficiarios valueForKey:@"Nombre"] objectAtIndex:indexPath.row];
+    listaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"beneficiarios" forIndexPath:indexPath];
+    cell.tfNombre.text = [[self.listabeneficiarios valueForKey:@"Nombre"] objectAtIndex:indexPath.row];
+    NSInteger asistencias= [[[self.listabeneficiarios valueForKey:@"Asistencia"] objectAtIndex:indexPath.row] intValue];
+    NSInteger faltas = [[[self.listabeneficiarios valueForKey:@"Faltas"] objectAtIndex:indexPath.row] intValue];
     
+    cell.tfAsistencia.text = [NSString stringWithFormat:@"%ld",asistencias];
+    cell.tfFaltas.text = [NSString stringWithFormat:@"%ld",faltas];
     return cell;
 }
 
@@ -121,6 +125,9 @@
     beneficiario[@"Nombre"] = nombre;
     beneficiario[@"Telefono"] = telefono;
     beneficiario[@"IDGrupo"] = [PFObject objectWithoutDataWithClassName:@"Grupo" objectId:self.detailItem];
+    beneficiario[@"Asistencia"] = [NSNumber numberWithInt:0];
+    beneficiario[@"Faltas"] = [NSNumber numberWithInt:0];
+    
     
     [beneficiario saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {

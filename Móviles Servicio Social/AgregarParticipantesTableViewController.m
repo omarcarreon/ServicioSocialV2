@@ -27,6 +27,18 @@
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
     //Cambia el color del back.
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    self.tfNombre.delegate = (id)self;
+    self.tfTelefono.delegate = (id)self;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.tfNombre)
+    {
+        [self.tfTelefono becomeFirstResponder];
+    }
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -134,6 +146,7 @@
                             blue:((float) b / 255.0f)
                            alpha:1.0f];
 }
+
 - (IBAction)crearBeneficiario:(UIBarButtonItem *)sender {
     NSString *nombre = self.tfNombre.text;
     NSString *telefono = self.tfTelefono.text;

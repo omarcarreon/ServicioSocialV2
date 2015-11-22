@@ -36,11 +36,15 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    if (section == 2){
+        return 1;
+    } else{
+        return 2;
+    }
 }
 
 /*
@@ -96,7 +100,50 @@
         [[segue destinationViewController] setDetailItem:self.detailItem];
     } else if ([[segue identifier] isEqualToString:@"alumnos"]) {
         [[segue destinationViewController] setDetailItem:self.detailItem];
+    } else if ([[segue identifier] isEqualToString:@"crearstaff"]){
+        [[segue destinationViewController] setDelegado:self];
+    } else if ([[segue identifier] isEqualToString:@"tomarasistenciabeneficiario"]){
+        [[segue destinationViewController] setDetailItem:self.detailItem];
     }
+}
+
+- (void) agregarStaff:(NSString *)email withName:(NSString *)name withID:(NSString *)mat withCareer:(NSString *)career withSemester:(NSString *)sem withTelefono:(NSString *)tel withPassword:(NSString *)pass{
+    
+    PFUser *user = [PFUser user];
+    user.username = email;
+    user.password = pass;
+    user[@"Nombre"] = name;
+    user.email = email;
+    user[@"Matricula"] = mat;
+    user[@"Carrera"] = career;
+    user[@"Semestre"] = sem;
+    user[@"Telefono"] = tel;
+    user[@"IDGrupo"] = [PFObject objectWithoutDataWithClassName:@"Grupo" objectId:self.detailItem];
+    NSNumber *privilegios = [NSNumber numberWithBool:NO];
+    [user setObject:privilegios forKey:@"Privilegios"];
+    
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            
+            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Staff creado exitosamente" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
+            [alert addAction:ok];
+            [self presentViewController:alert animated:YES completion:nil];
+            
+        } else {
+            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"Ocurrió un error al intentar crear el staff" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
+            [alert addAction:ok];
+            [self presentViewController:alert animated:YES completion:nil];
+            
+        }
+    }];
+    
+}
+
+
+- (void)quitaVista{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

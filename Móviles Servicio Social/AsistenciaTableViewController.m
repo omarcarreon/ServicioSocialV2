@@ -7,16 +7,42 @@
 //
 
 #import "AsistenciaTableViewController.h"
+#import <Parse/Parse.h>
 
 @interface AsistenciaTableViewController ()
-
+@property (strong,nonatomic) NSArray *listabeneficiarios;
+@property (strong,nonatomic) NSString *objectId;
 @end
 
 @implementation AsistenciaTableViewController
 
+- (void)setDetailItem:(id)newDetailItem {
+    if (_detailItem != newDetailItem) {
+        _detailItem = newDetailItem;
+        
+        // Update the view.
+        [self configureView];
+    }
+}
+
+
+- (void)configureView {
+    // Update the user interface for the detail item.
+    if (self.detailItem) {
+        PFQuery *query = [PFQuery queryWithClassName:@"Beneficiario"];
+        [query whereKey:@"IDGrupo" equalTo:[PFObject objectWithoutDataWithClassName:@"Grupo" objectId:self.detailItem]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                self.listabeneficiarios = [[NSMutableArray alloc]initWithArray:objects];
+                [self.tableView reloadData];
+            }
+        }];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self configureView];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -48,24 +74,21 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.listabeneficiarios.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"asistencia" forIndexPath:indexPath];
+    cell.textLabel.text = [[self.listabeneficiarios valueForKey:@"Nombre"] objectAtIndex:indexPath.row];
+
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

@@ -21,6 +21,7 @@
 		1A239FC31BD93B5700B0721B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A239FC21BD93B5700B0721B /* libsqlite3.tbd */; };
 		1A59DD7C1BEAAD2000E94496 /* TableViewControllerLugares.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A59DD7B1BEAAD2000E94496 /* TableViewControllerLugares.m */; };
 		1A59DD7F1BEAAF2600E94496 /* TableViewControllerProyectos.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A59DD7E1BEAAF2600E94496 /* TableViewControllerProyectos.m */; };
+		1AB99B281C01264700683681 /* listaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB99B271C01264700683681 /* listaTableViewCell.m */; };
 		4A1001701BF0479200122FA9 /* CrearLugarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A10016F1BF0479200122FA9 /* CrearLugarTableViewController.m */; };
 		4A1001731BF053B500122FA9 /* CrearProyectoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1001721BF053B500122FA9 /* CrearProyectoTableViewController.m */; };
 		4A23964C1BEC0934006A5CE6 /* CrearStaffTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23964B1BEC0934006A5CE6 /* CrearStaffTableViewController.m */; };
@@ -90,6 +91,8 @@
 		1A59DD7B1BEAAD2000E94496 /* TableViewControllerLugares.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewControllerLugares.m; sourceTree = "<group>"; };
 		1A59DD7D1BEAAF2600E94496 /* TableViewControllerProyectos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewControllerProyectos.h; sourceTree = "<group>"; };
 		1A59DD7E1BEAAF2600E94496 /* TableViewControllerProyectos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewControllerProyectos.m; sourceTree = "<group>"; };
+		1AB99B261C01264700683681 /* listaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = listaTableViewCell.h; sourceTree = "<group>"; };
+		1AB99B271C01264700683681 /* listaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = listaTableViewCell.m; sourceTree = "<group>"; };
 		4A10016E1BF0479200122FA9 /* CrearLugarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CrearLugarTableViewController.h; path = ../CrearLugarTableViewController.h; sourceTree = "<group>"; };
 		4A10016F1BF0479200122FA9 /* CrearLugarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CrearLugarTableViewController.m; path = ../CrearLugarTableViewController.m; sourceTree = "<group>"; };
 		4A1001711BF053B500122FA9 /* CrearProyectoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrearProyectoTableViewController.h; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 		4A9B14071BD828F0004AC8C5 = {
 			isa = PBXGroup;
 			children = (
+				1AB99B261C01264700683681 /* listaTableViewCell.h */,
+				1AB99B271C01264700683681 /* listaTableViewCell.m */,
 				1A239FC41BD93B6C00B0721B /* Frameworks */,
 				4A9B14121BD828F1004AC8C5 /* Móviles Servicio Social */,
 				4A9B142C1BD828F3004AC8C5 /* Móviles Servicio SocialTests */,
@@ -457,6 +462,7 @@
 				4A23964C1BEC0934006A5CE6 /* CrearStaffTableViewController.m in Sources */,
 				4A9B14181BD828F1004AC8C5 /* AppDelegate.m in Sources */,
 				4A98C5521BF5041B0034FD44 /* AsistenciaTableViewController.m in Sources */,
+				1AB99B281C01264700683681 /* listaTableViewCell.m in Sources */,
 				4A43D7881BF3B7EA00C47F1A /* MenuTableViewController.m in Sources */,
 				1A59DD7C1BEAAD2000E94496 /* TableViewControllerLugares.m in Sources */,
 				FB7865261BF66398001FC117 /* AlumnosTableViewController.m in Sources */,

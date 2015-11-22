@@ -33,6 +33,19 @@
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
     //Cambia el color del back.
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    self.tfNombre.delegate = (id)self;
+    self.tfDireccion.delegate = (id)self;
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.tfNombre)
+    {
+        [self.tfDireccion becomeFirstResponder];
+    }
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

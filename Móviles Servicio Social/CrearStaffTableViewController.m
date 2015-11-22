@@ -37,6 +37,40 @@
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
     //Cambia el color del back.
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    self.tfEMail.delegate = (id)self;
+    self.tfPassword.delegate = (id)self;
+    self.tfName.delegate = (id)self;
+    self.tfID.delegate = (id)self;
+    self.tfCareer.delegate = (id)self;
+    self.tfSemester.delegate = (id)self;
+    self.tfTelefono.delegate = (id)self;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.tfName)
+    {
+        [self.tfEMail becomeFirstResponder];
+    }
+    else if (textField == self.tfEMail)
+    {
+        [self.tfPassword becomeFirstResponder];
+    }
+    else if (textField == self.tfPassword)
+    {
+        [self.tfID becomeFirstResponder];
+    }
+    else if (textField == self.tfID)
+    {
+        [self.tfCareer becomeFirstResponder];
+    }
+    else if (textField == self.tfCareer)
+    {
+        [self.tfSemester becomeFirstResponder];
+        
+    }
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,7 +85,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 6;
+    return 7;
 }
 
 /*
@@ -115,10 +149,11 @@
     NSString *carrera = self.tfCareer.text;
     NSString *semestre = self.tfSemester.text;
     NSString *telefono = self.tfTelefono.text;
+    NSString *pass = self.tfPassword.text;
     
-    if (![email isEqualToString:@""] && ![nombre isEqualToString:@""] && ![matricula isEqualToString:@""] && ![carrera isEqualToString:@""] && ![semestre isEqualToString:@""] && ![telefono isEqualToString:@""]){
+    if (![email isEqualToString:@""] && ![nombre isEqualToString:@""] && ![matricula isEqualToString:@""] && ![carrera isEqualToString:@""] && ![semestre isEqualToString:@""] && ![telefono isEqualToString:@""] && ![pass isEqualToString:@""]){
         
-        [self.delegado agregarStaff:email withName:nombre withID:matricula withCareer:carrera withSemester:semestre withTelefono:telefono];
+        [self.delegado agregarStaff:email withName:nombre withID:matricula withCareer:carrera withSemester:semestre withTelefono:telefono withPassword:pass];
         [self.delegado quitaVista];
         
     } else {

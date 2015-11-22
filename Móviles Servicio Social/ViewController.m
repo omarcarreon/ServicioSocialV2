@@ -31,8 +31,25 @@
      */
     //Cambia el color de la barra.
     [self.navigationController.navigationBar setBarTintColor:[self colorWithHexString:@"00B28C"]];
+    
+    self.tfEMail.delegate = (id)self;
+    self.tfPassword.delegate = (id)self;
+
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.tfEMail)
+    {
+        [self.tfPassword becomeFirstResponder];
+    }
+    else if (textField == self.tfPassword)
+    {
+        [self login:self.bttnLogin];
+    }
+    
+    return YES;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -101,5 +118,7 @@
                             blue:((float) b / 255.0f)
                            alpha:1.0f];
 }
+
+
 
 @end
