@@ -7,11 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "MenudelGrupoTableViewController.h"
 #import <Parse/Parse.h>
 
 
 @interface ViewController ()
-
+@property NSInteger isAdmin;
+@property (strong, nonatomic) NSString* groupID;
 @end
 
 @implementation ViewController
@@ -70,7 +72,19 @@
     [PFUser logInWithUsernameInBackground:self.tfEMail.text password:self.tfPassword.text block:^(PFUser *user, NSError *error)
      {
          if (!error) {
-             [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+             PFQuery *query = [PFUser query];
+             [query whereKey:@"email" equalTo:self.tfEMail.text];
+             NSArray *checkuser = [query findObjects];
+             self.isAdmin = [[[checkuser valueForKey:@"Privilegios"] objectAtIndex:0] integerValue];
+             self.groupID = [[checkuser valueForKey:@"IDGrupo"] objectAtIndex:0];
+             if (self.isAdmin == 1){
+                 [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+             } else{
+                 [self performSegueWithIdentifier:@"notadmin" sender:nil];
+                 //[[segue destinationViewController] setDetailItem:self.objectId];
+
+             }
+             
          } else {
              
              UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"Correo y/o contraseña incorrectos." preferredStyle:UIAlertControllerStyleAlert];
@@ -80,6 +94,12 @@
              [self presentViewController:alert animated:YES completion:nil];
          }
      }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+     if ([[segue identifier] isEqualToString:@"notadmin"]) {
+        [[segue destinationViewController] setDetailItem:[self.groupID valueForKey:@"objectId"]];
+    }
 }
 
 //Convierte un valor string hexadecimal(http://stackoverflow.com/questions/6207329/how-to-set-hex-color-code-for-background)

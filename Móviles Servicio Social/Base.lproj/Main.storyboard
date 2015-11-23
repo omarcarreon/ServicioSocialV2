@@ -86,6 +86,7 @@
                         <outlet property="tfEMail" destination="nYj-N0-tX1" id="wV0-LB-B3R"/>
                         <outlet property="tfPassword" destination="uca-Rc-spR" id="JEk-YI-L3H"/>
                         <segue destination="sKR-uv-5vf" kind="show" identifier="loginSegue" id="EfI-nF-b47"/>
+                        <segue destination="6e4-lb-dQv" kind="show" identifier="notadmin" id="B4r-gh-8al"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -838,7 +839,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPH-WN-bYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5371.5" y="-3597.5"/>
+            <point key="canvasLocation" x="-5356.5" y="-3547.5"/>
         </scene>
         <!--Tomar Asistencia-->
         <scene sceneID="Ebh-VF-MTn">
@@ -2030,13 +2031,13 @@
         <image name="User Groups-100.png" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zec-0F-1na"/>
-        <segue reference="Rhi-TB-e4B"/>
-        <segue reference="Alf-o1-vp3"/>
-        <segue reference="71N-i5-wAP"/>
         <segue reference="yYr-z9-EYJ"/>
-        <segue reference="6pg-Fk-Vru"/>
+        <segue reference="B4r-gh-8al"/>
+        <segue reference="Zec-0F-1na"/>
         <segue reference="zQu-1P-ANk"/>
         <segue reference="2Et-f4-hKO"/>
+        <segue reference="6pg-Fk-Vru"/>
+        <segue reference="71N-i5-wAP"/>
+        <segue reference="Alf-o1-vp3"/>
     </inferredMetricsTieBreakers>
 </document>

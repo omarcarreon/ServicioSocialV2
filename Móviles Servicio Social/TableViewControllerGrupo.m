@@ -8,6 +8,7 @@
 
 #import "TableViewControllerGrupo.h"
 #import "CrearGrupoTableViewController.h"
+#import "MenudelGrupoTableViewController.h"
 #import <Parse/Parse.h>
 
 @interface TableViewControllerGrupo ()
@@ -162,7 +163,9 @@
     } else if([[segue identifier] isEqualToString:@"menugrupo"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         self.objectId = [[self.listagrupos valueForKey:@"objectId"] objectAtIndex:indexPath.row];
+        [[segue destinationViewController] setIsAdmin:self.objectId];
         [[segue destinationViewController] setDetailItem:self.objectId];
+        
         
     }
 }
