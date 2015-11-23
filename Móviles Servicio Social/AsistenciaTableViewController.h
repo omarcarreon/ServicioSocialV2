@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ProtocoloAsistenciaBeneficiario <NSObject>
+- (void)quitaVista2;
+@end
+
 @interface AsistenciaTableViewController : UITableViewController
 @property (strong, nonatomic) id detailItem;
+- (IBAction)guardarAsistencia:(UIBarButtonItem *)sender;
+
+@property (nonatomic,strong)id <ProtocoloAsistenciaBeneficiario> delegado;
+
 @end

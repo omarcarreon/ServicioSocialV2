@@ -53,7 +53,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 6;
 }
 
 
@@ -150,10 +150,14 @@
 - (IBAction)crearBeneficiario:(UIBarButtonItem *)sender {
     NSString *nombre = self.tfNombre.text;
     NSString *telefono = self.tfTelefono.text;
+    NSString *edad = self.tfEdad.text;
+    NSString *direccion = self.tfDireccion.text;
+    NSString *celular = self.tfCelular.text;
+    NSString *tutor = self.tfTutor.text;
     
-    if (![nombre isEqualToString:@""] && ![telefono isEqualToString:@""]){
+    if (![nombre isEqualToString:@""] && ![edad isEqualToString:@""] && ![direccion isEqualToString:@""] && ![tutor isEqualToString:@""]){
         
-        [self.delegado crearBeneficiario:nombre withTel:telefono];
+        [self.delegado crearBeneficiario:nombre withTel:telefono withEdad:edad withDireccion:direccion withCelular:celular withTutor:tutor];
         [self.delegado quitaVista];
         
     } else {

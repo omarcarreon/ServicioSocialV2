@@ -22,6 +22,8 @@
 		1A59DD7C1BEAAD2000E94496 /* TableViewControllerLugares.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A59DD7B1BEAAD2000E94496 /* TableViewControllerLugares.m */; };
 		1A59DD7F1BEAAF2600E94496 /* TableViewControllerProyectos.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A59DD7E1BEAAF2600E94496 /* TableViewControllerProyectos.m */; };
 		1AB99B281C01264700683681 /* listaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB99B271C01264700683681 /* listaTableViewCell.m */; };
+		1AB99B2E1C02943700683681 /* DetailBeneficiarioTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB99B2D1C02943700683681 /* DetailBeneficiarioTableViewController.m */; };
+		1AB99B311C02A20A00683681 /* DetailAlumnosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB99B301C02A20A00683681 /* DetailAlumnosTableViewController.m */; };
 		4A1001701BF0479200122FA9 /* CrearLugarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A10016F1BF0479200122FA9 /* CrearLugarTableViewController.m */; };
 		4A1001731BF053B500122FA9 /* CrearProyectoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1001721BF053B500122FA9 /* CrearProyectoTableViewController.m */; };
 		4A23964C1BEC0934006A5CE6 /* CrearStaffTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23964B1BEC0934006A5CE6 /* CrearStaffTableViewController.m */; };
@@ -93,6 +95,10 @@
 		1A59DD7E1BEAAF2600E94496 /* TableViewControllerProyectos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewControllerProyectos.m; sourceTree = "<group>"; };
 		1AB99B261C01264700683681 /* listaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = listaTableViewCell.h; sourceTree = "<group>"; };
 		1AB99B271C01264700683681 /* listaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = listaTableViewCell.m; sourceTree = "<group>"; };
+		1AB99B2C1C02943700683681 /* DetailBeneficiarioTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailBeneficiarioTableViewController.h; sourceTree = "<group>"; };
+		1AB99B2D1C02943700683681 /* DetailBeneficiarioTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailBeneficiarioTableViewController.m; sourceTree = "<group>"; };
+		1AB99B2F1C02A20A00683681 /* DetailAlumnosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailAlumnosTableViewController.h; sourceTree = "<group>"; };
+		1AB99B301C02A20A00683681 /* DetailAlumnosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailAlumnosTableViewController.m; sourceTree = "<group>"; };
 		4A10016E1BF0479200122FA9 /* CrearLugarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CrearLugarTableViewController.h; path = ../CrearLugarTableViewController.h; sourceTree = "<group>"; };
 		4A10016F1BF0479200122FA9 /* CrearLugarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CrearLugarTableViewController.m; path = ../CrearLugarTableViewController.m; sourceTree = "<group>"; };
 		4A1001711BF053B500122FA9 /* CrearProyectoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrearProyectoTableViewController.h; sourceTree = "<group>"; };
@@ -243,6 +249,10 @@
 				1A59DD7A1BEAAD2000E94496 /* TableViewControllerLugares.h */,
 				1A59DD7B1BEAAD2000E94496 /* TableViewControllerLugares.m */,
 				4A98C5441BF502890034FD44 /* Main.storyboard */,
+				1AB99B2F1C02A20A00683681 /* DetailAlumnosTableViewController.h */,
+				1AB99B301C02A20A00683681 /* DetailAlumnosTableViewController.m */,
+				1AB99B2C1C02943700683681 /* DetailBeneficiarioTableViewController.h */,
+				1AB99B2D1C02943700683681 /* DetailBeneficiarioTableViewController.m */,
 				4A70C8B11BFFDF91000A6F88 /* AsistenciaAlumnosTableViewController.h */,
 				4A70C8B21BFFDF91000A6F88 /* AsistenciaAlumnosTableViewController.m */,
 				FB7865271BF66A91001FC117 /* AgregarAlumnoTableViewController.h */,
@@ -459,9 +469,11 @@
 				4A98C5491BF503470034FD44 /* MenudelGrupoTableViewController.m in Sources */,
 				4A1001701BF0479200122FA9 /* CrearLugarTableViewController.m in Sources */,
 				4A98C5551BF516400034FD44 /* BeneficiariosTableViewController.m in Sources */,
+				1AB99B311C02A20A00683681 /* DetailAlumnosTableViewController.m in Sources */,
 				4A23964C1BEC0934006A5CE6 /* CrearStaffTableViewController.m in Sources */,
 				4A9B14181BD828F1004AC8C5 /* AppDelegate.m in Sources */,
 				4A98C5521BF5041B0034FD44 /* AsistenciaTableViewController.m in Sources */,
+				1AB99B2E1C02943700683681 /* DetailBeneficiarioTableViewController.m in Sources */,
 				1AB99B281C01264700683681 /* listaTableViewCell.m in Sources */,
 				4A43D7881BF3B7EA00C47F1A /* MenuTableViewController.m in Sources */,
 				1A59DD7C1BEAAD2000E94496 /* TableViewControllerLugares.m in Sources */,

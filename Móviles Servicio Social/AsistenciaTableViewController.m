@@ -12,6 +12,7 @@
 @interface AsistenciaTableViewController ()
 @property (strong,nonatomic) NSArray *listabeneficiarios;
 @property (strong,nonatomic) NSString *objectId;
+
 @end
 
 @implementation AsistenciaTableViewController
@@ -43,11 +44,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureView];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -134,4 +130,43 @@
 }
 */
 
+- (IBAction)guardarAsistencia:(UIBarButtonItem *)sender {
+    for (int row = 0; row < [self.tableView numberOfRowsInSection:0]; row++) {
+        NSIndexPath* cellPath = [NSIndexPath indexPathForRow:row inSection:0];
+        UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:cellPath];
+        NSString *tempID = [[self.listabeneficiarios valueForKey:@"objectId"]objectAtIndex:row];
+        
+        if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+            
+            PFQuery *query = [PFQuery queryWithClassName:@"Beneficiario"];
+            [query getObjectInBackgroundWithId:tempID
+                                         block:^(PFObject *beneficiario, NSError *error) {
+                                             [beneficiario incrementKey:@"Asistencia"];
+                                             [beneficiario saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                                 if (succeeded) {
+                                                     // The score key has been incremented
+                                                 } else {
+                                                     // There was a problem, check error.description
+                                                 }
+                                             }];
+                                         }];
+            
+        } else {
+            PFQuery *query = [PFQuery queryWithClassName:@"Beneficiario"];
+            [query getObjectInBackgroundWithId:tempID
+                                         block:^(PFObject *beneficiario, NSError *error) {
+                                             [beneficiario incrementKey:@"Faltas"];
+                                             [beneficiario saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                                 if (succeeded) {
+                                                     // The score key has been incremented
+                                                 } else {
+                                                     // There was a problem, check error.description
+                                                 }
+                                             }];
+                                         }];
+        }
+    }
+    [self.delegado quitaVista2];
+    
+}
 @end

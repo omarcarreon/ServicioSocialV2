@@ -8,6 +8,7 @@
 
 #import "AlumnosTableViewController.h"
 #import <Parse/Parse.h>
+#import "listaTableViewCell.h"
 
 @interface AlumnosTableViewController ()
 @property (strong,nonatomic) NSArray *listaalumnos;
@@ -60,10 +61,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"alumnos" forIndexPath:indexPath];
     
-    cell.textLabel.text = [[self.listaalumnos valueForKey:@"Nombre"] objectAtIndex:indexPath.row];
+    listaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"alumnos" forIndexPath:indexPath];
+    cell.tfNombre.text = [[self.listaalumnos valueForKey:@"Nombre"] objectAtIndex:indexPath.row];
+    NSInteger asistencias= [[[self.listaalumnos valueForKey:@"Asistencia"] objectAtIndex:indexPath.row] intValue];
+    NSInteger faltas = [[[self.listaalumnos valueForKey:@"Faltas"] objectAtIndex:indexPath.row] intValue];
     
+    cell.tfAsistencia.text = [NSString stringWithFormat:@"%ld",asistencias];
+    cell.tfFaltas.text = [NSString stringWithFormat:@"%ld",faltas];
     return cell;
 }
 
@@ -131,6 +136,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"crearalumno"]){
         [[segue destinationViewController] setDelegado:self];
+    } else if ([[segue identifier] isEqualToString:@"detallealumno"]){
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        self.objectId = [[self.listaalumnos valueForKey:@"objectId"] objectAtIndex:indexPath.row];
+        [[segue destinationViewController] setDetailItem:self.objectId];
     }
 }
 

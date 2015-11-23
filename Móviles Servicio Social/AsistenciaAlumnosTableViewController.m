@@ -7,21 +7,42 @@
 //
 
 #import "AsistenciaAlumnosTableViewController.h"
+#import <Parse/Parse.h>
 
 @interface AsistenciaAlumnosTableViewController ()
+@property (strong,nonatomic) NSArray *listaalumnos;
+@property (strong,nonatomic) NSString *objectId;
 
 @end
 
 @implementation AsistenciaAlumnosTableViewController
 
+- (void)setDetailItem:(id)newDetailItem {
+    if (_detailItem != newDetailItem) {
+        _detailItem = newDetailItem;
+        
+        // Update the view.
+        [self configureView];
+    }
+}
+
+- (void)configureView {
+    // Update the user interface for the detail item.
+    if (self.detailItem) {
+        PFQuery *query = [PFQuery queryWithClassName:@"Alumno"];
+        [query whereKey:@"IDGrupo" equalTo:[PFObject objectWithoutDataWithClassName:@"Grupo" objectId:self.detailItem]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                self.listaalumnos = [[NSMutableArray alloc]initWithArray:objects];
+                [self.tableView reloadData];
+            }
+        }];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self configureView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,24 +69,22 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.listaalumnos.count;
+
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"asistenciaalumno" forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.textLabel.text = [[self.listaalumnos valueForKey:@"Nombre"] objectAtIndex:indexPath.row];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -111,4 +130,42 @@
 }
 */
 
+- (IBAction)guardarAsistenciaAlumno:(UIBarButtonItem *)sender {
+    for (int row = 0; row < [self.tableView numberOfRowsInSection:0]; row++) {
+        NSIndexPath* cellPath = [NSIndexPath indexPathForRow:row inSection:0];
+        UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:cellPath];
+        NSString *tempID = [[self.listaalumnos valueForKey:@"objectId"]objectAtIndex:row];
+        
+        if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+            
+            PFQuery *query = [PFQuery queryWithClassName:@"Alumno"];
+            [query getObjectInBackgroundWithId:tempID
+                                         block:^(PFObject *beneficiario, NSError *error) {
+                                             [beneficiario incrementKey:@"Asistencia"];
+                                             [beneficiario saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                                 if (succeeded) {
+                                                     // The score key has been incremented
+                                                 } else {
+                                                     // There was a problem, check error.description
+                                                 }
+                                             }];
+                                         }];
+            
+        } else {
+            PFQuery *query = [PFQuery queryWithClassName:@"Alumno"];
+            [query getObjectInBackgroundWithId:tempID
+                                         block:^(PFObject *beneficiario, NSError *error) {
+                                             [beneficiario incrementKey:@"Faltas"];
+                                             [beneficiario saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                                 if (succeeded) {
+                                                     // The score key has been incremented
+                                                 } else {
+                                                     // There was a problem, check error.description
+                                                 }
+                                             }];
+                                         }];
+        }
+    }
+    [self.delegado quitaVista2];
+}
 @end

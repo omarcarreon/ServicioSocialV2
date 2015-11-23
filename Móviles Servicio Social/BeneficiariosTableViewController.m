@@ -120,10 +120,14 @@
     }
 }
 
-- (void)crearBeneficiario:(NSString *)nombre withTel:(NSString *)telefono{
+- (void) crearBeneficiario:(NSString *)nombre withTel:(NSString *)telefono withEdad:(NSString  *)edad withDireccion:(NSString *)direccion withCelular:(NSString *)celular withTutor:(NSString *)tutor{
     PFObject *beneficiario = [PFObject objectWithClassName:@"Beneficiario"];
     beneficiario[@"Nombre"] = nombre;
     beneficiario[@"Telefono"] = telefono;
+    beneficiario[@"Edad"] = edad;
+    beneficiario[@"Direccion"] = direccion;
+    beneficiario[@"Tutor"] = tutor;
+    beneficiario[@"Celular"] = celular;
     beneficiario[@"IDGrupo"] = [PFObject objectWithoutDataWithClassName:@"Grupo" objectId:self.detailItem];
     beneficiario[@"Asistencia"] = [NSNumber numberWithInt:0];
     beneficiario[@"Faltas"] = [NSNumber numberWithInt:0];
@@ -174,6 +178,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"crearbeneficiario"]){
         [[segue destinationViewController] setDelegado:self];
+    } else if ([[segue identifier] isEqualToString:@"detallebeneficiario"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        self.objectId = [[self.listabeneficiarios valueForKey:@"objectId"] objectAtIndex:indexPath.row];
+        [[segue destinationViewController] setDetailItem:self.objectId];
     }
 }
 

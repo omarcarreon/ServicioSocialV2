@@ -13,4 +13,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *tfFaltas;
 @property (strong, nonatomic) IBOutlet UILabel *tfNombre;
 
+
 @end

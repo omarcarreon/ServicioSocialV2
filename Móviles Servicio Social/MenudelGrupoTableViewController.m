@@ -7,6 +7,7 @@
 //
 
 #import "MenudelGrupoTableViewController.h"
+#import "AsistenciaTableViewController.h"
 
 @interface MenudelGrupoTableViewController ()
 @property (strong,nonatomic) NSString *objectId;
@@ -104,6 +105,10 @@
         [[segue destinationViewController] setDelegado:self];
     } else if ([[segue identifier] isEqualToString:@"tomarasistenciabeneficiario"]){
         [[segue destinationViewController] setDetailItem:self.detailItem];
+        [[segue destinationViewController] setDelegado:self];
+    } else if ([[segue identifier] isEqualToString:@"asistenciaalumnos"]){
+        [[segue destinationViewController] setDetailItem:self.detailItem];
+        [[segue destinationViewController] setDelegado:self];
     }
 }
 
@@ -144,6 +149,15 @@
 
 - (void)quitaVista{
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)quitaVista2{
+    [self.navigationController popViewControllerAnimated:YES];
+    UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Asistencia guardada" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 
