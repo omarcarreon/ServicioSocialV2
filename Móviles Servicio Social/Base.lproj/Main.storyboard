@@ -461,7 +461,7 @@
                                                     <rect key="frame" x="202" y="0.0" width="173" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                             </subviews>
                                             <animations/>
@@ -479,7 +479,7 @@
                                                     <rect key="frame" x="202" y="0.0" width="173" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dirección" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5p4-bS-EMr">
                                                     <rect key="frame" x="14" y="10" width="73" height="21"/>
@@ -984,10 +984,7 @@
                                     <outlet property="tfAsistencia" destination="0Ec-l7-7C5" id="RmD-io-fVJ"/>
                                     <outlet property="tfFaltas" destination="nZp-AU-SLh" id="g9X-zo-fIJ"/>
                                     <outlet property="tfNombre" destination="3Tr-5Q-xt4" id="fcI-hO-aFq"/>
-                                    <segue destination="til-bQ-jqo" kind="show" identifier="detallealumno" id="wRI-1X-bRF">
-                                        <segue key="commit" inheritsFrom="parent" id="Wdu-gQ-NeT"/>
-                                        <segue key="preview" inheritsFrom="commit" id="DGC-r8-cck"/>
-                                    </segue>
+                                    <segue destination="til-bQ-jqo" kind="show" identifier="detallealumno" id="wRI-1X-bRF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1058,7 +1055,7 @@
                                                     <rect key="frame" x="202" y="0.0" width="165" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3v-8a-g6c">
                                                     <rect key="frame" x="17" y="11" width="39" height="21"/>
@@ -1218,7 +1215,7 @@
                                                     <rect key="frame" x="202" y="0.0" width="165" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3Z-Xp-F7G">
                                                     <rect key="frame" x="17" y="11" width="62" height="21"/>
@@ -1243,7 +1240,7 @@
                                                     <rect key="frame" x="202" y="0.0" width="165" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e0-XX-GYp">
                                                     <rect key="frame" x="17" y="11" width="39" height="21"/>
@@ -1268,7 +1265,7 @@
                                                     <rect key="frame" x="202" y="0.0" width="165" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dirección" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlQ-Al-f0J">
                                                     <rect key="frame" x="17" y="11" width="73" height="21"/>
@@ -1343,7 +1340,7 @@
                                                     <rect key="frame" x="195" y="0.0" width="180" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tutor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KT4-9W-cEQ">
                                                     <rect key="frame" x="19" y="11" width="41" height="21"/>
@@ -1639,10 +1636,7 @@
                                     <outlet property="tfAsistencia" destination="AE6-as-q8G" id="IUN-0H-qoJ"/>
                                     <outlet property="tfFaltas" destination="TrC-Rj-Q9e" id="AYZ-BY-lHC"/>
                                     <outlet property="tfNombre" destination="86v-4J-Yqh" id="6hn-2d-hTv"/>
-                                    <segue destination="EES-d3-aZo" kind="show" identifier="detallebeneficiario" id="Aab-za-3a7">
-                                        <segue key="commit" inheritsFrom="parent" id="OZv-Ii-hAl"/>
-                                        <segue key="preview" inheritsFrom="commit" id="0Me-x9-W7D"/>
-                                    </segue>
+                                    <segue destination="EES-d3-aZo" kind="show" identifier="detallebeneficiario" id="Aab-za-3a7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1688,7 +1682,7 @@
                                                     <rect key="frame" x="173" y="0.0" width="202" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre del Grupo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoU-6o-irf">
                                                     <rect key="frame" x="13" y="11" width="142" height="21"/>
@@ -1750,7 +1744,7 @@
                                                     <rect key="frame" x="173" y="0.0" width="202" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre del Proyecto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEf-dh-brr">
                                                     <rect key="frame" x="8" y="10" width="162" height="21"/>
@@ -1775,7 +1769,7 @@
                                                     <rect key="frame" x="178" y="0.0" width="197" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descripción" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDU-0U-OHx">
                                                     <rect key="frame" x="8" y="10" width="92" height="21"/>
@@ -2040,15 +2034,13 @@
         <image name="User Groups-100.png" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yYr-z9-EYJ"/>
         <segue reference="B4r-gh-8al"/>
-        <segue reference="10I-aq-A8b"/>
-        <segue reference="Zec-0F-1na"/>
         <segue reference="6pg-Fk-Vru"/>
-        <segue reference="2Et-f4-hKO"/>
         <segue reference="zQu-1P-ANk"/>
-        <segue reference="wRI-1X-bRF"/>
-        <segue reference="Aab-za-3a7"/>
+        <segue reference="2Et-f4-hKO"/>
+        <segue reference="Zec-0F-1na"/>
+        <segue reference="10I-aq-A8b"/>
+        <segue reference="yYr-z9-EYJ"/>
         <segue reference="71N-i5-wAP"/>
         <segue reference="Alf-o1-vp3"/>
     </inferredMetricsTieBreakers>
