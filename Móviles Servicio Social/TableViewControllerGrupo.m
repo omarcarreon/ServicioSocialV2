@@ -91,8 +91,8 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         UIAlertController * alert=   [UIAlertController
-                                      alertControllerWithTitle:@"Borrar Grupo"
-                                      message:@"¿Desea borrar el grupo?"
+                                      alertControllerWithTitle:@"¿Desea borrar el grupo?"
+                                      message:@"ATENCIÓN: Borrar el grupo eliminará permanentemente todos los datos del mismo."
                                       preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction* ok = [UIAlertAction
                              actionWithTitle:@"Si"

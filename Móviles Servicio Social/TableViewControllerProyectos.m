@@ -91,36 +91,63 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        UIAlertController * alert=   [UIAlertController
-                                      alertControllerWithTitle:@"Borrar Proyecto"
-                                      message:@"¿Desea borrar el proyecto?"
-                                      preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* ok = [UIAlertAction
-                             actionWithTitle:@"Si"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 
-                                 PFObject *object = [self.listaproyectos objectAtIndex:indexPath.row];
-                                 [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                                     [self viewDidLoad];
-                                 }];
-                                 [alert dismissViewControllerAnimated:YES completion:nil];
-                                 
-                             }];
-        UIAlertAction* cancel = [UIAlertAction
-                                 actionWithTitle:@"No"
-                                 style:UIAlertActionStyleDefault
-                                 handler:^(UIAlertAction * action)
-                                 {
-                                     [alert dismissViewControllerAnimated:YES completion:nil];
-                                     
-                                 }];
-        [alert addAction:cancel];
-        [alert addAction:ok];
         
-        [self presentViewController:alert animated:YES completion:nil];
-        
+        PFQuery *query = [PFQuery queryWithClassName:@"Grupo"];
+        [query whereKey:@"IDProyecto" equalTo:[PFObject objectWithoutDataWithClassName:@"Proyecto" objectId:[[self.listaproyectos valueForKey:@"objectId"] objectAtIndex:indexPath.row]]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                
+                if ([objects count] > 0){
+                    UIAlertController * alert=   [UIAlertController
+                                                  alertControllerWithTitle:@"Borrar Proyecto"
+                                                  message:@"El proyecto tiene grupos y no puede borrarse."
+                                                  preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction* ok = [UIAlertAction
+                                         actionWithTitle:@"Ok"
+                                         style:UIAlertActionStyleDefault
+                                         handler:^(UIAlertAction * action)
+                                         {
+                                             [alert dismissViewControllerAnimated:YES completion:nil];
+                                             
+                                         }];
+                    [alert addAction:ok];
+                    
+                    [self presentViewController:alert animated:YES completion:nil];
+                } else {
+                    UIAlertController * alert=   [UIAlertController
+                                                  alertControllerWithTitle:@"Borrar Proyecto"
+                                                  message:@"El proyecto está vacío, ¿desea borrarlo?"
+                                                  preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction* ok = [UIAlertAction
+                                         actionWithTitle:@"Si"
+                                         style:UIAlertActionStyleDefault
+                                         handler:^(UIAlertAction * action)
+                                         {
+                                             PFObject *object = [self.listaproyectos objectAtIndex:indexPath.row];
+                                             [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                                 [self viewDidLoad];
+                                             }];
+                                             [alert dismissViewControllerAnimated:YES completion:nil];
+                                             
+                                         }];
+                    UIAlertAction* cancel = [UIAlertAction
+                                             actionWithTitle:@"No"
+                                             style:UIAlertActionStyleDefault
+                                             handler:^(UIAlertAction * action)
+                                             {
+                                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                                 
+                                             }];
+                    [alert addAction:cancel];
+                    [alert addAction:ok];
+                    
+                    [self presentViewController:alert animated:YES completion:nil];
+                }
+            }
+        }];
+
     }
 }
 
