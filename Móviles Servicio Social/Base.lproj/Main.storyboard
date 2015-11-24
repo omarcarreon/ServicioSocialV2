@@ -823,7 +823,10 @@
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="C3P-ov-w74" kind="show" identifier="crearstaff" id="10I-aq-A8b"/>
+                                            <segue destination="C3P-ov-w74" kind="show" identifier="crearstaff" id="10I-aq-A8b">
+                                                <segue key="commit" inheritsFrom="parent" id="UXL-oN-SvZ"/>
+                                                <segue key="preview" inheritsFrom="commit" id="pcN-HK-DGa"/>
+                                            </segue>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -981,7 +984,10 @@
                                     <outlet property="tfAsistencia" destination="0Ec-l7-7C5" id="RmD-io-fVJ"/>
                                     <outlet property="tfFaltas" destination="nZp-AU-SLh" id="g9X-zo-fIJ"/>
                                     <outlet property="tfNombre" destination="3Tr-5Q-xt4" id="fcI-hO-aFq"/>
-                                    <segue destination="til-bQ-jqo" kind="show" identifier="detallealumno" id="wRI-1X-bRF"/>
+                                    <segue destination="til-bQ-jqo" kind="show" identifier="detallealumno" id="wRI-1X-bRF">
+                                        <segue key="commit" inheritsFrom="parent" id="Wdu-gQ-NeT"/>
+                                        <segue key="preview" inheritsFrom="commit" id="DGC-r8-cck"/>
+                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1152,7 +1158,7 @@
                                                     <rect key="frame" x="195" y="0.0" width="180" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tutor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sK-39-KdG">
                                                     <rect key="frame" x="19" y="11" width="41" height="21"/>
@@ -1337,7 +1343,7 @@
                                                     <rect key="frame" x="195" y="0.0" width="180" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tutor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KT4-9W-cEQ">
                                                     <rect key="frame" x="19" y="11" width="41" height="21"/>
@@ -1407,7 +1413,7 @@
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-lP-TiT">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-lP-TiT">
                                                     <rect key="frame" x="165" y="1" width="210" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1432,7 +1438,7 @@
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hdp-g1-QAn">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Matrícula" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hdp-g1-QAn">
                                                     <rect key="frame" x="165" y="1" width="210" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1457,7 +1463,7 @@
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dUz-y4-1mE">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Correo Electrónico" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dUz-y4-1mE">
                                                     <rect key="frame" x="165" y="0.0" width="210" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1475,14 +1481,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EvY-Yb-ZdE">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Carrera" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EvY-Yb-ZdE">
                                                     <rect key="frame" x="165" y="0.0" width="210" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carrera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8h-Xo-2KL">
-                                                    <rect key="frame" x="17" y="11" width="58" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carrera (ITC,IIS,LAF, ...)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8h-Xo-2KL">
+                                                    <rect key="frame" x="15" y="11" width="179" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1500,19 +1506,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Semestre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmK-S6-MZs">
-                                                    <rect key="frame" x="18" y="11" width="73" height="21"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mR9-NU-zjp">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Semestre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mR9-NU-zjp">
                                                     <rect key="frame" x="165" y="0.0" width="210" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
                                                 </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Semestre (1, 5, 9, ...)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmK-S6-MZs">
+                                                    <rect key="frame" x="16" y="11" width="157" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -1532,7 +1538,7 @@
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZ5-Km-nLh">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Teléfono" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZ5-Km-nLh">
                                                     <rect key="frame" x="165" y="0.0" width="210" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1633,7 +1639,10 @@
                                     <outlet property="tfAsistencia" destination="AE6-as-q8G" id="IUN-0H-qoJ"/>
                                     <outlet property="tfFaltas" destination="TrC-Rj-Q9e" id="AYZ-BY-lHC"/>
                                     <outlet property="tfNombre" destination="86v-4J-Yqh" id="6hn-2d-hTv"/>
-                                    <segue destination="EES-d3-aZo" kind="show" identifier="detallebeneficiario" id="Aab-za-3a7"/>
+                                    <segue destination="EES-d3-aZo" kind="show" identifier="detallebeneficiario" id="Aab-za-3a7">
+                                        <segue key="commit" inheritsFrom="parent" id="OZv-Ii-hAl"/>
+                                        <segue key="preview" inheritsFrom="commit" id="0Me-x9-W7D"/>
+                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1675,19 +1684,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Número del Grupo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoU-6o-irf">
-                                                    <rect key="frame" x="29" y="10" width="141" height="21"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tkx-sF-TK4">
+                                                    <rect key="frame" x="173" y="0.0" width="202" height="43"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre del Grupo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoU-6o-irf">
+                                                    <rect key="frame" x="13" y="11" width="142" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Número" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tkx-sF-TK4">
-                                                    <rect key="frame" x="173" y="0.0" width="202" height="43"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="next"/>
-                                                </textField>
                                             </subviews>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -2033,10 +2042,13 @@
     <inferredMetricsTieBreakers>
         <segue reference="yYr-z9-EYJ"/>
         <segue reference="B4r-gh-8al"/>
+        <segue reference="10I-aq-A8b"/>
         <segue reference="Zec-0F-1na"/>
-        <segue reference="zQu-1P-ANk"/>
-        <segue reference="2Et-f4-hKO"/>
         <segue reference="6pg-Fk-Vru"/>
+        <segue reference="2Et-f4-hKO"/>
+        <segue reference="zQu-1P-ANk"/>
+        <segue reference="wRI-1X-bRF"/>
+        <segue reference="Aab-za-3a7"/>
         <segue reference="71N-i5-wAP"/>
         <segue reference="Alf-o1-vp3"/>
     </inferredMetricsTieBreakers>

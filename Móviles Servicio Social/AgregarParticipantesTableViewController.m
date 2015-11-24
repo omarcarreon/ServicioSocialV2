@@ -29,6 +29,10 @@
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
     self.tfNombre.delegate = (id)self;
+    self.tfEdad.delegate = (id)self;
+    self.tfDireccion.delegate = (id)self;
+    self.tfCelular.delegate = (id)self;
+    self.tfTutor.delegate = (id)self;
     self.tfTelefono.delegate = (id)self;
 }
 
@@ -36,7 +40,19 @@
 {
     if (textField == self.tfNombre)
     {
+        [self.tfEdad becomeFirstResponder];
+    } else if (textField == self.tfEdad)
+    {
+        [self.tfDireccion becomeFirstResponder];
+    } else if (textField == self.tfDireccion)
+    {
         [self.tfTelefono becomeFirstResponder];
+    } else if (textField == self.tfTelefono)
+    {
+        [self.tfCelular becomeFirstResponder];
+    } else if (textField == self.tfCelular)
+    {
+        [self.tfTutor becomeFirstResponder];
     }
     return YES;
 }
