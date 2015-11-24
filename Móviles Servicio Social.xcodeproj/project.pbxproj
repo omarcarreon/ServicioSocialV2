@@ -88,8 +88,8 @@
 		1A59DD7B1BEAAD2000E94496 /* TableViewControllerLugares.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewControllerLugares.m; sourceTree = "<group>"; };
 		1A59DD7D1BEAAF2600E94496 /* TableViewControllerProyectos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewControllerProyectos.h; sourceTree = "<group>"; };
 		1A59DD7E1BEAAF2600E94496 /* TableViewControllerProyectos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewControllerProyectos.m; sourceTree = "<group>"; };
-		1AB99B261C01264700683681 /* listaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = listaTableViewCell.h; sourceTree = "<group>"; };
-		1AB99B271C01264700683681 /* listaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = listaTableViewCell.m; sourceTree = "<group>"; };
+		1AB99B261C01264700683681 /* listaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = listaTableViewCell.h; path = ../listaTableViewCell.h; sourceTree = "<group>"; };
+		1AB99B271C01264700683681 /* listaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = listaTableViewCell.m; path = ../listaTableViewCell.m; sourceTree = "<group>"; };
 		1AB99B2C1C02943700683681 /* DetailBeneficiarioTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailBeneficiarioTableViewController.h; sourceTree = "<group>"; };
 		1AB99B2D1C02943700683681 /* DetailBeneficiarioTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailBeneficiarioTableViewController.m; sourceTree = "<group>"; };
 		1AB99B2F1C02A20A00683681 /* DetailAlumnosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailAlumnosTableViewController.h; sourceTree = "<group>"; };
@@ -292,8 +292,6 @@
 		4A9B14071BD828F0004AC8C5 = {
 			isa = PBXGroup;
 			children = (
-				1AB99B261C01264700683681 /* listaTableViewCell.h */,
-				1AB99B271C01264700683681 /* listaTableViewCell.m */,
 				1A239FC41BD93B6C00B0721B /* Frameworks */,
 				4A9B14121BD828F1004AC8C5 /* Móviles Servicio Social */,
 				4A9B142C1BD828F3004AC8C5 /* Móviles Servicio SocialTests */,
@@ -326,6 +324,8 @@
 				1A7A15461C03EF760095CFDC /* Lugar */,
 				4A9B14191BD828F1004AC8C5 /* ViewController.h */,
 				4A9B141A1BD828F1004AC8C5 /* ViewController.m */,
+				1AB99B261C01264700683681 /* listaTableViewCell.h */,
+				1AB99B271C01264700683681 /* listaTableViewCell.m */,
 				4A98C5441BF502890034FD44 /* Main.storyboard */,
 				4A23964A1BEC0934006A5CE6 /* CrearStaffTableViewController.h */,
 				4A23964B1BEC0934006A5CE6 /* CrearStaffTableViewController.m */,
