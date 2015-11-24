@@ -7,7 +7,6 @@
 //
 
 #import "CrearStaffTableViewController.h"
-#import "ViewControllerAdminPrincipal.h"
 #import <Parse/Parse.h>
 
 @interface CrearStaffTableViewController ()

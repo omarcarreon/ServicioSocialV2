@@ -27,12 +27,9 @@
 		4A1001701BF0479200122FA9 /* CrearLugarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A10016F1BF0479200122FA9 /* CrearLugarTableViewController.m */; };
 		4A1001731BF053B500122FA9 /* CrearProyectoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1001721BF053B500122FA9 /* CrearProyectoTableViewController.m */; };
 		4A23964C1BEC0934006A5CE6 /* CrearStaffTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23964B1BEC0934006A5CE6 /* CrearStaffTableViewController.m */; };
-		4A43D7801BF3B6A900C47F1A /* Back-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A43D77A1BF3B6A900C47F1A /* Back-100.png */; };
-		4A43D7811BF3B6A900C47F1A /* Forward-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A43D77B1BF3B6A900C47F1A /* Forward-100.png */; };
 		4A43D7821BF3B6A900C47F1A /* User Groups-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A43D77C1BF3B6A900C47F1A /* User Groups-100.png */; };
 		4A43D7831BF3B6A900C47F1A /* Statistics-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A43D77D1BF3B6A900C47F1A /* Statistics-100.png */; };
 		4A43D7841BF3B6A900C47F1A /* Add User-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A43D77E1BF3B6A900C47F1A /* Add User-100.png */; };
-		4A43D7851BF3B6A900C47F1A /* Exit-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A43D77F1BF3B6A900C47F1A /* Exit-100.png */; };
 		4A43D7881BF3B7EA00C47F1A /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A43D7871BF3B7EA00C47F1A /* MenuTableViewController.m */; };
 		4A43D78A1BF3BBEC00C47F1A /* Exit-100-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A43D7891BF3BBEC00C47F1A /* Exit-100-2.png */; };
 		4A70C8B31BFFDF91000A6F88 /* AsistenciaAlumnosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A70C8B21BFFDF91000A6F88 /* AsistenciaAlumnosTableViewController.m */; };
@@ -53,8 +50,6 @@
 		4A9B142E1BD828F3004AC8C5 /* Mo_viles_Servicio_SocialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9B142D1BD828F3004AC8C5 /* Mo_viles_Servicio_SocialTests.m */; };
 		4A9B14391BD828F3004AC8C5 /* Mo_viles_Servicio_SocialUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9B14381BD828F3004AC8C5 /* Mo_viles_Servicio_SocialUITests.m */; };
 		4A9B144B1BD84623004AC8C5 /* LOGONEGRO.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9B14491BD84623004AC8C5 /* LOGONEGRO.png */; };
-		4A9B144D1BD85248004AC8C5 /* crearUsuario.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9B144C1BD85248004AC8C5 /* crearUsuario.png */; };
-		4A9B14501BD8569C004AC8C5 /* ViewControllerAdminPrincipal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9B144F1BD8569C004AC8C5 /* ViewControllerAdminPrincipal.m */; };
 		FB7865261BF66398001FC117 /* AlumnosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7865251BF66398001FC117 /* AlumnosTableViewController.m */; };
 		FB7865291BF66A91001FC117 /* AgregarAlumnoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7865281BF66A91001FC117 /* AgregarAlumnoTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -105,12 +100,9 @@
 		4A1001721BF053B500122FA9 /* CrearProyectoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrearProyectoTableViewController.m; sourceTree = "<group>"; };
 		4A23964A1BEC0934006A5CE6 /* CrearStaffTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrearStaffTableViewController.h; sourceTree = "<group>"; };
 		4A23964B1BEC0934006A5CE6 /* CrearStaffTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrearStaffTableViewController.m; sourceTree = "<group>"; };
-		4A43D77A1BF3B6A900C47F1A /* Back-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back-100.png"; sourceTree = "<group>"; };
-		4A43D77B1BF3B6A900C47F1A /* Forward-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Forward-100.png"; sourceTree = "<group>"; };
 		4A43D77C1BF3B6A900C47F1A /* User Groups-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "User Groups-100.png"; sourceTree = "<group>"; };
 		4A43D77D1BF3B6A900C47F1A /* Statistics-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Statistics-100.png"; sourceTree = "<group>"; };
 		4A43D77E1BF3B6A900C47F1A /* Add User-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add User-100.png"; sourceTree = "<group>"; };
-		4A43D77F1BF3B6A900C47F1A /* Exit-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exit-100.png"; sourceTree = "<group>"; };
 		4A43D7861BF3B7EA00C47F1A /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuTableViewController.h; path = ../MenuTableViewController.h; sourceTree = "<group>"; };
 		4A43D7871BF3B7EA00C47F1A /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuTableViewController.m; path = ../MenuTableViewController.m; sourceTree = "<group>"; };
 		4A43D7891BF3BBEC00C47F1A /* Exit-100-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exit-100-2.png"; sourceTree = "<group>"; };
@@ -147,9 +139,6 @@
 		4A9B14381BD828F3004AC8C5 /* Mo_viles_Servicio_SocialUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mo_viles_Servicio_SocialUITests.m; sourceTree = "<group>"; };
 		4A9B143A1BD828F3004AC8C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A9B14491BD84623004AC8C5 /* LOGONEGRO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGONEGRO.png; sourceTree = "<group>"; };
-		4A9B144C1BD85248004AC8C5 /* crearUsuario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crearUsuario.png; sourceTree = "<group>"; };
-		4A9B144E1BD8569C004AC8C5 /* ViewControllerAdminPrincipal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerAdminPrincipal.h; sourceTree = "<group>"; };
-		4A9B144F1BD8569C004AC8C5 /* ViewControllerAdminPrincipal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerAdminPrincipal.m; sourceTree = "<group>"; };
 		FB7865241BF66398001FC117 /* AlumnosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlumnosTableViewController.h; sourceTree = "<group>"; };
 		FB7865251BF66398001FC117 /* AlumnosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlumnosTableViewController.m; sourceTree = "<group>"; };
 		FB7865271BF66A91001FC117 /* AgregarAlumnoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgregarAlumnoTableViewController.h; sourceTree = "<group>"; };
@@ -212,6 +201,94 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1A7A15461C03EF760095CFDC /* Lugar */ = {
+			isa = PBXGroup;
+			children = (
+				4A10016E1BF0479200122FA9 /* CrearLugarTableViewController.h */,
+				4A10016F1BF0479200122FA9 /* CrearLugarTableViewController.m */,
+				1A59DD7A1BEAAD2000E94496 /* TableViewControllerLugares.h */,
+				1A59DD7B1BEAAD2000E94496 /* TableViewControllerLugares.m */,
+			);
+			name = Lugar;
+			sourceTree = "<group>";
+		};
+		1A7A15471C03EFAE0095CFDC /* Proyectos */ = {
+			isa = PBXGroup;
+			children = (
+				4A1001711BF053B500122FA9 /* CrearProyectoTableViewController.h */,
+				4A1001721BF053B500122FA9 /* CrearProyectoTableViewController.m */,
+				1A59DD7D1BEAAF2600E94496 /* TableViewControllerProyectos.h */,
+				1A59DD7E1BEAAF2600E94496 /* TableViewControllerProyectos.m */,
+			);
+			name = Proyectos;
+			sourceTree = "<group>";
+		};
+		1A7A15481C03EFC90095CFDC /* Grupos */ = {
+			isa = PBXGroup;
+			children = (
+				4A98C53E1BF500310034FD44 /* CrearGrupoTableViewController.h */,
+				4A98C53F1BF500310034FD44 /* CrearGrupoTableViewController.m */,
+				4A98C5411BF500AC0034FD44 /* TableViewControllerGrupo.h */,
+				4A98C5421BF500AC0034FD44 /* TableViewControllerGrupo.m */,
+			);
+			name = Grupos;
+			sourceTree = "<group>";
+		};
+		1A7A15491C03EFE40095CFDC /* Beneficiarios */ = {
+			isa = PBXGroup;
+			children = (
+				4A98C54D1BF503B90034FD44 /* AgregarParticipantesTableViewController.h */,
+				4A98C54E1BF503B90034FD44 /* AgregarParticipantesTableViewController.m */,
+				4A98C5501BF5041B0034FD44 /* AsistenciaTableViewController.h */,
+				4A98C5511BF5041B0034FD44 /* AsistenciaTableViewController.m */,
+				4A98C5531BF516400034FD44 /* BeneficiariosTableViewController.h */,
+				4A98C5541BF516400034FD44 /* BeneficiariosTableViewController.m */,
+				1AB99B2C1C02943700683681 /* DetailBeneficiarioTableViewController.h */,
+				1AB99B2D1C02943700683681 /* DetailBeneficiarioTableViewController.m */,
+			);
+			name = Beneficiarios;
+			sourceTree = "<group>";
+		};
+		1A7A154A1C03F01D0095CFDC /* Alumnos */ = {
+			isa = PBXGroup;
+			children = (
+				FB7865271BF66A91001FC117 /* AgregarAlumnoTableViewController.h */,
+				FB7865281BF66A91001FC117 /* AgregarAlumnoTableViewController.m */,
+				FB7865241BF66398001FC117 /* AlumnosTableViewController.h */,
+				FB7865251BF66398001FC117 /* AlumnosTableViewController.m */,
+				4A70C8B11BFFDF91000A6F88 /* AsistenciaAlumnosTableViewController.h */,
+				4A70C8B21BFFDF91000A6F88 /* AsistenciaAlumnosTableViewController.m */,
+				1AB99B2F1C02A20A00683681 /* DetailAlumnosTableViewController.h */,
+				1AB99B301C02A20A00683681 /* DetailAlumnosTableViewController.m */,
+			);
+			name = Alumnos;
+			sourceTree = "<group>";
+		};
+		1A7A154B1C03F0520095CFDC /* Imagenes */ = {
+			isa = PBXGroup;
+			children = (
+				4A9B14491BD84623004AC8C5 /* LOGONEGRO.png */,
+				4A43D77C1BF3B6A900C47F1A /* User Groups-100.png */,
+				4A43D77D1BF3B6A900C47F1A /* Statistics-100.png */,
+				4A43D77E1BF3B6A900C47F1A /* Add User-100.png */,
+				4A43D7891BF3BBEC00C47F1A /* Exit-100-2.png */,
+				4A98C53A1BF4FC6B0034FD44 /* Checklist-100.png */,
+				4A98C53B1BF4FC6B0034FD44 /* List Filled-100-2.png */,
+			);
+			name = Imagenes;
+			sourceTree = "<group>";
+		};
+		1A7A154C1C03F0890095CFDC /* Menus */ = {
+			isa = PBXGroup;
+			children = (
+				4A98C5471BF503470034FD44 /* MenudelGrupoTableViewController.h */,
+				4A98C5481BF503470034FD44 /* MenudelGrupoTableViewController.m */,
+				4A43D7861BF3B7EA00C47F1A /* MenuTableViewController.h */,
+				4A43D7871BF3B7EA00C47F1A /* MenuTableViewController.m */,
+			);
+			name = Menus;
+			sourceTree = "<group>";
+		};
 		4A9B14071BD828F0004AC8C5 = {
 			isa = PBXGroup;
 			children = (
@@ -240,56 +317,18 @@
 			children = (
 				4A9B14161BD828F1004AC8C5 /* AppDelegate.h */,
 				4A9B14171BD828F1004AC8C5 /* AppDelegate.m */,
+				1A7A154C1C03F0890095CFDC /* Menus */,
+				1A7A154B1C03F0520095CFDC /* Imagenes */,
+				1A7A154A1C03F01D0095CFDC /* Alumnos */,
+				1A7A15491C03EFE40095CFDC /* Beneficiarios */,
+				1A7A15481C03EFC90095CFDC /* Grupos */,
+				1A7A15471C03EFAE0095CFDC /* Proyectos */,
+				1A7A15461C03EF760095CFDC /* Lugar */,
 				4A9B14191BD828F1004AC8C5 /* ViewController.h */,
 				4A9B141A1BD828F1004AC8C5 /* ViewController.m */,
-				4A98C5411BF500AC0034FD44 /* TableViewControllerGrupo.h */,
-				4A98C5421BF500AC0034FD44 /* TableViewControllerGrupo.m */,
-				1A59DD7D1BEAAF2600E94496 /* TableViewControllerProyectos.h */,
-				1A59DD7E1BEAAF2600E94496 /* TableViewControllerProyectos.m */,
-				1A59DD7A1BEAAD2000E94496 /* TableViewControllerLugares.h */,
-				1A59DD7B1BEAAD2000E94496 /* TableViewControllerLugares.m */,
 				4A98C5441BF502890034FD44 /* Main.storyboard */,
-				1AB99B2F1C02A20A00683681 /* DetailAlumnosTableViewController.h */,
-				1AB99B301C02A20A00683681 /* DetailAlumnosTableViewController.m */,
-				1AB99B2C1C02943700683681 /* DetailBeneficiarioTableViewController.h */,
-				1AB99B2D1C02943700683681 /* DetailBeneficiarioTableViewController.m */,
-				4A70C8B11BFFDF91000A6F88 /* AsistenciaAlumnosTableViewController.h */,
-				4A70C8B21BFFDF91000A6F88 /* AsistenciaAlumnosTableViewController.m */,
-				FB7865271BF66A91001FC117 /* AgregarAlumnoTableViewController.h */,
-				FB7865281BF66A91001FC117 /* AgregarAlumnoTableViewController.m */,
-				FB7865241BF66398001FC117 /* AlumnosTableViewController.h */,
-				FB7865251BF66398001FC117 /* AlumnosTableViewController.m */,
-				4A98C5531BF516400034FD44 /* BeneficiariosTableViewController.h */,
-				4A98C5541BF516400034FD44 /* BeneficiariosTableViewController.m */,
-				4A98C5501BF5041B0034FD44 /* AsistenciaTableViewController.h */,
-				4A98C5511BF5041B0034FD44 /* AsistenciaTableViewController.m */,
-				4A98C54D1BF503B90034FD44 /* AgregarParticipantesTableViewController.h */,
-				4A98C54E1BF503B90034FD44 /* AgregarParticipantesTableViewController.m */,
-				4A98C5471BF503470034FD44 /* MenudelGrupoTableViewController.h */,
-				4A98C5481BF503470034FD44 /* MenudelGrupoTableViewController.m */,
-				4A9B14491BD84623004AC8C5 /* LOGONEGRO.png */,
-				4A9B144C1BD85248004AC8C5 /* crearUsuario.png */,
-				4A43D77A1BF3B6A900C47F1A /* Back-100.png */,
-				4A43D77B1BF3B6A900C47F1A /* Forward-100.png */,
-				4A43D77C1BF3B6A900C47F1A /* User Groups-100.png */,
-				4A43D77D1BF3B6A900C47F1A /* Statistics-100.png */,
-				4A43D77E1BF3B6A900C47F1A /* Add User-100.png */,
-				4A43D77F1BF3B6A900C47F1A /* Exit-100.png */,
-				4A43D7891BF3BBEC00C47F1A /* Exit-100-2.png */,
-				4A98C53A1BF4FC6B0034FD44 /* Checklist-100.png */,
-				4A98C53B1BF4FC6B0034FD44 /* List Filled-100-2.png */,
-				4A9B144E1BD8569C004AC8C5 /* ViewControllerAdminPrincipal.h */,
-				4A9B144F1BD8569C004AC8C5 /* ViewControllerAdminPrincipal.m */,
-				4A43D7861BF3B7EA00C47F1A /* MenuTableViewController.h */,
-				4A43D7871BF3B7EA00C47F1A /* MenuTableViewController.m */,
-				4A98C53E1BF500310034FD44 /* CrearGrupoTableViewController.h */,
-				4A98C53F1BF500310034FD44 /* CrearGrupoTableViewController.m */,
 				4A23964A1BEC0934006A5CE6 /* CrearStaffTableViewController.h */,
 				4A23964B1BEC0934006A5CE6 /* CrearStaffTableViewController.m */,
-				4A10016E1BF0479200122FA9 /* CrearLugarTableViewController.h */,
-				4A10016F1BF0479200122FA9 /* CrearLugarTableViewController.m */,
-				4A1001711BF053B500122FA9 /* CrearProyectoTableViewController.h */,
-				4A1001721BF053B500122FA9 /* CrearProyectoTableViewController.m */,
 				4A9B141F1BD828F2004AC8C5 /* Assets.xcassets */,
 				4A9B14211BD828F2004AC8C5 /* LaunchScreen.storyboard */,
 				4A9B14241BD828F2004AC8C5 /* Info.plist */,
@@ -427,20 +466,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A9B144D1BD85248004AC8C5 /* crearUsuario.png in Resources */,
 				4A98C53D1BF4FC6B0034FD44 /* List Filled-100-2.png in Resources */,
 				4A43D7841BF3B6A900C47F1A /* Add User-100.png in Resources */,
 				4A9B14231BD828F2004AC8C5 /* LaunchScreen.storyboard in Resources */,
-				4A43D7851BF3B6A900C47F1A /* Exit-100.png in Resources */,
 				4A43D78A1BF3BBEC00C47F1A /* Exit-100-2.png in Resources */,
 				4A9B144B1BD84623004AC8C5 /* LOGONEGRO.png in Resources */,
 				4A98C5461BF502890034FD44 /* Main.storyboard in Resources */,
 				4A43D7821BF3B6A900C47F1A /* User Groups-100.png in Resources */,
 				4A9B14201BD828F2004AC8C5 /* Assets.xcassets in Resources */,
 				4A43D7831BF3B6A900C47F1A /* Statistics-100.png in Resources */,
-				4A43D7801BF3B6A900C47F1A /* Back-100.png in Resources */,
 				4A98C53C1BF4FC6B0034FD44 /* Checklist-100.png in Resources */,
-				4A43D7811BF3B6A900C47F1A /* Forward-100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +519,6 @@
 				4A70C8B31BFFDF91000A6F88 /* AsistenciaAlumnosTableViewController.m in Sources */,
 				1A59DD7F1BEAAF2600E94496 /* TableViewControllerProyectos.m in Sources */,
 				4A98C5431BF500AC0034FD44 /* TableViewControllerGrupo.m in Sources */,
-				4A9B14501BD8569C004AC8C5 /* ViewControllerAdminPrincipal.m in Sources */,
 				4A98C5401BF500310034FD44 /* CrearGrupoTableViewController.m in Sources */,
 				4A98C54F1BF503B90034FD44 /* AgregarParticipantesTableViewController.m in Sources */,
 			);
