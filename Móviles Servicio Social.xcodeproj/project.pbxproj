@@ -27,8 +27,9 @@
 		4A1001701BF0479200122FA9 /* CrearLugarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A10016F1BF0479200122FA9 /* CrearLugarTableViewController.m */; };
 		4A1001731BF053B500122FA9 /* CrearProyectoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1001721BF053B500122FA9 /* CrearProyectoTableViewController.m */; };
 		4A23964C1BEC0934006A5CE6 /* CrearStaffTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A23964B1BEC0934006A5CE6 /* CrearStaffTableViewController.m */; };
+		4A4370831C0A472B00C6B7C3 /* Purchase Order-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A4370821C0A472B00C6B7C3 /* Purchase Order-100.png */; };
+		4A4370891C0A482600C6B7C3 /* CreditosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4370881C0A482600C6B7C3 /* CreditosTableViewController.m */; };
 		4A43D7821BF3B6A900C47F1A /* User Groups-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A43D77C1BF3B6A900C47F1A /* User Groups-100.png */; };
-		4A43D7831BF3B6A900C47F1A /* Statistics-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A43D77D1BF3B6A900C47F1A /* Statistics-100.png */; };
 		4A43D7841BF3B6A900C47F1A /* Add User-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A43D77E1BF3B6A900C47F1A /* Add User-100.png */; };
 		4A43D7881BF3B7EA00C47F1A /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A43D7871BF3B7EA00C47F1A /* MenuTableViewController.m */; };
 		4A43D78A1BF3BBEC00C47F1A /* Exit-100-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A43D7891BF3BBEC00C47F1A /* Exit-100-2.png */; };
@@ -100,8 +101,10 @@
 		4A1001721BF053B500122FA9 /* CrearProyectoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrearProyectoTableViewController.m; sourceTree = "<group>"; };
 		4A23964A1BEC0934006A5CE6 /* CrearStaffTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrearStaffTableViewController.h; sourceTree = "<group>"; };
 		4A23964B1BEC0934006A5CE6 /* CrearStaffTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrearStaffTableViewController.m; sourceTree = "<group>"; };
+		4A4370821C0A472B00C6B7C3 /* Purchase Order-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Purchase Order-100.png"; sourceTree = "<group>"; };
+		4A4370871C0A482600C6B7C3 /* CreditosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditosTableViewController.h; path = ../CreditosTableViewController.h; sourceTree = "<group>"; };
+		4A4370881C0A482600C6B7C3 /* CreditosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditosTableViewController.m; path = ../CreditosTableViewController.m; sourceTree = "<group>"; };
 		4A43D77C1BF3B6A900C47F1A /* User Groups-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "User Groups-100.png"; sourceTree = "<group>"; };
-		4A43D77D1BF3B6A900C47F1A /* Statistics-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Statistics-100.png"; sourceTree = "<group>"; };
 		4A43D77E1BF3B6A900C47F1A /* Add User-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add User-100.png"; sourceTree = "<group>"; };
 		4A43D7861BF3B7EA00C47F1A /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuTableViewController.h; path = ../MenuTableViewController.h; sourceTree = "<group>"; };
 		4A43D7871BF3B7EA00C47F1A /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuTableViewController.m; path = ../MenuTableViewController.m; sourceTree = "<group>"; };
@@ -123,7 +126,7 @@
 		4A98C5511BF5041B0034FD44 /* AsistenciaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsistenciaTableViewController.m; sourceTree = "<group>"; };
 		4A98C5531BF516400034FD44 /* BeneficiariosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeneficiariosTableViewController.h; sourceTree = "<group>"; };
 		4A98C5541BF516400034FD44 /* BeneficiariosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeneficiariosTableViewController.m; sourceTree = "<group>"; };
-		4A9B14101BD828F1004AC8C5 /* Móviles Servicio Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Móviles Servicio Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A9B14101BD828F1004AC8C5 /* T. Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T. Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A9B14141BD828F1004AC8C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4A9B14161BD828F1004AC8C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4A9B14171BD828F1004AC8C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -269,9 +272,9 @@
 			children = (
 				4A9B14491BD84623004AC8C5 /* LOGONEGRO.png */,
 				4A43D77C1BF3B6A900C47F1A /* User Groups-100.png */,
-				4A43D77D1BF3B6A900C47F1A /* Statistics-100.png */,
 				4A43D77E1BF3B6A900C47F1A /* Add User-100.png */,
 				4A43D7891BF3BBEC00C47F1A /* Exit-100-2.png */,
+				4A4370821C0A472B00C6B7C3 /* Purchase Order-100.png */,
 				4A98C53A1BF4FC6B0034FD44 /* Checklist-100.png */,
 				4A98C53B1BF4FC6B0034FD44 /* List Filled-100-2.png */,
 			);
@@ -303,7 +306,7 @@
 		4A9B14111BD828F1004AC8C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4A9B14101BD828F1004AC8C5 /* Móviles Servicio Social.app */,
+				4A9B14101BD828F1004AC8C5 /* T. Social.app */,
 				4A9B14291BD828F3004AC8C5 /* Móviles Servicio SocialTests.xctest */,
 				4A9B14341BD828F3004AC8C5 /* Móviles Servicio SocialUITests.xctest */,
 			);
@@ -327,6 +330,8 @@
 				1AB99B261C01264700683681 /* listaTableViewCell.h */,
 				1AB99B271C01264700683681 /* listaTableViewCell.m */,
 				4A98C5441BF502890034FD44 /* Main.storyboard */,
+				4A4370871C0A482600C6B7C3 /* CreditosTableViewController.h */,
+				4A4370881C0A482600C6B7C3 /* CreditosTableViewController.m */,
 				4A23964A1BEC0934006A5CE6 /* CrearStaffTableViewController.h */,
 				4A23964B1BEC0934006A5CE6 /* CrearStaffTableViewController.m */,
 				4A9B141F1BD828F2004AC8C5 /* Assets.xcassets */,
@@ -380,7 +385,7 @@
 			);
 			name = "Móviles Servicio Social";
 			productName = "Móviles Servicio Social";
-			productReference = 4A9B14101BD828F1004AC8C5 /* Móviles Servicio Social.app */;
+			productReference = 4A9B14101BD828F1004AC8C5 /* T. Social.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4A9B14281BD828F3004AC8C5 /* Móviles Servicio SocialTests */ = {
@@ -474,8 +479,8 @@
 				4A98C5461BF502890034FD44 /* Main.storyboard in Resources */,
 				4A43D7821BF3B6A900C47F1A /* User Groups-100.png in Resources */,
 				4A9B14201BD828F2004AC8C5 /* Assets.xcassets in Resources */,
-				4A43D7831BF3B6A900C47F1A /* Statistics-100.png in Resources */,
 				4A98C53C1BF4FC6B0034FD44 /* Checklist-100.png in Resources */,
+				4A4370831C0A472B00C6B7C3 /* Purchase Order-100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +517,7 @@
 				1AB99B281C01264700683681 /* listaTableViewCell.m in Sources */,
 				4A43D7881BF3B7EA00C47F1A /* MenuTableViewController.m in Sources */,
 				1A59DD7C1BEAAD2000E94496 /* TableViewControllerLugares.m in Sources */,
+				4A4370891C0A482600C6B7C3 /* CreditosTableViewController.m in Sources */,
 				FB7865261BF66398001FC117 /* AlumnosTableViewController.m in Sources */,
 				4A1001731BF053B500122FA9 /* CrearProyectoTableViewController.m in Sources */,
 				FB7865291BF66A91001FC117 /* AgregarAlumnoTableViewController.m in Sources */,
@@ -666,7 +672,7 @@
 				INFOPLIST_FILE = "Móviles Servicio Social/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ITESM.Mo-viles-Servicio-Social";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "T. Social";
 			};
 			name = Debug;
 		};
@@ -681,7 +687,7 @@
 				INFOPLIST_FILE = "Móviles Servicio Social/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ITESM.Mo-viles-Servicio-Social";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "T. Social";
 			};
 			name = Release;
 		};
