@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+// Protocolo de asistencia alumno
 @protocol ProtocoloAsistenciaAlumno <NSObject>
 - (void)quitaVista2;
 @end
 
 @interface AsistenciaAlumnosTableViewController : UITableViewController
-@property (strong, nonatomic) id detailItem;
-
+@property (strong, nonatomic) id detailItem; // id del grupo
+// boton para guardar la assitencia
 - (IBAction)guardarAsistenciaAlumno:(UIBarButtonItem *)sender;
 @property (nonatomic,strong)id <ProtocoloAsistenciaAlumno> delegado;
 

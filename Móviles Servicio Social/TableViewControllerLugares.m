@@ -11,16 +11,16 @@
 #import <Parse/Parse.h>
 
 @interface TableViewControllerLugares ()
-@property (strong,nonatomic) NSMutableArray *objects2;
+@property (strong,nonatomic) NSMutableArray *objects2; // lista de todos los lugares existentes
 @property (strong,nonatomic) NSString *objectId;
-@property (strong,nonatomic) NSString *objectIdToDelete;
+@property (strong,nonatomic) NSString *objectIdToDelete; // objecto a borrar
 @end
 
 @implementation TableViewControllerLugares
 - (void)awakeFromNib{
     [super awakeFromNib];
 }
-
+// Hace un query select para desplegar todos los lugares existentes
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -32,11 +32,6 @@
             [self.tableView reloadData];
         }
     }];
-    /*
-    PFQuery *query = [PFQuery queryWithClassName:@"Lugar"];
-    self.objects2 = [query findObjects];
-    
-    */
     
     /*
      El siguiente código se obtuvo de:
@@ -65,7 +60,7 @@
     return self.objects2.count;
 }
 
-
+// Despliega nombre de cada lugar
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"lugares" forIndexPath:indexPath];
@@ -78,6 +73,7 @@
     return YES;
 }
 
+// Funcion para borrar un lugar, no debe de contener proyectos para poder borrarse
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -141,7 +137,7 @@
     }
 }
 
-
+// Funcion para crear un lugar, hace un query insert con un PFObject con toda la info del lugar proporcionada
 - (void) crearLugar:(NSString *)nombre withDir:(NSString *)dir{
     PFObject *lugar = [PFObject objectWithClassName:@"Lugar"];
     lugar[@"Nombre"] = nombre;
@@ -151,7 +147,7 @@
         if (succeeded) {
             // The object has been saved.
             
-            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Lugar creado exitosamente" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Lugar creado exitósamente" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
             [alert addAction:ok];
             [self presentViewController:alert animated:YES completion:nil];
@@ -165,16 +161,16 @@
         }
     }];
 }
-
+// quita vista de crear lugar
 - (void)quitaVista{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+// Prepare for segues
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+    // si el segue es a proyectos, envia el id del lugar seleccionado
     if ([[segue identifier] isEqualToString:@"proyectos"]) {
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
@@ -182,6 +178,7 @@
         [[segue destinationViewController] setDetailItem:self.objectId];
         
     }
+    // si es segue a crear lugar, indica que el tableview es el delegado
     else if ([[segue identifier] isEqualToString:@"crearlugar"]){
         [[segue destinationViewController] setDelegado:self];
     }

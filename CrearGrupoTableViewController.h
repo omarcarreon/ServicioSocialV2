@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+// Protocolo para crear un grupo
 @protocol ProtocoloCrearGrupo <NSObject>
 
 - (void) crearGrupo:(NSString *)numero;
@@ -15,9 +15,9 @@
 @end
 
 @interface CrearGrupoTableViewController : UITableViewController
-
+// outlet para numero/nombre del grupo
 @property (weak, nonatomic) IBOutlet UITextField *tfNumero;
-
+// boton de crear grupo
 - (IBAction)crearGrupo:(UIBarButtonItem *)sender;
 
 @property (nonatomic,strong)id <ProtocoloCrearGrupo> delegado;

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailBeneficiarioTableViewController : UITableViewController
+// outlets para desplegar info del alumno
 @property (strong, nonatomic) id detailItem;
 @property (strong, nonatomic) IBOutlet UITextField *tfNombre;
 @property (strong, nonatomic) IBOutlet UITextField *tfEdad;

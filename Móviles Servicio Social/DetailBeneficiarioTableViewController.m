@@ -14,7 +14,7 @@
 @end
 
 @implementation DetailBeneficiarioTableViewController
-
+// obtiene objectid del beneficiario
 - (void)setDetailItem:(id)newDetailItem {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
@@ -23,7 +23,7 @@
         [self configureView];
     }
 }
-
+// Funcion que hace un query select buscando al beneficiario con su object id, si lo encuentra despliega su info
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {

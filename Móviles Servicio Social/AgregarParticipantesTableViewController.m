@@ -27,7 +27,8 @@
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
     //Cambia el color del back.
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-    
+    // se usan para navegar en los outlets
+
     self.tfNombre.delegate = (id)self;
     self.tfEdad.delegate = (id)self;
     self.tfDireccion.delegate = (id)self;
@@ -35,7 +36,7 @@
     self.tfTutor.delegate = (id)self;
     self.tfTelefono.delegate = (id)self;
 }
-
+// Funcion para navegar en los outlets
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if (textField == self.tfNombre)
@@ -162,7 +163,7 @@
                             blue:((float) b / 255.0f)
                            alpha:1.0f];
 }
-
+// Funcion del protocolo para guardar alumno
 - (IBAction)crearBeneficiario:(UIBarButtonItem *)sender {
     NSString *nombre = self.tfNombre.text;
     NSString *telefono = self.tfTelefono.text;

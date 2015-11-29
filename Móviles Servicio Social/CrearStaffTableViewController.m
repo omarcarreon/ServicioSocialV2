@@ -18,14 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    
-    
     /*
      El siguiente código se obtuvo de:
      http://stackoverflow.com/questions/19029833/ios-7-navigation-bar-text-and-arrow-color
@@ -36,7 +28,7 @@
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
     //Cambia el color del back.
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-    
+    // se utilizan para navegar en los outlets
     self.tfEMail.delegate = (id)self;
     self.tfPassword.delegate = (id)self;
     self.tfName.delegate = (id)self;
@@ -45,7 +37,7 @@
     self.tfSemester.delegate = (id)self;
     self.tfTelefono.delegate = (id)self;
 }
-
+// Funcion para navegar a traves de los outlets
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if (textField == self.tfName)
@@ -140,7 +132,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+// Funcion para guardar un staff
 - (IBAction)guardarStaff:(UIBarButtonItem *)sender {
     NSString *email = self.tfEMail.text;
     NSString *nombre = self.tfName.text;
@@ -149,7 +141,7 @@
     NSString *semestre = self.tfSemester.text;
     NSString *telefono = self.tfTelefono.text;
     NSString *pass = self.tfPassword.text;
-    
+    // Revisa que todos los campos se hayan llenado y si está completo hace la función del protocolo
     if (![email isEqualToString:@""] && ![nombre isEqualToString:@""] && ![matricula isEqualToString:@""] && ![carrera isEqualToString:@""] && ![semestre isEqualToString:@""] && ![telefono isEqualToString:@""] && ![pass isEqualToString:@""]){
         
         [self.delegado agregarStaff:email withName:nombre withID:matricula withCareer:carrera withSemester:semestre withTelefono:telefono withPassword:pass];

@@ -34,11 +34,13 @@
     //Cambia el color del back.
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
+    // se utilizan para navegar en los textfields
     self.tfNombre.delegate = (id)self;
     self.tfDireccion.delegate = (id)self;
     
 }
 
+// Funcion para navegar en los textfields
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if (textField == self.tfNombre)
@@ -116,7 +118,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+// funcion para crear lugar , manda al delegado la info proporcionada
 - (IBAction)crearLugar:(UIBarButtonItem *)sender{
     NSString *nombre = self.tfNombre.text;
     NSString *direccion = self.tfDireccion.text;

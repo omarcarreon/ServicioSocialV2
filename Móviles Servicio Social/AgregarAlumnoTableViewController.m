@@ -16,12 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // se usan para navegar en los outlets
     self.tfNombre.delegate = (id)self;
     self.tfMatricula.delegate = (id)self;
     self.tfCorreo.delegate = (id)self;
@@ -30,7 +25,7 @@
     self.tfSemestre.delegate = (id)self;
     
 }
-
+// Funcion para navegar en los outlets
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if (textField == self.tfNombre)
@@ -125,7 +120,7 @@
 }
 */
 
-
+// Funcion del protocolo para guardar alumno
 - (IBAction)guardarAlumno:(UIBarButtonItem *)sender {
     NSString *email = self.tfCorreo.text;
     NSString *nombre = self.tfNombre.text;

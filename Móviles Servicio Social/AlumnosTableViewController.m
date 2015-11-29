@@ -11,11 +11,12 @@
 #import "listaTableViewCell.h"
 
 @interface AlumnosTableViewController ()
-@property (strong,nonatomic) NSArray *listaalumnos;
+@property (strong,nonatomic) NSArray *listaalumnos; //arreglo con lista de alumnos
 @property (strong,nonatomic) NSString *objectId;
 @end
 
 @implementation AlumnosTableViewController
+//   Obtiene id del grupo
 - (void)setDetailItem:(id)newDetailItem {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
@@ -24,6 +25,7 @@
         [self configureView];
     }
 }
+// Funcion para desplegar todos los alumnos del grupo actual
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
@@ -59,7 +61,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.listaalumnos.count;
 }
-
+//  Despliega nombre , asistencias y faltas del alumno
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     listaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"alumnos" forIndexPath:indexPath];
@@ -76,7 +78,7 @@
 - (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
 }
-
+//  Funcion para borrar un alumno
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -112,6 +114,7 @@
         
     }
 }
+// Quita vista de agregar alumno
 - (void)quitaVista{
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -131,11 +134,12 @@
 
 
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+// Funcion de prepare for segues
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // si el segue es crear alumno, indica que el tableview es el delegado
     if ([[segue identifier] isEqualToString:@"crearalumno"]){
         [[segue destinationViewController] setDelegado:self];
+        // si el segue es el detalle del alumno, pasa el object id del alumno seleccionado
     } else if ([[segue identifier] isEqualToString:@"detallealumno"]){
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         self.objectId = [[self.listaalumnos valueForKey:@"objectId"] objectAtIndex:indexPath.row];
@@ -143,7 +147,7 @@
     }
 }
 
-
+// Funcion para crear alumno, aqui se hace la funcion de parse PFObject para crearlo con los parametros recibidos
 - (void) crearAlumno:(NSString *)email withName:(NSString *)name withID:(NSString *)mat withCareer:(NSString *)career withSemester:(NSString *)sem withTelefono:(NSString *)tel{
     
     PFObject *alumno = [PFObject objectWithClassName:@"Alumno"];
@@ -162,7 +166,7 @@
         if (succeeded) {
             // The object has been saved.
             
-            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Alumno agregado exitosamente" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Alumno agregado exitósamente" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
             [alert addAction:ok];
             [self presentViewController:alert animated:YES completion:nil];

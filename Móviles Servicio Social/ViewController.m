@@ -12,19 +12,18 @@
 
 
 @interface ViewController ()
-@property NSInteger isAdmin;
-@property (strong, nonatomic) NSString* groupID;
+@property NSInteger isAdmin; // variable para revisar si es admin
+@property (strong, nonatomic) NSString* groupID;  // guarda el ID del grupo en caso de no ser admin
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
+    // quita el teclado
     UITapGestureRecognizer *tapgestureTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(voidQuitaTeclado)];
     [self.view addGestureRecognizer:tapgestureTap];
-    
+    // estilo del boton de login
     _bttnLogin.layer.cornerRadius = 10;
     
     /*
@@ -33,12 +32,12 @@
      */
     //Cambia el color de la barra.
     [self.navigationController.navigationBar setBarTintColor:[self colorWithHexString:@"00B28C"]];
-    
+    // se utilizan para navegar a traves de los textfields
     self.tfEMail.delegate = (id)self;
     self.tfPassword.delegate = (id)self;
 
 }
-
+// Función para navegar a traves de los textfields
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if (textField == self.tfEMail)
@@ -56,17 +55,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+// Funcion para quitar el teclado
 - (void) voidQuitaTeclado{
     [self.view endEditing:YES];
 }
-
+// Unwind para el logout
 - (IBAction)unwindLogout:(UIStoryboardSegue *)segue{
     [PFUser logOut];
     self.tfEMail.text = @"";
     self.tfPassword.text = @"";
 
 }
+//  Función para el login, hace un query con PFUser con el mail y password del usuario
+// Si es admin, te redirige al menu de admin, si no es admin te redirige al menu del grupo del staff
 - (IBAction)login:(UIButton *)sender {
     
     [PFUser logInWithUsernameInBackground:self.tfEMail.text password:self.tfPassword.text block:^(PFUser *user, NSError *error)
@@ -95,7 +96,7 @@
          }
      }];
 }
-
+// Funcion prepareforsegue si no es admin
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
      if ([[segue identifier] isEqualToString:@"notadmin"]) {
         [[segue destinationViewController] setDetailItem:[self.groupID valueForKey:@"objectId"]];

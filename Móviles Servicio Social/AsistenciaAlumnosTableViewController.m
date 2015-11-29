@@ -10,13 +10,13 @@
 #import <Parse/Parse.h>
 
 @interface AsistenciaAlumnosTableViewController ()
-@property (strong,nonatomic) NSArray *listaalumnos;
+@property (strong,nonatomic) NSArray *listaalumnos; // arreglo con lista de alumnos
 @property (strong,nonatomic) NSString *objectId;
 
 @end
 
 @implementation AsistenciaAlumnosTableViewController
-
+// Obtiene el id del grupo actual
 - (void)setDetailItem:(id)newDetailItem {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
@@ -25,7 +25,7 @@
         [self configureView];
     }
 }
-
+// Carga todos los alumnos en el grupo actual
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
@@ -76,7 +76,7 @@
     return self.listaalumnos.count;
 
 }
-
+// Despliega nombre del alumno
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"asistenciaalumno" forIndexPath:indexPath];
     
@@ -130,6 +130,10 @@
 }
 */
 
+/* 
+ Funcion para guardar asistencia, si la celda está seleccionada incrementa el valor de su asistencia, si no esta
+ seleccionada incrementa el valor de faltas del alumno
+ */
 - (IBAction)guardarAsistenciaAlumno:(UIBarButtonItem *)sender {
     for (int row = 0; row < [self.tableView numberOfRowsInSection:0]; row++) {
         NSIndexPath* cellPath = [NSIndexPath indexPathForRow:row inSection:0];

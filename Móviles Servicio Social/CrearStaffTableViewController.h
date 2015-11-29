@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+// Protocolo para agregar staff
 @protocol ProtocoloAgregarStaff <NSObject>
 
 - (void) agregarStaff:(NSString *)email withName:(NSString *)name withID:(NSString *)mat withCareer:(NSString *)career withSemester:(NSString *)sem withTelefono:(NSString *)tel withPassword:(NSString *)pass;
@@ -16,7 +16,7 @@
 @end
 
 @interface CrearStaffTableViewController : UITableViewController
-
+// Outlets de la form para crear a un staff
 @property (weak, nonatomic) IBOutlet UITextField *tfEMail;
 
 @property (strong, nonatomic) IBOutlet UITextField *tfPassword;
@@ -32,7 +32,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfTelefono;
 
 @property (nonatomic,strong)id <ProtocoloAgregarStaff> delegado;
-
+// Acción de boton para agregar staff
 - (IBAction)guardarStaff:(UIBarButtonItem *)sender;
 
 @end

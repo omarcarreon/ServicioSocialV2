@@ -10,13 +10,13 @@
 #import <Parse/Parse.h>
 
 @interface AsistenciaTableViewController ()
-@property (strong,nonatomic) NSArray *listabeneficiarios;
+@property (strong,nonatomic) NSArray *listabeneficiarios; // arreglo con lista de beneficiarios
 @property (strong,nonatomic) NSString *objectId;
 
 @end
 
 @implementation AsistenciaTableViewController
-
+// Obtiene el id del grupo actual
 - (void)setDetailItem:(id)newDetailItem {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
@@ -26,7 +26,7 @@
     }
 }
 
-
+// Carga todos los beneficiarios en el grupo actual
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
@@ -77,7 +77,7 @@
     return self.listabeneficiarios.count;
 }
 
-
+// Despliega nombre del beneficiario
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"asistencia" forIndexPath:indexPath];
     cell.textLabel.text = [[self.listabeneficiarios valueForKey:@"Nombre"] objectAtIndex:indexPath.row];
@@ -130,6 +130,10 @@
 }
 */
 
+/*
+ Funcion para guardar asistencia, si la celda está seleccionada incrementa el valor de su asistencia, si no esta
+ seleccionada incrementa el valor de faltas del beneficiario
+ */
 - (IBAction)guardarAsistencia:(UIBarButtonItem *)sender {
     for (int row = 0; row < [self.tableView numberOfRowsInSection:0]; row++) {
         NSIndexPath* cellPath = [NSIndexPath indexPathForRow:row inSection:0];

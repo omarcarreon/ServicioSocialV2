@@ -16,12 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -92,7 +86,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+// funcion para crear grupo , manda al delegado el nombre/numero proporcionado
 - (IBAction)crearGrupo:(UIBarButtonItem *)sender {
     NSString *numero = self.tfNumero.text;
     

@@ -11,6 +11,6 @@
 
 @interface TableViewControllerProyectos : UITableViewController <ProtocoloCrearProyecto>
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) id detailItem; // id del lugar proviniente
 
 @end

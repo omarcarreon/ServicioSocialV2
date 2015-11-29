@@ -10,6 +10,6 @@
 #import "AgregarParticipantesTableViewController.h"
 
 @interface BeneficiariosTableViewController : UITableViewController <ProtocoloCrearBeneficiario>
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) id detailItem; // id del grupo
 
 @end

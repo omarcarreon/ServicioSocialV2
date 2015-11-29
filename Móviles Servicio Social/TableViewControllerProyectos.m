@@ -12,13 +12,13 @@
 #import <Parse/Parse.h>
 
 @interface TableViewControllerProyectos ()
-@property (strong,nonatomic) NSArray *listaproyectos;
+@property (strong,nonatomic) NSArray *listaproyectos; // lista de los proyectos en el lugar
 @property (strong,nonatomic) NSString *objectId;
-@property (strong,nonatomic) NSString *objectIdToDelete;
+@property (strong,nonatomic) NSString *objectIdToDelete; // guarda el objeto a borrar
 @end
 
 @implementation TableViewControllerProyectos
-
+// obtiene el id del lugar proviniente
 - (void)setDetailItem:(id)newDetailItem {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
@@ -28,6 +28,7 @@
     }
 }
 
+// Funcion que hace un query select para buscar los proyectos en el lugar que se selecciono
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
@@ -74,7 +75,7 @@
     return self.listaproyectos.count;
 }
 
-
+// despliega nombre del proyecto
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"proyectos" forIndexPath:indexPath];
     
@@ -88,6 +89,7 @@
     return YES;
 }
 
+// Funcion para borrar un proyecto, solo se puede borrar si no hay grupos en el
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -180,11 +182,12 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+// Prepare for segues
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // si el segue es crear proyecto, indica que el tableview es delegado
     if ([[segue identifier] isEqualToString:@"crearproyecto"]){
         [[segue destinationViewController] setDelegado:self];
-        
+        // si el segue se dirige a un grupo, envia object id del proyecto seleccionado
     } else if ([[segue identifier] isEqualToString:@"grupos"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         self.objectId = [[self.listaproyectos valueForKey:@"objectId"] objectAtIndex:indexPath.row];
@@ -192,7 +195,7 @@
     }
 }
 
-
+// Funcion para crear proyecto, hace una funcion de insert PFObject con la informacion que se proporciono
 - (void)crearProyecto:(NSString *)nombre withDes:(NSString *)des{
     PFObject *proyecto = [PFObject objectWithClassName:@"Proyecto"];
     proyecto[@"Nombre"] = nombre;
@@ -203,7 +206,7 @@
         if (succeeded) {
             // The object has been saved.
             
-            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Proyecto creado exitosamente" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Proyecto creado exitósamente" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
             [alert addAction:ok];
             [self presentViewController:alert animated:YES completion:nil];
@@ -218,7 +221,7 @@
     }];
     
 }
-
+// quita la vista de crear proyecto
 - (void)quitaVista{
     [self.navigationController popViewControllerAnimated:YES];
 }

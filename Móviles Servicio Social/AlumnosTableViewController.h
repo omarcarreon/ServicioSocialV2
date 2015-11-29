@@ -10,5 +10,5 @@
 #include "AgregarAlumnoTableViewController.h"
 
 @interface AlumnosTableViewController : UITableViewController <ProtocoloCrearAlumno>
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) id detailItem; // id del grupo
 @end

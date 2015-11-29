@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+// Protocolo para crear alumno
 @protocol ProtocoloCrearAlumno <NSObject>
 
 - (void) crearAlumno:(NSString *)email withName:(NSString *)name withID:(NSString *)mat withCareer:(NSString *)career withSemester:(NSString *)sem withTelefono:(NSString *)tel;
@@ -16,6 +16,7 @@
 @end
 
 @interface AgregarAlumnoTableViewController : UITableViewController
+// outlets de la form para crear alumno
 @property (weak, nonatomic) IBOutlet UITextField *tfNombre;
 @property (weak, nonatomic) IBOutlet UITextField *tfMatricula;
 @property (weak, nonatomic) IBOutlet UITextField *tfCorreo;

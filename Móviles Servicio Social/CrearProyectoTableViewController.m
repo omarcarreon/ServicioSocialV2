@@ -17,11 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     /*
      El siguiente código se obtuvo de:
      http://stackoverflow.com/questions/19029833/ios-7-navigation-bar-text-and-arrow-color
@@ -33,11 +28,12 @@
     //Cambia el color del back.
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
+    // se utilizan para navegar en los textfields
     self.tfNombre.delegate = (id)self;
     self.tfDescripcion.delegate = (id)self;
     
 }
-
+// Funcion para navegar en los textfields
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if (textField == self.tfNombre)
@@ -115,6 +111,7 @@
 }
 */
 
+// funcion para crear proyecto , manda al delegado la info proporcionada
 - (IBAction)crearProyecto:(UIBarButtonItem *)sender{
     NSString *nombre = self.tfNombre.text;
     NSString *descripcion = self.tfDescripcion.text;

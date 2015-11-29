@@ -15,7 +15,7 @@
 @end
 
 @implementation MenudelGrupoTableViewController
-
+//  Obtiene el id del grupo en el que el admin esta navegando
 - (void)setDetailItem:(id)newDetailItem {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
@@ -24,7 +24,7 @@
         //[self configureView];
     }
 }
-
+//  Obtiene el id del grupo del usuario, loggeado como usuario
 -(void)setIsAdmin:(id)isAdmin{
     if (_isAdmin != isAdmin) {
         _isAdmin = isAdmin;
@@ -41,6 +41,8 @@
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
     //Cambia el color del back.
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    // si no es admin, aparece un boton de logout
     if(!self.isAdmin){
         self.navigationController.navigationBar.topItem.backBarButtonItem = [[UIBarButtonItem alloc]
                                                                              initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -54,7 +56,7 @@
 }
 
 #pragma mark - Table view data source
-
+//  Decide las secciones para mostrar en el menu de acuerdo a si es admin o no
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (!self.isAdmin){
         return 2;
@@ -62,7 +64,7 @@
         return 3;
     }
 }
-
+//  Decide las opciones para mostrar en el menu de acuerdo a si es admin o no
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 2){
         return 1;
@@ -118,23 +120,28 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+// Prepare for segues
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Si el segue es al tableview de beneficiarios envia id del grupo
     if ([[segue identifier] isEqualToString:@"beneficiarios"]) {
         [[segue destinationViewController] setDetailItem:self.detailItem];
+        // si el segue es al tableview de alumnos envia id del grupo
     } else if ([[segue identifier] isEqualToString:@"alumnos"]) {
         [[segue destinationViewController] setDetailItem:self.detailItem];
+        // si el segue es a crear staff indica que esta view es el delegado
     } else if ([[segue identifier] isEqualToString:@"crearstaff"]){
         [[segue destinationViewController] setDelegado:self];
+        // si el segue es a tomar asistencia de beneficiario envia id del grupo e indica que esta view es el delegado
     } else if ([[segue identifier] isEqualToString:@"tomarasistenciabeneficiario"]){
         [[segue destinationViewController] setDetailItem:self.detailItem];
         [[segue destinationViewController] setDelegado:self];
+        // si el segue es a tomar asistencia de alumnos envia id del grupo e indica que esta view es el delegado
     } else if ([[segue identifier] isEqualToString:@"asistenciaalumnos"]){
         [[segue destinationViewController] setDetailItem:self.detailItem];
         [[segue destinationViewController] setDelegado:self];
     }
 }
-
+//  Funcion para agregar staff, hace una función de parse tipo PFUser y se le agregan todos los datos que se proporcionaron
 - (void) agregarStaff:(NSString *)email withName:(NSString *)name withID:(NSString *)mat withCareer:(NSString *)career withSemester:(NSString *)sem withTelefono:(NSString *)tel withPassword:(NSString *)pass{
     
     PFUser *user = [PFUser user];
@@ -152,13 +159,14 @@
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
-            
-            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Staff creado exitosamente" preferredStyle:UIAlertControllerStyleAlert];
+            // si no hay error, muestra mensaje de listo
+            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Staff creado exitósamente" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
             [alert addAction:ok];
             [self presentViewController:alert animated:YES completion:nil];
             
         } else {
+            // hubo un error
             UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"Ocurrió un error al intentar crear el staff" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
             [alert addAction:ok];
@@ -169,11 +177,11 @@
     
 }
 
-
+// Funcion del protocolo para quitar vista
 - (void)quitaVista{
     [self.navigationController popViewControllerAnimated:YES];
 }
-
+// Funcion del protocolo para quitar vista cuando se regresa de tomar asistencia
 -(void)quitaVista2{
     [self.navigationController popViewControllerAnimated:YES];
     UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Asistencia guardada" preferredStyle:UIAlertControllerStyleAlert];

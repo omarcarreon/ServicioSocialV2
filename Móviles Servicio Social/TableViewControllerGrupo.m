@@ -12,13 +12,13 @@
 #import <Parse/Parse.h>
 
 @interface TableViewControllerGrupo ()
-@property (strong,nonatomic) NSArray *listagrupos;
+@property (strong,nonatomic) NSArray *listagrupos; // lista de los grupos en el proyecto
 @property (strong,nonatomic) NSString *objectId;
 
 @end
 
 @implementation TableViewControllerGrupo
-
+// obtiene el id del proyecto proviniente
 - (void)setDetailItem:(id)newDetailItem {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
@@ -27,7 +27,7 @@
         [self configureView];
     }
 }
-
+// Funcion que hace un query select para buscar los grupos en el proyecto que se selecciono
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
@@ -73,7 +73,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.listagrupos.count;
 }
-
+// despliega numero/nombre del grupo
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"grupos" forIndexPath:indexPath];
     
@@ -86,7 +86,7 @@
 - (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
 }
-
+// Funcion para borrar un grupo, si se borra el grupo tambien se borraran alumnos,  beneficiarios y staff relacionados a el
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -104,8 +104,30 @@
                                  [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                                      [self viewDidLoad];
                                  }];
-                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 // Borrar beneficiarios
+                                 PFQuery *query = [PFQuery queryWithClassName:@"Beneficiario"];
+                                 [query whereKey:@"IDGrupo" equalTo:[PFObject objectWithoutDataWithClassName:@"Grupo" objectId:[[self.listagrupos valueForKey:@"objectId"] objectAtIndex:indexPath.row]]];
+                                 [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                                     if (!error) {
+                                      
+                                         [PFObject deleteAllInBackground:objects];
+                                     } else {
+                                         NSLog(@"Error: %@ %@", error, [error userInfo]);
+                                     }
+                                 }];
+                                 // Borrar alumnos
+                                 PFQuery *query2 = [PFQuery queryWithClassName:@"Alumno"];
+                                 [query2 whereKey:@"IDGrupo" equalTo:[PFObject objectWithoutDataWithClassName:@"Grupo" objectId:[[self.listagrupos valueForKey:@"objectId"] objectAtIndex:indexPath.row]]];
+                                 [query2 findObjectsInBackgroundWithBlock:^(NSArray *objects2, NSError *error) {
+                                     if (!error) {
+                                         [PFObject deleteAllInBackground:objects2];
+                                     } else {
+                                         NSLog(@"Error: %@ %@", error, [error userInfo]);
+                                     }
+                                 }];
                                  
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                            
                              }];
         UIAlertAction* cancel = [UIAlertAction
                                  actionWithTitle:@"No"
@@ -123,7 +145,7 @@
     }
 }
 
-
+// Funcion para crear grupo, hace una funcion de insert PFObject con la informacion que se proporciono
 - (void)crearGrupo:(NSString *)numero{
     PFObject *grupo = [PFObject objectWithClassName:@"Grupo"];
     grupo[@"Numero"] = numero;
@@ -133,7 +155,7 @@
         if (succeeded) {
             // The object has been saved.
             
-            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Grupo creado exitosamente" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Grupo creado exitósamente" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
             [alert addAction:ok];
             [self presentViewController:alert animated:YES completion:nil];
@@ -148,7 +170,7 @@
     }];
     
 }
-
+// quita la vista de crear grupo
 - (void)quitaVista{
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -156,10 +178,12 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+// Prepare for segues
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // si el segue es crear grupo, indica que el tableview es delegado
     if ([[segue identifier] isEqualToString:@"creargrupo"]){
         [[segue destinationViewController] setDelegado:self];
+        // si el segue es el menu del grupo, manda el object id del menu seleccionado y variable que indica si es admin o no
     } else if([[segue identifier] isEqualToString:@"menugrupo"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         self.objectId = [[self.listagrupos valueForKey:@"objectId"] objectAtIndex:indexPath.row];

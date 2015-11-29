@@ -12,13 +12,13 @@
 #import "listaTableViewCell.h"
 
 @interface BeneficiariosTableViewController ()
-@property (strong,nonatomic) NSArray *listabeneficiarios;
+@property (strong,nonatomic) NSArray *listabeneficiarios; // arreglo con lista de beneficiarios
 @property (strong,nonatomic) NSString *objectId;
 
 @end
 
 @implementation BeneficiariosTableViewController
-
+//   Obtiene id del grupo
 - (void)setDetailItem:(id)newDetailItem {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
@@ -28,7 +28,7 @@
     }
 }
 
-
+// Funcion para desplegar todos los beneficiarios del grupo actual
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
@@ -68,6 +68,7 @@
     return self.listabeneficiarios.count;
 }
 
+//  Despliega nombre , asistencias y faltas del alumno
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     listaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"beneficiarios" forIndexPath:indexPath];
@@ -84,6 +85,7 @@
     return YES;
 }
 
+//  Funcion para borrar un beneficiario
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -119,7 +121,7 @@
         
     }
 }
-
+// Funcion para crear benenficario, aqui se hace la funcion de parse PFObject para crearlo con los parametros recibidos
 - (void) crearBeneficiario:(NSString *)nombre withTel:(NSString *)telefono withEdad:(NSString  *)edad withDireccion:(NSString *)direccion withCelular:(NSString *)celular withTutor:(NSString *)tutor{
     PFObject *beneficiario = [PFObject objectWithClassName:@"Beneficiario"];
     beneficiario[@"Nombre"] = nombre;
@@ -137,7 +139,7 @@
         if (succeeded) {
             // The object has been saved.
             
-            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Beneficiario agregado exitosamente" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Listo" message:@"Beneficiario agregado exitósamente" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
             [alert addAction:ok];
             [self presentViewController:alert animated:YES completion:nil];
@@ -174,10 +176,12 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+// Funcion de prepare for segues
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // si el segue es crear beneficario, indica que el tableview es el delegado
     if ([[segue identifier] isEqualToString:@"crearbeneficiario"]){
         [[segue destinationViewController] setDelegado:self];
+        // si el segue es el detalle del beneficiario, pasa el object id del beneficiario seleccionado
     } else if ([[segue identifier] isEqualToString:@"detallebeneficiario"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         self.objectId = [[self.listabeneficiarios valueForKey:@"objectId"] objectAtIndex:indexPath.row];

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+// Protocolo para crear beneficiario
+
 @protocol ProtocoloCrearBeneficiario <NSObject>
 
 - (void) crearBeneficiario:(NSString *)nombre withTel:(NSString *)telefono withEdad:(NSString  *)edad withDireccion:(NSString *)direccion withCelular:(NSString *)celular withTutor:(NSString *)tutor;
@@ -14,6 +16,7 @@
 - (void)quitaVista;
 @end
 @interface AgregarParticipantesTableViewController : UITableViewController
+// outlets de la form para crear beneficiario
 
 @property (weak, nonatomic) IBOutlet UITextField *tfNombre;
 @property (weak, nonatomic) IBOutlet UITextField *tfTelefono;

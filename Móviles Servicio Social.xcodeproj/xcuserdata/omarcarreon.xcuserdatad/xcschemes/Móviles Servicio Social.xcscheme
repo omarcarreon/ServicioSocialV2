@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4A9B140F1BD828F0004AC8C5"
-               BuildableName = "Mo&#x301;viles Servicio Social.app"
+               BuildableName = "T. Social.app"
                BlueprintName = "Mo&#x301;viles Servicio Social"
                ReferencedContainer = "container:Mo&#x301;viles Servicio Social.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A9B140F1BD828F0004AC8C5"
-            BuildableName = "Mo&#x301;viles Servicio Social.app"
+            BuildableName = "T. Social.app"
             BlueprintName = "Mo&#x301;viles Servicio Social"
             ReferencedContainer = "container:Mo&#x301;viles Servicio Social.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A9B140F1BD828F0004AC8C5"
-            BuildableName = "Mo&#x301;viles Servicio Social.app"
+            BuildableName = "T. Social.app"
             BlueprintName = "Mo&#x301;viles Servicio Social"
             ReferencedContainer = "container:Mo&#x301;viles Servicio Social.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A9B140F1BD828F0004AC8C5"
-            BuildableName = "Mo&#x301;viles Servicio Social.app"
+            BuildableName = "T. Social.app"
             BlueprintName = "Mo&#x301;viles Servicio Social"
             ReferencedContainer = "container:Mo&#x301;viles Servicio Social.xcodeproj">
          </BuildableReference>

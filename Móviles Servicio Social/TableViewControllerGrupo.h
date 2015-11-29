@@ -11,6 +11,6 @@
 
 @interface TableViewControllerGrupo : UITableViewController <ProtocoloCrearGrupo>
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) id detailItem; // id del proyecto proviniente
 
 @end

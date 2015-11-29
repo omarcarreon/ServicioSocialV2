@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface listaTableViewCell : UITableViewCell
+// outlets que se utilizan en alumnos y beneficiarios para mostrar faltas y asistencias
 @property (strong, nonatomic) IBOutlet UILabel *tfAsistencia;
 @property (strong, nonatomic) IBOutlet UILabel *tfFaltas;
 @property (strong, nonatomic) IBOutlet UILabel *tfNombre;
