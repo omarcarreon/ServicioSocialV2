@@ -16,12 +16,19 @@
 
 @implementation MenudelGrupoTableViewController
 //  Obtiene el id del grupo en el que el admin esta navegando
-- (void)setDetailItem:(id)newDetailItem {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+- (void)setGrupoSeleccionado:(id)grupoSeleccionado {
+    if (_grupoSeleccionado != grupoSeleccionado) {
+        _grupoSeleccionado = grupoSeleccionado;
         
         // Update the view.
         //[self configureView];
+    }
+}
+//  Obtiene el id del grupo en el que el admin esta navegando
+- (void)setDetailItemLugar:(id)detailItemLugar {
+    if (_detailItemLugar != detailItemLugar) {
+        _detailItemLugar = detailItemLugar;
+    
     }
 }
 //  Obtiene el id del grupo del usuario, loggeado como usuario
@@ -42,12 +49,6 @@
     //Cambia el color del back.
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
-    // si no es admin, aparece un boton de logout
-    if(!self.isAdmin){
-        self.navigationController.navigationBar.topItem.backBarButtonItem = [[UIBarButtonItem alloc]
-                                                                             initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:nil action:nil];
-    }
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,7 +59,7 @@
 #pragma mark - Table view data source
 //  Decide las secciones para mostrar en el menu de acuerdo a si es admin o no
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if (!self.isAdmin){
+    if (self.isAdmin){
         return 2;
     } else {
         return 3;
@@ -124,20 +125,20 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Si el segue es al tableview de beneficiarios envia id del grupo
     if ([[segue identifier] isEqualToString:@"beneficiarios"]) {
-        [[segue destinationViewController] setDetailItem:self.detailItem];
+        [[segue destinationViewController] setDetailItem:self.grupoSeleccionado];
         // si el segue es al tableview de alumnos envia id del grupo
     } else if ([[segue identifier] isEqualToString:@"alumnos"]) {
-        [[segue destinationViewController] setDetailItem:self.detailItem];
+        [[segue destinationViewController] setDetailItem:self.grupoSeleccionado];
         // si el segue es a crear staff indica que esta view es el delegado
     } else if ([[segue identifier] isEqualToString:@"crearstaff"]){
         [[segue destinationViewController] setDelegado:self];
         // si el segue es a tomar asistencia de beneficiario envia id del grupo e indica que esta view es el delegado
     } else if ([[segue identifier] isEqualToString:@"tomarasistenciabeneficiario"]){
-        [[segue destinationViewController] setDetailItem:self.detailItem];
+        [[segue destinationViewController] setDetailItem:self.grupoSeleccionado];
         [[segue destinationViewController] setDelegado:self];
         // si el segue es a tomar asistencia de alumnos envia id del grupo e indica que esta view es el delegado
     } else if ([[segue identifier] isEqualToString:@"asistenciaalumnos"]){
-        [[segue destinationViewController] setDetailItem:self.detailItem];
+        [[segue destinationViewController] setDetailItem:self.grupoSeleccionado];
         [[segue destinationViewController] setDelegado:self];
     }
 }
@@ -153,7 +154,7 @@
     user[@"Carrera"] = career;
     user[@"Semestre"] = sem;
     user[@"Telefono"] = tel;
-    user[@"IDGrupo"] = [PFObject objectWithoutDataWithClassName:@"Grupo" objectId:self.detailItem];
+    user[@"IDLugar"] = [PFObject objectWithoutDataWithClassName:@"Lugar" objectId:self.detailItemLugar];
     NSNumber *privilegios = [NSNumber numberWithBool:NO];
     [user setObject:privilegios forKey:@"Privilegios"];
     

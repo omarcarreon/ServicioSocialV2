@@ -86,7 +86,7 @@
                         <outlet property="tfEMail" destination="nYj-N0-tX1" id="wV0-LB-B3R"/>
                         <outlet property="tfPassword" destination="uca-Rc-spR" id="JEk-YI-L3H"/>
                         <segue destination="sKR-uv-5vf" kind="show" identifier="loginSegue" id="EfI-nF-b47"/>
-                        <segue destination="6e4-lb-dQv" kind="show" identifier="notadmin" id="B4r-gh-8al"/>
+                        <segue destination="pJJ-LM-YmT" kind="show" identifier="notadmin" id="2KG-U3-xPD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -618,7 +618,7 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ZX-p1-IvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7022.5" y="-3597.5"/>
+            <point key="canvasLocation" x="-7179.5" y="-3557.5"/>
         </scene>
         <!--Proyectos-->
         <scene sceneID="uAA-u8-zH4">
@@ -659,10 +659,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="addButton" destination="wC8-rn-nOi" id="F1X-9b-fDy"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bct-wW-p4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6455.5" y="-3597.5"/>
+            <point key="canvasLocation" x="-6536.5" y="-3557.5"/>
         </scene>
         <!--Grupos-->
         <scene sceneID="jOH-cO-QCq">
@@ -702,6 +705,9 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="addButton" destination="7S4-Kz-mua" id="lYE-Wu-99x"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5g5-LC-4TX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -927,6 +933,9 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="saveButton" destination="sf0-Xh-1AJ" id="And-QQ-t3z"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4i-fx-omc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -967,6 +976,9 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="saveButton" destination="uJ7-bK-Ld0" id="Jly-iX-vKx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46P-Jb-4m9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -975,6 +987,7 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
         <!--Lista de Alumnos-->
         <scene sceneID="71r-pa-qc3">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pmh-0m-m9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="vF7-Z5-Fd0" customClass="AlumnosTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="iLl-aV-l9q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -1018,7 +1031,7 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZp-AU-SLh">
-                                            <rect key="frame" x="333" y="14" width="42" height="21"/>
+                                            <rect key="frame" x="333" y="14" width="27" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1051,7 +1064,6 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pmh-0m-m9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4815.5" y="-2750.5"/>
         </scene>
@@ -2082,12 +2094,12 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
         <image name="User Groups-100.png" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2KG-U3-xPD"/>
         <segue reference="yYr-z9-EYJ"/>
-        <segue reference="Rhi-TB-e4B"/>
-        <segue reference="zQu-1P-ANk"/>
         <segue reference="2Et-f4-hKO"/>
-        <segue reference="Zec-0F-1na"/>
+        <segue reference="XzX-s9-788"/>
         <segue reference="10I-aq-A8b"/>
-        <segue reference="6pg-Fk-Vru"/>
+        <segue reference="Zec-0F-1na"/>
+        <segue reference="zQu-1P-ANk"/>
     </inferredMetricsTieBreakers>
 </document>

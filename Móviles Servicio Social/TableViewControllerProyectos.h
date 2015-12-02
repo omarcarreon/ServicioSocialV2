@@ -11,6 +11,8 @@
 
 @interface TableViewControllerProyectos : UITableViewController <ProtocoloCrearProyecto>
 
-@property (strong, nonatomic) id detailItem; // id del lugar proviniente
+@property (strong, nonatomic) id lugarSeleccionado; // id del lugar proviniente
+@property (strong, nonatomic) id lugarDeUsuario; // id del lugar del usuario staff
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
 @end

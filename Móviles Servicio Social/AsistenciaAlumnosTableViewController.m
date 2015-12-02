@@ -36,6 +36,14 @@
                 self.listaalumnos = [[NSMutableArray alloc]initWithArray:objects];
                 [self.tableView reloadData];
             }
+            if ([objects count] == 0){
+                [self.saveButton setEnabled:NO];
+                [self.saveButton setTintColor: [UIColor clearColor]];
+                UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"No hay alumnos registrados en este grupo." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
+                [alert addAction:ok];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
         }];
     }
 }

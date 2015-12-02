@@ -20,6 +20,12 @@
 - (void)awakeFromNib{
     [super awakeFromNib];
 }
+// guarda id lugar del usuario
+- (void)setLugarDeUsuario:(id)lugarDeUsuario {
+    if (_lugarDeUsuario != lugarDeUsuario) {
+        _lugarDeUsuario = lugarDeUsuario;
+    }
+}
 // Hace un query select para desplegar todos los lugares existentes
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,6 +36,13 @@
         if (!error) {
             self.objects2 = [[NSMutableArray alloc]initWithArray:objects];
             [self.tableView reloadData];
+        }
+        if ([objects count] == 0){
+            // There was a problem
+            UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"No hay lugares disponibles." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
+            [alert addAction:ok];
+            [self presentViewController:alert animated:YES completion:nil];
         }
     }];
     
@@ -175,7 +188,9 @@
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         self.objectId = [[self.objects2 valueForKey:@"objectId"] objectAtIndex:indexPath.row];
-        [[segue destinationViewController] setDetailItem:self.objectId];
+        [[segue destinationViewController] setLugarDeUsuario:self.lugarDeUsuario];
+        [[segue destinationViewController] setLugarSeleccionado:self.objectId];
+        
         
     }
     // si es segue a crear lugar, indica que el tableview es el delegado

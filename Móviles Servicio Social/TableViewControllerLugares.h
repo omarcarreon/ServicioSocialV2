@@ -10,5 +10,6 @@
 #import "CrearLugarTableViewController.h"
 
 @interface TableViewControllerLugares : UITableViewController <ProtocoloCrearLugar>
+@property (strong, nonatomic) id lugarDeUsuario; // id del lugar del usuario
 
 @end

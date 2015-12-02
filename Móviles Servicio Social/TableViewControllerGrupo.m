@@ -19,24 +19,47 @@
 
 @implementation TableViewControllerGrupo
 // obtiene el id del proyecto proviniente
-- (void)setDetailItem:(id)newDetailItem {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+- (void)setDetailItemLugar:(id)newdetailItemLugar {
+    if (_detailItemLugar != newdetailItemLugar) {
+        _detailItemLugar = newdetailItemLugar;
+        
+        // Update the view.
+        //[self configureView];
+    }
+}
+- (void)setProyectoSeleccionado:(id)proyectoSeleccionado {
+    if (_proyectoSeleccionado != proyectoSeleccionado) {
+        _proyectoSeleccionado = proyectoSeleccionado;
         
         // Update the view.
         [self configureView];
     }
 }
+// obtiene el id del lugar del staff
+- (void) setLugarDeUsuario:(id)lugarDeUsuario {
+    if (_lugarDeUsuario != lugarDeUsuario) {
+        _lugarDeUsuario = lugarDeUsuario;
+        // Update the view.
+        //      [self configureView];
+    }
+}
 // Funcion que hace un query select para buscar los grupos en el proyecto que se selecciono
 - (void)configureView {
     // Update the user interface for the detail item.
-    if (self.detailItem) {
+    if (self.proyectoSeleccionado) {
         PFQuery *query = [PFQuery queryWithClassName:@"Grupo"];
-        [query whereKey:@"IDProyecto" equalTo:[PFObject objectWithoutDataWithClassName:@"Proyecto" objectId:self.detailItem]];
+        [query whereKey:@"IDProyecto" equalTo:[PFObject objectWithoutDataWithClassName:@"Proyecto" objectId:self.proyectoSeleccionado]];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
                 self.listagrupos = [[NSMutableArray alloc]initWithArray:objects];
                 [self.tableView reloadData];
+            }
+            if ([objects count] == 0){
+                // There was a problem
+                UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"No hay grupos disponibles." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
+                [alert addAction:ok];
+                [self presentViewController:alert animated:YES completion:nil];
             }
         }];
         
@@ -56,6 +79,13 @@
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
     //Cambia el color del back.
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    if(self.lugarDeUsuario){
+                                                              
+        [self.addButton setEnabled:NO];
+        [self.addButton setTintColor: [UIColor clearColor]];
+        
+    }
 
 }
 
@@ -149,7 +179,7 @@
 - (void)crearGrupo:(NSString *)numero{
     PFObject *grupo = [PFObject objectWithClassName:@"Grupo"];
     grupo[@"Numero"] = numero;
-    grupo[@"IDProyecto"] = [PFObject objectWithoutDataWithClassName:@"Proyecto" objectId:self.detailItem];
+    grupo[@"IDProyecto"] = [PFObject objectWithoutDataWithClassName:@"Proyecto" objectId:self.proyectoSeleccionado];
     
     [grupo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
@@ -183,13 +213,13 @@
     // si el segue es crear grupo, indica que el tableview es delegado
     if ([[segue identifier] isEqualToString:@"creargrupo"]){
         [[segue destinationViewController] setDelegado:self];
-        // si el segue es el menu del grupo, manda el object id del menu seleccionado y variable que indica si es admin o no
+        // si el segue es el menu del grupo, manda el object id del grupo y lugar seleccionado variable que indica si es admin o no
     } else if([[segue identifier] isEqualToString:@"menugrupo"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         self.objectId = [[self.listagrupos valueForKey:@"objectId"] objectAtIndex:indexPath.row];
-        [[segue destinationViewController] setIsAdmin:self.objectId];
-        [[segue destinationViewController] setDetailItem:self.objectId];
-        
+        [[segue destinationViewController] setIsAdmin:_lugarDeUsuario];
+        [[segue destinationViewController] setGrupoSeleccionado:self.objectId];
+        [[segue destinationViewController] setDetailItemLugar:_detailItemLugar];
         
     }
 }

@@ -16,6 +16,7 @@
 @property (strong, nonatomic) id detailItem; // id del grupo
 // boton para guardar la asistencia
 - (IBAction)guardarAsistencia:(UIBarButtonItem *)sender;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
 @property (nonatomic,strong)id <ProtocoloAsistenciaBeneficiario> delegado;
 

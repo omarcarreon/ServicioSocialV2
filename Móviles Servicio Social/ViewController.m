@@ -7,13 +7,14 @@
 //
 
 #import "ViewController.h"
-#import "MenudelGrupoTableViewController.h"
+#import "TableViewControllerProyectos.h"
+#import "TableViewControllerLugares.h"
 #import <Parse/Parse.h>
 
 
 @interface ViewController ()
 @property NSInteger isAdmin; // variable para revisar si es admin
-@property (strong, nonatomic) NSString* groupID;  // guarda el ID del grupo en caso de no ser admin
+@property (strong, nonatomic) NSString* lugarID;  // guarda el ID del lugar en caso de no ser admin
 @end
 
 @implementation ViewController
@@ -77,7 +78,7 @@
              [query whereKey:@"email" equalTo:self.tfEMail.text];
              NSArray *checkuser = [query findObjects];
              self.isAdmin = [[[checkuser valueForKey:@"Privilegios"] objectAtIndex:0] integerValue];
-             self.groupID = [[checkuser valueForKey:@"IDGrupo"] objectAtIndex:0];
+             self.lugarID = [[checkuser valueForKey:@"IDLugar"] objectAtIndex:0];
              if (self.isAdmin == 1){
                  [self performSegueWithIdentifier:@"loginSegue" sender:nil];
              } else{
@@ -98,9 +99,12 @@
 }
 // Funcion prepareforsegue si no es admin
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-     if ([[segue identifier] isEqualToString:@"notadmin"]) {
-        [[segue destinationViewController] setDetailItem:[self.groupID valueForKey:@"objectId"]];
+    if ([[segue identifier] isEqualToString:@"notadmin"]){
+        [[segue destinationViewController] setLugarDeUsuario:[self.lugarID valueForKey:@"objectId"]];
+
+    } else {
     }
+    
 }
 
 //Convierte un valor string hexadecimal(http://stackoverflow.com/questions/6207329/how-to-set-hex-color-code-for-background)

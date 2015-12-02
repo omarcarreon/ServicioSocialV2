@@ -17,5 +17,6 @@
 // boton para guardar la assitencia
 - (IBAction)guardarAsistenciaAlumno:(UIBarButtonItem *)sender;
 @property (nonatomic,strong)id <ProtocoloAsistenciaAlumno> delegado;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
 @end

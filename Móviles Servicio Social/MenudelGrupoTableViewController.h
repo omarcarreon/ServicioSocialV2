@@ -14,8 +14,9 @@
 
 @interface MenudelGrupoTableViewController : UITableViewController <ProtocoloAgregarStaff , ProtocoloAsistenciaBeneficiario>
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) id grupoSeleccionado;
 @property (strong, nonatomic) id isAdmin;
+@property (strong, nonatomic) id detailItemLugar;
 
 
 @end

@@ -9,6 +9,7 @@
 #import "TableViewControllerProyectos.h"
 #import "TableViewControllerLugares.h"
 #import "CrearProyectoTableViewController.h"
+#import "TableViewControllerGrupo.h"
 #import <Parse/Parse.h>
 
 @interface TableViewControllerProyectos ()
@@ -19,31 +20,63 @@
 
 @implementation TableViewControllerProyectos
 // obtiene el id del lugar proviniente
-- (void)setDetailItem:(id)newDetailItem {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+- (void)setLugarSeleccionado:(id)lugarSeleccionado{
+    if (_lugarSeleccionado != lugarSeleccionado) {
+        _lugarSeleccionado = lugarSeleccionado;
         
-        // Update the view.
-        [self configureView];
     }
 }
-
+// obtiene el id del lugar del staff
+- (void) setLugarDeUsuario:(id)lugarDeUsuario {
+    if (_lugarDeUsuario != lugarDeUsuario) {
+        _lugarDeUsuario = lugarDeUsuario;
+        // Update the view.
+        //      [self configureView];
+    }
+}
 // Funcion que hace un query select para buscar los proyectos en el lugar que se selecciono
 - (void)configureView {
     // Update the user interface for the detail item.
-    if (self.detailItem) {
+    if (!self.lugarDeUsuario) {
         PFQuery *query = [PFQuery queryWithClassName:@"Proyecto"];
         //[query whereKey:@"IDLugar" equalTo:self.detailItem];
-        [query whereKey:@"IDLugar" equalTo:[PFObject objectWithoutDataWithClassName:@"Lugar" objectId:self.detailItem]];
+        [query whereKey:@"IDLugar" equalTo:[PFObject objectWithoutDataWithClassName:@"Lugar" objectId:self.lugarSeleccionado]];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
                 self.listaproyectos = [[NSMutableArray alloc]initWithArray:objects];
                 [self.tableView reloadData];
             }
+            if ([objects count] == 0){
+                // There was a problem
+                UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"No hay proyectos disponibles." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
+                [alert addAction:ok];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
         }];
+        NSLog(@"admin");
+    } else {
+        PFQuery *query = [PFQuery queryWithClassName:@"Proyecto"];
+        //[query whereKey:@"IDLugar" equalTo:self.detailItem];
+        [query whereKey:@"IDLugar" equalTo:[PFObject objectWithoutDataWithClassName:@"Lugar" objectId:self.lugarDeUsuario]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                self.listaproyectos = [[NSMutableArray alloc]initWithArray:objects];
+                [self.tableView reloadData];
+            }
+            if ([objects count] == 0){
+                // There was a problem
+                UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error" message:@"No hay proyectos disponibles." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){[alert dismissViewControllerAnimated:YES completion:nil];}];
+                [alert addAction:ok];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+        }];
+        NSLog(@"no admin");
     }
 }
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     [self configureView];
     /*
@@ -56,6 +89,14 @@
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
     //Cambia el color del back.
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    if(self.lugarDeUsuario){
+        self.navigationController.navigationBar.topItem.backBarButtonItem = [[UIBarButtonItem alloc]
+                                                                             initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:nil action:nil];
+        [self.addButton setEnabled:NO];
+        [self.addButton setTintColor: [UIColor clearColor]];
+        
+    }
     
 }
 
@@ -187,11 +228,13 @@
     // si el segue es crear proyecto, indica que el tableview es delegado
     if ([[segue identifier] isEqualToString:@"crearproyecto"]){
         [[segue destinationViewController] setDelegado:self];
-        // si el segue se dirige a un grupo, envia object id del proyecto seleccionado
+        // si el segue se dirige a un grupo, envia object id del proyecto seleccionado y del lugar proviniente
     } else if ([[segue identifier] isEqualToString:@"grupos"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         self.objectId = [[self.listaproyectos valueForKey:@"objectId"] objectAtIndex:indexPath.row];
-        [[segue destinationViewController] setDetailItem:self.objectId];
+        [[segue destinationViewController] setProyectoSeleccionado:self.objectId];
+        [[segue destinationViewController] setDetailItemLugar:self.lugarSeleccionado];
+        [[segue destinationViewController] setLugarDeUsuario:self.lugarDeUsuario];
     }
 }
 
@@ -200,7 +243,7 @@
     PFObject *proyecto = [PFObject objectWithClassName:@"Proyecto"];
     proyecto[@"Nombre"] = nombre;
     proyecto[@"Descripcion"] = des;
-    proyecto[@"IDLugar"] = [PFObject objectWithoutDataWithClassName:@"Lugar" objectId:self.detailItem];
+    proyecto[@"IDLugar"] = [PFObject objectWithoutDataWithClassName:@"Lugar" objectId:self.lugarSeleccionado];
     
     [proyecto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
