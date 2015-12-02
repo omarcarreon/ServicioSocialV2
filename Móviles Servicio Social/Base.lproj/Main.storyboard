@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Icf-Lz-W0u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Icf-Lz-W0u">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
     <scenes>
@@ -29,10 +30,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="LOGONEGRO.png" translatesAutoresizingMaskIntoConstraints="NO" id="e0m-GI-Xph">
-                                <rect key="frame" x="33" y="62" width="308" height="140"/>
-                                <animations/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNC-yQ-Own">
                                 <rect key="frame" x="134" y="321" width="106" height="46"/>
                                 <animations/>
@@ -61,6 +58,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="LOGONEGRO.png" translatesAutoresizingMaskIntoConstraints="NO" id="e0m-GI-Xph">
+                                <rect key="frame" x="33" y="64" width="308" height="140"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.69803921570000005" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -232,8 +233,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="MtH-WL-A79">
-                                                    <rect key="frame" x="8" y="8" width="359" height="334"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="MtH-WL-A79">
+                                                    <rect key="frame" x="40" y="8" width="294" height="334"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Transformación Social ha sido desarrollado por estudiantes del Tecnológico de Monterrey durante el semestre Agosto Diciembre de 2015 como parte del curso Proyecto de Desarrollo de Dispositivos Móviles y asesorados por la Maestra Yolanda Martínez Treviño.
@@ -249,6 +250,12 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </textView>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="MtH-WL-A79" secondAttribute="trailing" constant="33" id="19M-FD-Hf8"/>
+                                                <constraint firstItem="MtH-WL-A79" firstAttribute="centerY" secondItem="B1I-eW-Kyv" secondAttribute="centerY" id="9TE-4v-gV0"/>
+                                                <constraint firstItem="MtH-WL-A79" firstAttribute="leading" secondItem="B1I-eW-Kyv" secondAttribute="leadingMargin" constant="32" id="9fG-1e-PRf"/>
+                                                <constraint firstItem="MtH-WL-A79" firstAttribute="centerX" secondItem="B1I-eW-Kyv" secondAttribute="centerX" id="Fy5-TF-dUz"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -286,21 +293,29 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre Completo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qr3-Et-iP0">
-                                                    <rect key="frame" x="199" y="0.0" width="176" height="43"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
-                                                </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre Completo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhZ-IX-RQY">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Completo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhZ-IX-RQY">
                                                     <rect key="frame" x="20" y="11" width="141" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994736671448" green="0.69779974222183228" blue="0.53573465347290039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre Completo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qr3-Et-iP0">
+                                                    <rect key="frame" x="199" y="0.0" width="176" height="43"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
+                                                </textField>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Qr3-Et-iP0" secondAttribute="bottom" id="L89-eq-0Mj"/>
+                                                <constraint firstAttribute="trailing" secondItem="Qr3-Et-iP0" secondAttribute="trailing" id="Ryv-5C-Kig"/>
+                                                <constraint firstItem="Qr3-Et-iP0" firstAttribute="top" secondItem="NK3-yd-SSV" secondAttribute="top" id="rOo-nj-NRv"/>
+                                                <constraint firstItem="PhZ-IX-RQY" firstAttribute="leading" secondItem="NK3-yd-SSV" secondAttribute="leadingMargin" constant="12" id="uk4-5R-NFY"/>
+                                                <constraint firstItem="Qr3-Et-iP0" firstAttribute="centerY" secondItem="PhZ-IX-RQY" secondAttribute="centerY" id="vpN-0e-Ip8"/>
+                                                <constraint firstItem="Qr3-Et-iP0" firstAttribute="leading" secondItem="PhZ-IX-RQY" secondAttribute="trailing" constant="38" id="w10-9Y-WdE"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -311,14 +326,14 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Correo Electrónico" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tZ7-mQ-qGU">
-                                                    <rect key="frame" x="202" y="1" width="173" height="43"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Correo Electrónico" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tZ7-mQ-qGU">
+                                                    <rect key="frame" x="202" y="0.0" width="173" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Correo Electrónico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Blm-VC-6W8">
-                                                    <rect key="frame" x="18" y="11" width="143" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correo Electrónico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Blm-VC-6W8">
+                                                    <rect key="frame" x="18" y="10" width="143" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994736671448" green="0.69779974222183228" blue="0.53573465347290039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -326,6 +341,14 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="tZ7-mQ-qGU" secondAttribute="bottom" id="8S6-Am-B1r"/>
+                                                <constraint firstItem="tZ7-mQ-qGU" firstAttribute="leading" secondItem="Blm-VC-6W8" secondAttribute="trailing" constant="41" id="9GJ-9s-Dxc"/>
+                                                <constraint firstItem="tZ7-mQ-qGU" firstAttribute="baseline" secondItem="Blm-VC-6W8" secondAttribute="baseline" id="9Tl-Vr-DgA"/>
+                                                <constraint firstItem="tZ7-mQ-qGU" firstAttribute="top" secondItem="dVP-13-HGv" secondAttribute="top" id="Y4G-pZ-92S"/>
+                                                <constraint firstAttribute="trailing" secondItem="tZ7-mQ-qGU" secondAttribute="trailing" id="fyh-cs-YIM"/>
+                                                <constraint firstItem="Blm-VC-6W8" firstAttribute="leading" secondItem="dVP-13-HGv" secondAttribute="leadingMargin" constant="10" id="neD-zL-AZV"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -336,13 +359,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LfF-2B-Lrd">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LfF-2B-Lrd">
                                                     <rect key="frame" x="194" y="0.0" width="173" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1D-La-Xby">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1D-La-Xby">
                                                     <rect key="frame" x="19" y="11" width="89" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -351,6 +374,14 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="I1D-La-Xby" firstAttribute="leading" secondItem="X3k-R1-hm0" secondAttribute="leadingMargin" constant="11" id="2K0-5v-3DK"/>
+                                                <constraint firstItem="LfF-2B-Lrd" firstAttribute="trailing" secondItem="X3k-R1-hm0" secondAttribute="trailingMargin" id="5gA-XD-DIJ"/>
+                                                <constraint firstItem="LfF-2B-Lrd" firstAttribute="leading" secondItem="I1D-La-Xby" secondAttribute="trailing" constant="86" id="Het-px-wjc"/>
+                                                <constraint firstItem="LfF-2B-Lrd" firstAttribute="top" secondItem="X3k-R1-hm0" secondAttribute="top" id="P4H-k6-nzS"/>
+                                                <constraint firstAttribute="bottom" secondItem="LfF-2B-Lrd" secondAttribute="bottom" id="tHX-Ye-STS"/>
+                                                <constraint firstItem="I1D-La-Xby" firstAttribute="centerY" secondItem="LfF-2B-Lrd" secondAttribute="centerY" id="tuE-2s-4JS"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -361,21 +392,31 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Matrícula" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7EI-wS-WmK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matrícula" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7EI-wS-WmK">
                                                     <rect key="frame" x="21" y="10" width="71" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994736671448" green="0.69779974222183228" blue="0.53573465347290039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Matrícula" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ecr-xS-QN3">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Matrícula" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ecr-xS-QN3">
                                                     <rect key="frame" x="194" y="0.0" width="173" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="173" id="Bql-TI-UD1"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="ecr-xS-QN3" firstAttribute="top" secondItem="Yjw-OD-62t" secondAttribute="top" id="CV5-kS-20f"/>
+                                                <constraint firstAttribute="bottom" secondItem="ecr-xS-QN3" secondAttribute="bottom" id="FJb-Sh-u5b"/>
+                                                <constraint firstItem="7EI-wS-WmK" firstAttribute="baseline" secondItem="ecr-xS-QN3" secondAttribute="baseline" id="Qof-67-wsm"/>
+                                                <constraint firstItem="ecr-xS-QN3" firstAttribute="trailing" secondItem="Yjw-OD-62t" secondAttribute="trailingMargin" id="bKH-cO-Ico"/>
+                                                <constraint firstItem="7EI-wS-WmK" firstAttribute="leading" secondItem="Yjw-OD-62t" secondAttribute="leadingMargin" constant="13" id="yK6-Y8-Kga"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -386,14 +427,14 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carrera (ITC,IIS,LAF, ...)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiY-tc-kOX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carrera (ITC,IIS,LAF, ...)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiY-tc-kOX">
                                                     <rect key="frame" x="19" y="11" width="179" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994736671448" green="0.69779974222183228" blue="0.53573465347290039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Carrera" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qAM-dP-TJb">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Carrera" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qAM-dP-TJb">
                                                     <rect key="frame" x="224" y="1" width="115" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -401,6 +442,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </textField>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="qAM-dP-TJb" firstAttribute="leading" secondItem="xiY-tc-kOX" secondAttribute="trailing" constant="26" id="Z1P-hI-qeI"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qAM-dP-TJb" secondAttribute="trailing" constant="28" id="blC-Kh-xsP"/>
+                                                <constraint firstItem="qAM-dP-TJb" firstAttribute="baseline" secondItem="xiY-tc-kOX" secondAttribute="baseline" id="ctR-jm-B45"/>
+                                                <constraint firstItem="xiY-tc-kOX" firstAttribute="leading" secondItem="YgC-q2-RPn" secondAttribute="leadingMargin" constant="11" id="lnl-Lh-61Q"/>
+                                                <constraint firstItem="xiY-tc-kOX" firstAttribute="centerY" secondItem="YgC-q2-RPn" secondAttribute="centerY" id="mYp-4c-hH0"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -411,21 +459,29 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Semestre (1, 5, 9, ...)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aba-pe-qKV">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Semestre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zyR-TU-KUB">
+                                                    <rect key="frame" x="201" y="0.0" width="166" height="43"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Semestre (1, 5, 9, ...)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aba-pe-qKV">
                                                     <rect key="frame" x="18" y="11" width="157" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994736671448" green="0.69779974222183228" blue="0.53573465347290039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Semestre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zyR-TU-KUB">
-                                                    <rect key="frame" x="201" y="0.0" width="166" height="43"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
-                                                </textField>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="zyR-TU-KUB" firstAttribute="leading" secondItem="aba-pe-qKV" secondAttribute="trailing" constant="26" id="G10-vz-Cu1"/>
+                                                <constraint firstItem="zyR-TU-KUB" firstAttribute="trailing" secondItem="XOy-AD-5Rd" secondAttribute="trailingMargin" id="O3g-cH-YFQ"/>
+                                                <constraint firstItem="aba-pe-qKV" firstAttribute="leading" secondItem="XOy-AD-5Rd" secondAttribute="leadingMargin" constant="10" id="P0F-VC-qFI"/>
+                                                <constraint firstItem="aba-pe-qKV" firstAttribute="centerY" secondItem="zyR-TU-KUB" secondAttribute="centerY" id="UwV-Q6-ZDx"/>
+                                                <constraint firstAttribute="bottom" secondItem="zyR-TU-KUB" secondAttribute="bottom" id="XbC-HO-QC7"/>
+                                                <constraint firstItem="zyR-TU-KUB" firstAttribute="top" secondItem="XOy-AD-5Rd" secondAttribute="top" id="gaV-qT-bDN"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -436,21 +492,31 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teléfono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrY-MQ-AUm">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teléfono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrY-MQ-AUm">
                                                     <rect key="frame" x="20" y="11" width="66" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994736671448" green="0.69779974222183228" blue="0.53573465347290039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Teléfono" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dqb-MJ-qZu">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Teléfono" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dqb-MJ-qZu">
                                                     <rect key="frame" x="196" y="0.0" width="171" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="171" id="P0k-YO-mgB"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="Dqb-MJ-qZu" firstAttribute="trailing" secondItem="DQd-Dc-baB" secondAttribute="trailingMargin" id="90l-bx-glj"/>
+                                                <constraint firstItem="SrY-MQ-AUm" firstAttribute="leading" secondItem="DQd-Dc-baB" secondAttribute="leadingMargin" constant="12" id="Jxa-S6-DCP"/>
+                                                <constraint firstItem="Dqb-MJ-qZu" firstAttribute="centerY" secondItem="SrY-MQ-AUm" secondAttribute="centerY" id="WNF-To-Puv"/>
+                                                <constraint firstItem="Dqb-MJ-qZu" firstAttribute="top" secondItem="DQd-Dc-baB" secondAttribute="top" id="XFw-vK-b9G"/>
+                                                <constraint firstAttribute="bottom" secondItem="Dqb-MJ-qZu" secondAttribute="bottom" id="drA-hS-rYJ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -507,14 +573,14 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre del Lugar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btL-X5-rne">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre del Lugar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btL-X5-rne">
                                                     <rect key="frame" x="13" y="11" width="138" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aqD-MQ-OrC">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aqD-MQ-OrC">
                                                     <rect key="frame" x="202" y="0.0" width="173" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -522,6 +588,14 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </textField>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="btL-X5-rne" firstAttribute="centerY" secondItem="aqD-MQ-OrC" secondAttribute="centerY" id="67C-Gk-4FG"/>
+                                                <constraint firstItem="btL-X5-rne" firstAttribute="leading" secondItem="Z1Z-L1-k7b" secondAttribute="leadingMargin" constant="5" id="Hu8-BN-jdd"/>
+                                                <constraint firstItem="aqD-MQ-OrC" firstAttribute="top" secondItem="Z1Z-L1-k7b" secondAttribute="top" id="J76-0d-Jvj"/>
+                                                <constraint firstAttribute="trailing" secondItem="aqD-MQ-OrC" secondAttribute="trailing" id="bJw-ee-aGd"/>
+                                                <constraint firstItem="aqD-MQ-OrC" firstAttribute="leading" secondItem="btL-X5-rne" secondAttribute="trailing" constant="51" id="dJA-54-JC6"/>
+                                                <constraint firstAttribute="bottom" secondItem="aqD-MQ-OrC" secondAttribute="bottom" id="hDO-bK-kej"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -532,13 +606,16 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dirección" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SsB-Kz-kbi">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dirección" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SsB-Kz-kbi">
                                                     <rect key="frame" x="202" y="0.0" width="173" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="173" id="eDI-zB-QBz"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dirección" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5p4-bS-EMr">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dirección" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5p4-bS-EMr">
                                                     <rect key="frame" x="14" y="10" width="73" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -547,6 +624,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="5p4-bS-EMr" firstAttribute="baseline" secondItem="SsB-Kz-kbi" secondAttribute="baseline" id="VuP-87-Y9c"/>
+                                                <constraint firstAttribute="bottom" secondItem="SsB-Kz-kbi" secondAttribute="bottom" id="W95-j4-KdK"/>
+                                                <constraint firstItem="SsB-Kz-kbi" firstAttribute="top" secondItem="2QQ-Gr-1f5" secondAttribute="top" id="Xgs-um-I8D"/>
+                                                <constraint firstItem="5p4-bS-EMr" firstAttribute="leading" secondItem="2QQ-Gr-1f5" secondAttribute="leadingMargin" constant="6" id="ifL-yf-aBL"/>
+                                                <constraint firstAttribute="trailing" secondItem="SsB-Kz-kbi" secondAttribute="trailing" id="lQe-7x-Uf2"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -987,7 +1071,6 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
         <!--Lista de Alumnos-->
         <scene sceneID="71r-pa-qc3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pmh-0m-m9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="vF7-Z5-Fd0" customClass="AlumnosTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="iLl-aV-l9q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -1002,43 +1085,68 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="49"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ec-l7-7C5">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ec-l7-7C5">
                                             <rect key="frame" x="279" y="14" width="37" height="21"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="37" id="VPb-44-2v3"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tr-5Q-xt4">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tr-5Q-xt4">
                                             <rect key="frame" x="16" y="14" width="150" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="↑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRj-KW-nYi">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="↑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRj-KW-nYi">
                                             <rect key="frame" x="263" y="14" width="17" height="21"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="17" id="lLR-3t-S9J"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="↓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkV-CV-7gt">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="↓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkV-CV-7gt">
                                             <rect key="frame" x="316" y="14" width="17" height="21"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="17" id="MsZ-wY-cot"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZp-AU-SLh">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZp-AU-SLh">
                                             <rect key="frame" x="333" y="14" width="27" height="21"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="27" id="E6w-sE-8zZ"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="0Ec-l7-7C5" firstAttribute="centerY" secondItem="Bv9-oF-YzX" secondAttribute="centerY" id="5sW-jC-C9X"/>
+                                        <constraint firstItem="XRj-KW-nYi" firstAttribute="baseline" secondItem="0Ec-l7-7C5" secondAttribute="baseline" id="A2Z-tD-UdD"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="nZp-AU-SLh" secondAttribute="trailing" constant="-26" id="Fru-1d-oSU"/>
+                                        <constraint firstItem="nZp-AU-SLh" firstAttribute="baseline" secondItem="bkV-CV-7gt" secondAttribute="baseline" id="H5B-sZ-9hR"/>
+                                        <constraint firstItem="bkV-CV-7gt" firstAttribute="leading" secondItem="XRj-KW-nYi" secondAttribute="trailing" constant="36" id="Wb4-NB-2AA"/>
+                                        <constraint firstItem="3Tr-5Q-xt4" firstAttribute="leading" secondItem="Bv9-oF-YzX" secondAttribute="leadingMargin" constant="8" id="dln-fR-Dje"/>
+                                        <constraint firstItem="bkV-CV-7gt" firstAttribute="leading" secondItem="0Ec-l7-7C5" secondAttribute="trailing" id="jLi-ia-GTq"/>
+                                        <constraint firstItem="3Tr-5Q-xt4" firstAttribute="baseline" secondItem="XRj-KW-nYi" secondAttribute="baseline" id="knq-nM-lxe"/>
+                                        <constraint firstItem="nZp-AU-SLh" firstAttribute="leading" secondItem="bkV-CV-7gt" secondAttribute="trailing" id="ohu-bQ-ASt"/>
+                                        <constraint firstItem="0Ec-l7-7C5" firstAttribute="baseline" secondItem="bkV-CV-7gt" secondAttribute="baseline" id="qNQ-UC-RHW"/>
+                                        <constraint firstItem="XRj-KW-nYi" firstAttribute="leading" secondItem="3Tr-5Q-xt4" secondAttribute="trailing" constant="97" id="x0J-Gs-yCP"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
@@ -1064,6 +1172,7 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pmh-0m-m9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4815.5" y="-2750.5"/>
         </scene>
@@ -1086,13 +1195,16 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jw2-cd-zGV">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jw2-cd-zGV">
                                                     <rect key="frame" x="202" y="0.0" width="165" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="165" id="HwM-gj-899"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SL1-rA-B9s">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SL1-rA-B9s">
                                                     <rect key="frame" x="17" y="11" width="62" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1101,6 +1213,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="jw2-cd-zGV" firstAttribute="top" secondItem="9xk-FW-LDx" secondAttribute="top" id="8Cz-Ik-U7E"/>
+                                                <constraint firstAttribute="bottom" secondItem="jw2-cd-zGV" secondAttribute="bottom" id="VnI-1n-7oM"/>
+                                                <constraint firstItem="jw2-cd-zGV" firstAttribute="trailing" secondItem="9xk-FW-LDx" secondAttribute="trailingMargin" id="jfs-4O-A54"/>
+                                                <constraint firstItem="SL1-rA-B9s" firstAttribute="centerY" secondItem="jw2-cd-zGV" secondAttribute="centerY" id="oUm-qh-wdl"/>
+                                                <constraint firstItem="SL1-rA-B9s" firstAttribute="leading" secondItem="9xk-FW-LDx" secondAttribute="leadingMargin" constant="9" id="rXN-Jw-c6P"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1111,13 +1230,16 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Edad" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tAd-PP-Kcr">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Edad" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tAd-PP-Kcr">
                                                     <rect key="frame" x="202" y="0.0" width="165" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="165" id="xHH-r1-HGT"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3v-8a-g6c">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3v-8a-g6c">
                                                     <rect key="frame" x="17" y="11" width="39" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1126,6 +1248,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="U3v-8a-g6c" firstAttribute="leading" secondItem="RxG-39-afJ" secondAttribute="leadingMargin" constant="9" id="88Q-tn-d6k"/>
+                                                <constraint firstItem="tAd-PP-Kcr" firstAttribute="top" secondItem="RxG-39-afJ" secondAttribute="top" id="Fja-DP-xL0"/>
+                                                <constraint firstAttribute="bottom" secondItem="tAd-PP-Kcr" secondAttribute="bottom" id="KtD-nh-Z5k"/>
+                                                <constraint firstItem="tAd-PP-Kcr" firstAttribute="trailing" secondItem="RxG-39-afJ" secondAttribute="trailingMargin" id="pIw-St-d6w"/>
+                                                <constraint firstItem="tAd-PP-Kcr" firstAttribute="centerY" secondItem="U3v-8a-g6c" secondAttribute="centerY" id="qKC-gn-7jU"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1136,13 +1265,16 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dirección" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tPn-0Q-X2v">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dirección" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tPn-0Q-X2v">
                                                     <rect key="frame" x="202" y="0.0" width="165" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="165" id="aBz-1r-vFU"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dirección" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snp-nq-95J">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dirección" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snp-nq-95J">
                                                     <rect key="frame" x="17" y="11" width="73" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1151,6 +1283,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="tPn-0Q-X2v" secondAttribute="bottom" id="0HU-Or-qrV"/>
+                                                <constraint firstItem="Snp-nq-95J" firstAttribute="leading" secondItem="v1f-XE-6c8" secondAttribute="leadingMargin" constant="9" id="OVh-dC-EVe"/>
+                                                <constraint firstItem="tPn-0Q-X2v" firstAttribute="centerY" secondItem="Snp-nq-95J" secondAttribute="centerY" id="P7k-du-JYv"/>
+                                                <constraint firstItem="tPn-0Q-X2v" firstAttribute="trailing" secondItem="v1f-XE-6c8" secondAttribute="trailingMargin" id="Tfg-JC-vq9"/>
+                                                <constraint firstItem="tPn-0Q-X2v" firstAttribute="top" secondItem="v1f-XE-6c8" secondAttribute="top" id="n0T-jl-yXX"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1161,13 +1300,16 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Teléfono" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSU-Sj-wfT">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Teléfono" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSU-Sj-wfT">
                                                     <rect key="frame" x="195" y="0.0" width="180" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="180" id="Ppk-CN-8hn"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teléfono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UT-wf-MzM">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teléfono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UT-wf-MzM">
                                                     <rect key="frame" x="18" y="11" width="66" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1176,6 +1318,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="pSU-Sj-wfT" firstAttribute="centerY" secondItem="6UT-wf-MzM" secondAttribute="centerY" id="2jh-td-yAe"/>
+                                                <constraint firstAttribute="trailing" secondItem="pSU-Sj-wfT" secondAttribute="trailing" id="IhD-T2-LAu"/>
+                                                <constraint firstItem="6UT-wf-MzM" firstAttribute="leading" secondItem="gx7-bo-ZPM" secondAttribute="leadingMargin" constant="10" id="bqU-t0-i8I"/>
+                                                <constraint firstItem="pSU-Sj-wfT" firstAttribute="top" secondItem="gx7-bo-ZPM" secondAttribute="top" id="cb9-Sx-m6c"/>
+                                                <constraint firstAttribute="bottom" secondItem="pSU-Sj-wfT" secondAttribute="bottom" id="sRd-nT-Hxa"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1186,13 +1335,16 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Celular" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oxo-oQ-rq4">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Celular" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oxo-oQ-rq4">
                                                     <rect key="frame" x="195" y="0.0" width="180" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="180" id="seJ-ak-iQN"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Celular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUm-td-FLS">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUm-td-FLS">
                                                     <rect key="frame" x="17" y="11" width="54" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1201,6 +1353,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="Oxo-oQ-rq4" firstAttribute="centerY" secondItem="UUm-td-FLS" secondAttribute="centerY" id="27N-DF-hUv"/>
+                                                <constraint firstItem="Oxo-oQ-rq4" firstAttribute="top" secondItem="5ax-qU-5hJ" secondAttribute="top" id="75g-gG-EZY"/>
+                                                <constraint firstAttribute="trailing" secondItem="Oxo-oQ-rq4" secondAttribute="trailing" id="YEr-NU-KSS"/>
+                                                <constraint firstAttribute="bottom" secondItem="Oxo-oQ-rq4" secondAttribute="bottom" id="a3e-1U-gIK"/>
+                                                <constraint firstItem="UUm-td-FLS" firstAttribute="leading" secondItem="5ax-qU-5hJ" secondAttribute="leadingMargin" constant="9" id="muR-a0-qLc"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1211,13 +1370,16 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tutor" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMO-8p-zOR">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tutor" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMO-8p-zOR">
                                                     <rect key="frame" x="195" y="0.0" width="180" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="180" id="23b-2O-1b9"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tutor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sK-39-KdG">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sK-39-KdG">
                                                     <rect key="frame" x="19" y="11" width="41" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1226,6 +1388,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="6sK-39-KdG" firstAttribute="leading" secondItem="udk-dy-2zY" secondAttribute="leadingMargin" constant="11" id="6SO-JN-7g8"/>
+                                                <constraint firstAttribute="trailing" secondItem="XMO-8p-zOR" secondAttribute="trailing" id="JIo-m8-AYG"/>
+                                                <constraint firstItem="XMO-8p-zOR" firstAttribute="centerY" secondItem="6sK-39-KdG" secondAttribute="centerY" id="Loc-l0-xVS"/>
+                                                <constraint firstItem="XMO-8p-zOR" firstAttribute="top" secondItem="udk-dy-2zY" secondAttribute="top" id="PaV-zD-Zvw"/>
+                                                <constraint firstAttribute="bottom" secondItem="XMO-8p-zOR" secondAttribute="bottom" id="uSR-Ui-a47"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1271,13 +1440,16 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wih-62-C77">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wih-62-C77">
                                                     <rect key="frame" x="202" y="0.0" width="165" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="165" id="tos-YS-zBu"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3Z-Xp-F7G">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3Z-Xp-F7G">
                                                     <rect key="frame" x="17" y="11" width="62" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1286,6 +1458,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="z3Z-Xp-F7G" firstAttribute="leading" secondItem="XGL-du-S4o" secondAttribute="leadingMargin" constant="9" id="Ccy-sF-r2V"/>
+                                                <constraint firstItem="Wih-62-C77" firstAttribute="trailing" secondItem="XGL-du-S4o" secondAttribute="trailingMargin" id="eom-5w-4kb"/>
+                                                <constraint firstItem="z3Z-Xp-F7G" firstAttribute="centerY" secondItem="Wih-62-C77" secondAttribute="centerY" id="hFx-ir-y7d"/>
+                                                <constraint firstAttribute="bottom" secondItem="Wih-62-C77" secondAttribute="bottom" id="hjM-mn-85d"/>
+                                                <constraint firstItem="Wih-62-C77" firstAttribute="top" secondItem="XGL-du-S4o" secondAttribute="top" id="kBl-b3-aqd"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1296,13 +1475,16 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Edad" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JOz-Uu-HCE">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Edad" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JOz-Uu-HCE">
                                                     <rect key="frame" x="202" y="0.0" width="165" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="165" id="MHh-eN-9Bb"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e0-XX-GYp">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e0-XX-GYp">
                                                     <rect key="frame" x="17" y="11" width="39" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1311,6 +1493,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="JOz-Uu-HCE" firstAttribute="trailing" secondItem="GUk-c5-BAP" secondAttribute="trailingMargin" id="9z8-qG-uAt"/>
+                                                <constraint firstItem="JOz-Uu-HCE" firstAttribute="top" secondItem="GUk-c5-BAP" secondAttribute="top" id="Pi9-q2-uCv"/>
+                                                <constraint firstItem="4e0-XX-GYp" firstAttribute="centerY" secondItem="JOz-Uu-HCE" secondAttribute="centerY" id="Tdj-e2-aKZ"/>
+                                                <constraint firstItem="4e0-XX-GYp" firstAttribute="leading" secondItem="GUk-c5-BAP" secondAttribute="leadingMargin" constant="9" id="iK3-C6-A2U"/>
+                                                <constraint firstAttribute="bottom" secondItem="JOz-Uu-HCE" secondAttribute="bottom" id="smk-rj-g4D"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1321,13 +1510,16 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dirección" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VFd-B3-Te7">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dirección" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VFd-B3-Te7">
                                                     <rect key="frame" x="202" y="0.0" width="165" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="165" id="fAX-dK-Qkd"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dirección" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlQ-Al-f0J">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dirección" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlQ-Al-f0J">
                                                     <rect key="frame" x="17" y="11" width="73" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1336,6 +1528,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="QlQ-Al-f0J" firstAttribute="leading" secondItem="hqE-pY-wCs" secondAttribute="leadingMargin" constant="9" id="1Yp-Is-Vag"/>
+                                                <constraint firstAttribute="bottom" secondItem="VFd-B3-Te7" secondAttribute="bottom" id="25f-Lk-998"/>
+                                                <constraint firstItem="VFd-B3-Te7" firstAttribute="top" secondItem="hqE-pY-wCs" secondAttribute="top" id="63a-wr-Ae0"/>
+                                                <constraint firstItem="VFd-B3-Te7" firstAttribute="trailing" secondItem="hqE-pY-wCs" secondAttribute="trailingMargin" id="9EO-Ha-wSK"/>
+                                                <constraint firstItem="VFd-B3-Te7" firstAttribute="centerY" secondItem="QlQ-Al-f0J" secondAttribute="centerY" id="Cqs-fb-EFB"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1346,13 +1545,16 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Teléfono" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="14Z-rP-1ma">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Teléfono" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="14Z-rP-1ma">
                                                     <rect key="frame" x="195" y="0.0" width="180" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="180" id="JbZ-Hx-ZVP"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teléfono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPq-8j-mcV">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teléfono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPq-8j-mcV">
                                                     <rect key="frame" x="18" y="11" width="66" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1361,6 +1563,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="14Z-rP-1ma" secondAttribute="trailing" id="MGu-eZ-r9V"/>
+                                                <constraint firstItem="14Z-rP-1ma" firstAttribute="centerY" secondItem="UPq-8j-mcV" secondAttribute="centerY" id="fg3-zj-skB"/>
+                                                <constraint firstItem="UPq-8j-mcV" firstAttribute="leading" secondItem="jjU-ol-iv8" secondAttribute="leadingMargin" constant="10" id="i0O-id-ftQ"/>
+                                                <constraint firstItem="14Z-rP-1ma" firstAttribute="top" secondItem="jjU-ol-iv8" secondAttribute="top" id="iKq-Zy-Qqp"/>
+                                                <constraint firstAttribute="bottom" secondItem="14Z-rP-1ma" secondAttribute="bottom" id="t7N-r0-1Mr"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1371,13 +1580,16 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Celular" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tap-8b-K4S">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Celular" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tap-8b-K4S">
                                                     <rect key="frame" x="195" y="0.0" width="180" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="180" id="r6D-be-XKZ"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Celular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPO-kn-UBs">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPO-kn-UBs">
                                                     <rect key="frame" x="17" y="11" width="54" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1386,6 +1598,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="tap-8b-K4S" secondAttribute="bottom" id="0x8-Sn-FHh"/>
+                                                <constraint firstItem="OPO-kn-UBs" firstAttribute="centerY" secondItem="tap-8b-K4S" secondAttribute="centerY" id="83H-5o-C9g"/>
+                                                <constraint firstAttribute="trailing" secondItem="tap-8b-K4S" secondAttribute="trailing" id="O1q-KR-VFD"/>
+                                                <constraint firstItem="tap-8b-K4S" firstAttribute="top" secondItem="MlX-gx-pcP" secondAttribute="top" id="sQs-SF-FkH"/>
+                                                <constraint firstItem="OPO-kn-UBs" firstAttribute="leading" secondItem="MlX-gx-pcP" secondAttribute="leadingMargin" constant="9" id="y6s-TR-b3t"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1396,13 +1615,16 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tutor" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eZU-7b-a2C">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tutor" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eZU-7b-a2C">
                                                     <rect key="frame" x="195" y="0.0" width="180" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="180" id="xlt-pT-kw2"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tutor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KT4-9W-cEQ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KT4-9W-cEQ">
                                                     <rect key="frame" x="19" y="11" width="41" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1411,6 +1633,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="eZU-7b-a2C" firstAttribute="top" secondItem="Krd-Ha-hDF" secondAttribute="top" id="6BZ-J5-n57"/>
+                                                <constraint firstAttribute="trailing" secondItem="eZU-7b-a2C" secondAttribute="trailing" id="NZz-Xh-mbR"/>
+                                                <constraint firstItem="eZU-7b-a2C" firstAttribute="centerY" secondItem="KT4-9W-cEQ" secondAttribute="centerY" id="nTA-eF-MeI"/>
+                                                <constraint firstAttribute="bottom" secondItem="eZU-7b-a2C" secondAttribute="bottom" id="rYq-MC-ll9"/>
+                                                <constraint firstItem="KT4-9W-cEQ" firstAttribute="leading" secondItem="Krd-Ha-hDF" secondAttribute="leadingMargin" constant="11" id="uPM-ps-kdd"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1463,14 +1692,14 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre Completo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bep-Gc-zHX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Completo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bep-Gc-zHX">
                                                     <rect key="frame" x="16" y="11" width="141" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-lP-TiT">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-lP-TiT">
                                                     <rect key="frame" x="165" y="1" width="210" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1478,6 +1707,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </textField>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="Bep-Gc-zHX" firstAttribute="centerY" secondItem="78E-VS-mgu" secondAttribute="centerY" id="0kR-Wl-s17"/>
+                                                <constraint firstItem="hJz-lP-TiT" firstAttribute="leading" secondItem="Bep-Gc-zHX" secondAttribute="trailing" constant="8" symbolic="YES" id="rFb-8Q-SWF"/>
+                                                <constraint firstAttribute="trailing" secondItem="hJz-lP-TiT" secondAttribute="trailing" id="s7r-MP-MJN"/>
+                                                <constraint firstItem="Bep-Gc-zHX" firstAttribute="leading" secondItem="78E-VS-mgu" secondAttribute="leadingMargin" constant="8" id="z60-v7-esI"/>
+                                                <constraint firstItem="Bep-Gc-zHX" firstAttribute="baseline" secondItem="hJz-lP-TiT" secondAttribute="baseline" id="zjZ-mU-bgo"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1488,14 +1724,14 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Matrícula" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3y-8F-Rgs">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matrícula" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3y-8F-Rgs">
                                                     <rect key="frame" x="15" y="11" width="71" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Matrícula" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hdp-g1-QAn">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Matrícula" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hdp-g1-QAn">
                                                     <rect key="frame" x="165" y="1" width="210" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1503,6 +1739,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </textField>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="Hdp-g1-QAn" firstAttribute="leading" secondItem="M3y-8F-Rgs" secondAttribute="trailing" constant="79" id="OfO-JP-ZwA"/>
+                                                <constraint firstItem="M3y-8F-Rgs" firstAttribute="baseline" secondItem="Hdp-g1-QAn" secondAttribute="baseline" id="OzI-2f-pzh"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hdp-g1-QAn" secondAttribute="trailing" id="PRP-Tb-OQz"/>
+                                                <constraint firstItem="M3y-8F-Rgs" firstAttribute="leading" secondItem="0EK-bw-Zk8" secondAttribute="leadingMargin" constant="7" id="YBS-oE-GDr"/>
+                                                <constraint firstItem="M3y-8F-Rgs" firstAttribute="centerY" secondItem="0EK-bw-Zk8" secondAttribute="centerY" id="nQf-wb-aKB"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1513,14 +1756,14 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Correo Electrónico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKN-8m-sWF">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correo Electrónico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKN-8m-sWF">
                                                     <rect key="frame" x="16" y="11" width="143" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Correo Electrónico" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dUz-y4-1mE">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Correo Electrónico" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dUz-y4-1mE">
                                                     <rect key="frame" x="165" y="0.0" width="210" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1528,6 +1771,14 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </textField>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="VKN-8m-sWF" firstAttribute="centerY" secondItem="dUz-y4-1mE" secondAttribute="centerY" id="3dE-6H-qRF"/>
+                                                <constraint firstAttribute="bottom" secondItem="dUz-y4-1mE" secondAttribute="bottom" id="D9J-TZ-YqI"/>
+                                                <constraint firstItem="VKN-8m-sWF" firstAttribute="leading" secondItem="GwZ-Yv-cSc" secondAttribute="leadingMargin" constant="8" id="RB1-6g-Rdf"/>
+                                                <constraint firstItem="dUz-y4-1mE" firstAttribute="leading" secondItem="VKN-8m-sWF" secondAttribute="trailing" constant="6" id="cvp-O4-pYP"/>
+                                                <constraint firstAttribute="trailing" secondItem="dUz-y4-1mE" secondAttribute="trailing" id="ega-XW-xsy"/>
+                                                <constraint firstItem="dUz-y4-1mE" firstAttribute="top" secondItem="GwZ-Yv-cSc" secondAttribute="top" id="h88-Dj-60w"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1588,14 +1839,14 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teléfono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYw-Pv-L4A">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teléfono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYw-Pv-L4A">
                                                     <rect key="frame" x="17" y="11" width="66" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Teléfono" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZ5-Km-nLh">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Teléfono" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZ5-Km-nLh">
                                                     <rect key="frame" x="165" y="0.0" width="210" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1603,6 +1854,14 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </textField>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="cZ5-Km-nLh" secondAttribute="trailing" id="BcF-uM-sYH"/>
+                                                <constraint firstItem="cZ5-Km-nLh" firstAttribute="leading" secondItem="IYw-Pv-L4A" secondAttribute="trailing" constant="82" id="TNh-ej-Ued"/>
+                                                <constraint firstItem="IYw-Pv-L4A" firstAttribute="leading" secondItem="2Wi-Dx-NoR" secondAttribute="leadingMargin" constant="9" id="gem-dE-a5b"/>
+                                                <constraint firstItem="cZ5-Km-nLh" firstAttribute="centerY" secondItem="IYw-Pv-L4A" secondAttribute="centerY" id="hOG-4e-QKH"/>
+                                                <constraint firstAttribute="bottom" secondItem="cZ5-Km-nLh" secondAttribute="bottom" id="kSe-4G-25t"/>
+                                                <constraint firstItem="cZ5-Km-nLh" firstAttribute="top" secondItem="2Wi-Dx-NoR" secondAttribute="top" id="n6p-1c-4Cs"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1653,43 +1912,61 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="49"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrC-Rj-Q9e">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrC-Rj-Q9e">
                                             <rect key="frame" x="331" y="14" width="36" height="21"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="36" id="gGG-tE-CjQ"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86v-4J-Yqh">
-                                            <rect key="frame" x="16" y="14" width="204" height="21"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AE6-as-q8G">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AE6-as-q8G">
                                             <rect key="frame" x="269" y="14" width="40" height="21"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="xQv-ev-Sg2"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="↓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epe-PY-QcI">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="↓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epe-PY-QcI">
                                             <rect key="frame" x="311" y="14" width="17" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="↑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBb-t6-RRA">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="↑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBb-t6-RRA">
                                             <rect key="frame" x="251" y="14" width="17" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86v-4J-Yqh">
+                                            <rect key="frame" x="16" y="14" width="204" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="Epe-PY-QcI" firstAttribute="leading" secondItem="AE6-as-q8G" secondAttribute="trailing" constant="2" id="0yW-3s-ALH"/>
+                                        <constraint firstItem="AE6-as-q8G" firstAttribute="leading" secondItem="OBb-t6-RRA" secondAttribute="trailing" constant="1" id="2A9-wW-mPr"/>
+                                        <constraint firstItem="86v-4J-Yqh" firstAttribute="leading" secondItem="4pL-Au-UXy" secondAttribute="leadingMargin" constant="8" id="5Gm-bC-GIY"/>
+                                        <constraint firstItem="Epe-PY-QcI" firstAttribute="baseline" secondItem="TrC-Rj-Q9e" secondAttribute="baseline" id="5M1-rD-4kt"/>
+                                        <constraint firstItem="OBb-t6-RRA" firstAttribute="baseline" secondItem="AE6-as-q8G" secondAttribute="baseline" id="EqA-09-kxQ"/>
+                                        <constraint firstItem="OBb-t6-RRA" firstAttribute="baseline" secondItem="86v-4J-Yqh" secondAttribute="baseline" id="GuV-ha-Ifn"/>
+                                        <constraint firstItem="Epe-PY-QcI" firstAttribute="baseline" secondItem="AE6-as-q8G" secondAttribute="baseline" id="V2Z-ak-2X2"/>
+                                        <constraint firstItem="AE6-as-q8G" firstAttribute="centerY" secondItem="4pL-Au-UXy" secondAttribute="centerY" id="h2C-tz-x2q"/>
+                                        <constraint firstItem="TrC-Rj-Q9e" firstAttribute="leading" secondItem="Epe-PY-QcI" secondAttribute="trailing" constant="3" id="tNP-KF-dpF"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="TrC-Rj-Q9e" secondAttribute="trailing" constant="-33" id="yk7-5N-niZ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
@@ -1738,13 +2015,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tkx-sF-TK4">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tkx-sF-TK4">
                                                     <rect key="frame" x="173" y="0.0" width="202" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre del Grupo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoU-6o-irf">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre del Grupo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoU-6o-irf">
                                                     <rect key="frame" x="13" y="11" width="142" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1753,6 +2030,14 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="tkx-sF-TK4" secondAttribute="trailing" id="3KW-0F-nV4"/>
+                                                <constraint firstItem="tkx-sF-TK4" firstAttribute="top" secondItem="y9U-c6-vzH" secondAttribute="top" id="6eN-OB-MKx"/>
+                                                <constraint firstAttribute="bottom" secondItem="tkx-sF-TK4" secondAttribute="bottom" id="9oS-JR-Lhh"/>
+                                                <constraint firstItem="tkx-sF-TK4" firstAttribute="centerY" secondItem="EoU-6o-irf" secondAttribute="centerY" id="Dfg-Sa-hqe"/>
+                                                <constraint firstItem="EoU-6o-irf" firstAttribute="leading" secondItem="y9U-c6-vzH" secondAttribute="leadingMargin" constant="5" id="Q15-zE-OVw"/>
+                                                <constraint firstItem="tkx-sF-TK4" firstAttribute="leading" secondItem="EoU-6o-irf" secondAttribute="trailing" constant="18" id="gYm-ce-WS2"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1800,13 +2085,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fPA-dZ-qoF">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fPA-dZ-qoF">
                                                     <rect key="frame" x="173" y="0.0" width="202" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre del Proyecto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEf-dh-brr">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre del Proyecto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEf-dh-brr">
                                                     <rect key="frame" x="8" y="10" width="162" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1815,6 +2100,14 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="wEf-dh-brr" firstAttribute="leading" secondItem="biu-Lf-lPg" secondAttribute="leadingMargin" id="0LP-v6-caa"/>
+                                                <constraint firstAttribute="trailing" secondItem="fPA-dZ-qoF" secondAttribute="trailing" id="COe-PA-6eO"/>
+                                                <constraint firstItem="fPA-dZ-qoF" firstAttribute="leading" secondItem="wEf-dh-brr" secondAttribute="trailing" constant="3" id="EbR-v9-IhV"/>
+                                                <constraint firstItem="fPA-dZ-qoF" firstAttribute="baseline" secondItem="wEf-dh-brr" secondAttribute="baseline" id="Gdx-O1-gZd"/>
+                                                <constraint firstAttribute="bottom" secondItem="fPA-dZ-qoF" secondAttribute="bottom" id="NqM-JB-TRA"/>
+                                                <constraint firstItem="fPA-dZ-qoF" firstAttribute="top" secondItem="biu-Lf-lPg" secondAttribute="top" id="oNT-hb-zUZ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1825,13 +2118,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Descripción (Breve)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zrf-NO-p62">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Descripción (Breve)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zrf-NO-p62">
                                                     <rect key="frame" x="178" y="0.0" width="197" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descripción" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDU-0U-OHx">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripción" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDU-0U-OHx">
                                                     <rect key="frame" x="8" y="10" width="92" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1840,6 +2133,14 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="zrf-NO-p62" firstAttribute="leading" secondItem="cDU-0U-OHx" secondAttribute="trailing" constant="78" id="4pb-pt-9Dc"/>
+                                                <constraint firstItem="cDU-0U-OHx" firstAttribute="leading" secondItem="1do-uP-F92" secondAttribute="leadingMargin" id="5F8-4l-hbg"/>
+                                                <constraint firstAttribute="bottom" secondItem="zrf-NO-p62" secondAttribute="bottom" id="HMX-dG-bXI"/>
+                                                <constraint firstAttribute="trailing" secondItem="zrf-NO-p62" secondAttribute="trailing" id="OcB-QH-Oaw"/>
+                                                <constraint firstItem="zrf-NO-p62" firstAttribute="top" secondItem="1do-uP-F92" secondAttribute="top" id="vMa-kF-rLL"/>
+                                                <constraint firstItem="zrf-NO-p62" firstAttribute="baseline" secondItem="cDU-0U-OHx" secondAttribute="baseline" id="zGm-ld-Pgy"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1917,13 +2218,16 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OKh-v4-6gJ">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OKh-v4-6gJ">
                                                     <rect key="frame" x="202" y="0.0" width="165" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="165" id="OKu-ai-QkJ"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AT5-5S-92S">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AT5-5S-92S">
                                                     <rect key="frame" x="17" y="11" width="62" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1932,6 +2236,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="OKh-v4-6gJ" firstAttribute="centerY" secondItem="AT5-5S-92S" secondAttribute="centerY" id="5CV-b7-m5K"/>
+                                                <constraint firstItem="OKh-v4-6gJ" firstAttribute="trailing" secondItem="wGx-fD-xKH" secondAttribute="trailingMargin" id="OFV-1z-J0f"/>
+                                                <constraint firstItem="AT5-5S-92S" firstAttribute="leading" secondItem="wGx-fD-xKH" secondAttribute="leadingMargin" constant="9" id="Wev-fE-Um9"/>
+                                                <constraint firstItem="OKh-v4-6gJ" firstAttribute="top" secondItem="wGx-fD-xKH" secondAttribute="top" id="mRB-hk-lqG"/>
+                                                <constraint firstAttribute="bottom" secondItem="OKh-v4-6gJ" secondAttribute="bottom" id="v4v-Q9-02q"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1942,13 +2253,16 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="blg-Gy-QEN">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="blg-Gy-QEN">
                                                     <rect key="frame" x="202" y="0.0" width="165" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="165" id="jWX-Yb-lBL"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Matrícula" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HV-nw-Jho">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matrícula" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HV-nw-Jho">
                                                     <rect key="frame" x="17" y="11" width="71" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1957,6 +2271,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="blg-Gy-QEN" secondAttribute="bottom" id="HWT-pt-iy3"/>
+                                                <constraint firstItem="0HV-nw-Jho" firstAttribute="centerY" secondItem="blg-Gy-QEN" secondAttribute="centerY" id="X7R-Km-1Rr"/>
+                                                <constraint firstItem="blg-Gy-QEN" firstAttribute="trailing" secondItem="upE-lI-Lrw" secondAttribute="trailingMargin" id="Xuu-9R-hk3"/>
+                                                <constraint firstItem="0HV-nw-Jho" firstAttribute="leading" secondItem="upE-lI-Lrw" secondAttribute="leadingMargin" constant="9" id="fV0-ns-v3L"/>
+                                                <constraint firstItem="blg-Gy-QEN" firstAttribute="top" secondItem="upE-lI-Lrw" secondAttribute="top" id="mHW-pD-lIC"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1967,21 +2288,29 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zXy-rs-ld1">
-                                                    <rect key="frame" x="202" y="0.0" width="165" height="43"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                                </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Correo Electrónico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1q-s8-U4b">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correo Electrónico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1q-s8-U4b">
                                                     <rect key="frame" x="16" y="11" width="143" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zXy-rs-ld1">
+                                                    <rect key="frame" x="202" y="0.0" width="165" height="43"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                </textField>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="zXy-rs-ld1" firstAttribute="leading" secondItem="a1q-s8-U4b" secondAttribute="trailing" constant="43" id="7QN-FD-phh"/>
+                                                <constraint firstItem="zXy-rs-ld1" firstAttribute="centerY" secondItem="a1q-s8-U4b" secondAttribute="centerY" id="E9W-2b-8Qw"/>
+                                                <constraint firstItem="zXy-rs-ld1" firstAttribute="top" secondItem="jjV-VQ-DdX" secondAttribute="top" id="NK9-SH-RgC"/>
+                                                <constraint firstItem="zXy-rs-ld1" firstAttribute="trailing" secondItem="jjV-VQ-DdX" secondAttribute="trailingMargin" id="YhZ-jA-0Vm"/>
+                                                <constraint firstAttribute="bottom" secondItem="zXy-rs-ld1" secondAttribute="bottom" id="hVK-T3-ZKG"/>
+                                                <constraint firstItem="a1q-s8-U4b" firstAttribute="leading" secondItem="jjV-VQ-DdX" secondAttribute="leadingMargin" constant="8" id="m0n-bC-eFK"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -1992,21 +2321,31 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l3j-ko-aTN">
-                                                    <rect key="frame" x="195" y="0.0" width="180" height="43"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
-                                                </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carrera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqW-oH-tGI">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carrera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqW-oH-tGI">
                                                     <rect key="frame" x="15" y="11" width="58" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l3j-ko-aTN">
+                                                    <rect key="frame" x="195" y="0.0" width="180" height="43"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="180" id="NFk-dF-xcG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
+                                                </textField>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="l3j-ko-aTN" secondAttribute="bottom" id="Q7Q-QQ-U0a"/>
+                                                <constraint firstItem="lqW-oH-tGI" firstAttribute="leading" secondItem="Sfe-EC-d3Y" secondAttribute="leadingMargin" constant="7" id="Vku-sb-mst"/>
+                                                <constraint firstItem="lqW-oH-tGI" firstAttribute="centerY" secondItem="l3j-ko-aTN" secondAttribute="centerY" id="e28-Bw-ckw"/>
+                                                <constraint firstItem="l3j-ko-aTN" firstAttribute="top" secondItem="Sfe-EC-d3Y" secondAttribute="top" id="wxc-oh-89b"/>
+                                                <constraint firstAttribute="trailing" secondItem="l3j-ko-aTN" secondAttribute="trailing" id="yrs-0K-cDi"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -2017,21 +2356,31 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yNl-Zn-NEx">
-                                                    <rect key="frame" x="195" y="0.0" width="180" height="43"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
-                                                </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Semestre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bab-of-BrZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Semestre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bab-of-BrZ">
                                                     <rect key="frame" x="18" y="11" width="73" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17593994739999999" green="0.69779974219999996" blue="0.53573465350000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yNl-Zn-NEx">
+                                                    <rect key="frame" x="195" y="0.0" width="180" height="43"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="180" id="17t-aM-241"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
+                                                </textField>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="yNl-Zn-NEx" secondAttribute="trailing" id="3PK-2f-4t7"/>
+                                                <constraint firstItem="Bab-of-BrZ" firstAttribute="leading" secondItem="sWH-rr-KE3" secondAttribute="leadingMargin" constant="10" id="3nN-IZ-fcR"/>
+                                                <constraint firstAttribute="bottom" secondItem="yNl-Zn-NEx" secondAttribute="bottom" id="W5A-KV-U6E"/>
+                                                <constraint firstItem="yNl-Zn-NEx" firstAttribute="centerY" secondItem="Bab-of-BrZ" secondAttribute="centerY" id="thd-Tj-VQx"/>
+                                                <constraint firstItem="yNl-Zn-NEx" firstAttribute="top" secondItem="sWH-rr-KE3" secondAttribute="top" id="xg8-Cd-KhR"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -2042,13 +2391,16 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iW1-Ci-n89">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iW1-Ci-n89">
                                                     <rect key="frame" x="195" y="0.0" width="180" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="180" id="6L6-dJ-ebB"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teléfono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDj-lN-GoV">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teléfono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDj-lN-GoV">
                                                     <rect key="frame" x="16" y="11" width="66" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -2057,6 +2409,13 @@ Transformación Social se distribuye como está, de manera gratuita y se prohíb
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="TDj-lN-GoV" firstAttribute="centerY" secondItem="iW1-Ci-n89" secondAttribute="centerY" id="KJ9-x2-gX0"/>
+                                                <constraint firstItem="iW1-Ci-n89" firstAttribute="top" secondItem="TXQ-WS-hcP" secondAttribute="top" id="Qgf-Tk-cHx"/>
+                                                <constraint firstAttribute="trailing" secondItem="iW1-Ci-n89" secondAttribute="trailing" id="fex-yR-ZKX"/>
+                                                <constraint firstAttribute="bottom" secondItem="iW1-Ci-n89" secondAttribute="bottom" id="w0U-b7-86U"/>
+                                                <constraint firstItem="TDj-lN-GoV" firstAttribute="leading" secondItem="TXQ-WS-hcP" secondAttribute="leadingMargin" constant="8" id="yP4-T9-s0J"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
